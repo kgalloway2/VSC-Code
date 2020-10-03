@@ -1,5 +1,7 @@
 import math
 
+'''Finds the min.'''
+
 phi = ((5 ** 0.5) - 1) / 2
 
 a = -2

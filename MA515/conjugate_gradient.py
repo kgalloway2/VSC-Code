@@ -6,7 +6,7 @@ x = [[[-1.2],[1]]]              # initialize list of x with x0
 tolerance = 5 * 10 ** -5
 
 def f(xf):
-    x1 = xf[0][0] 
+    x1 = xf[0][0]
     x2 = xf[1][0]
     return (100 * ((x2 - x1) ** 2)) + ((1 - x1) ** 2)
 

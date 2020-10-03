@@ -1,0 +1,1 @@
+'make graph functions based on a craph being a piiar of lists, vertices and edges. stuff like neighbors, maybe finding a cycle, etc'

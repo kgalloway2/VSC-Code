@@ -17,4 +17,4 @@ while (abs(x[k] - x[k - 1]) >  (10 ** -3)):
     x.append(x[k] - f(x[k]) / f_prime(x[k]))
     k += 1
     
-print(x)
+print(x[-1], f(x[-1]))
