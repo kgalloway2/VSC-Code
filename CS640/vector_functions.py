@@ -8,12 +8,20 @@ def vector_add(v, w):
     if len(v) != len(w):
         raise Exception("Vectors are not the same size.")
     sum_vector = []
-    if type(v[0]) == list:
-        for i in range(len(v)):
-            sum_vector.append([v[i][0] + w[i][0]])
+    if type(v[0]) == type(w[0]):
+        if type(v[0]) == list:
+            for i in range(len(v)):
+                sum_vector.append([v[i][0] + w[i][0]])
+        else:
+            for i in range(len(v)):
+                sum_vector.append(v[i] + w[i])
     else:
-        for i in range(len(v)):
-            sum_vector.append(v[i] + w[i])
+        if type(v[0]) == list:
+            for i in range(len(v)):
+                sum_vector.append([v[i][0] + w[i]])
+        else:
+            for i in range(len(v)):
+                sum_vector.append(v[i] + w[i][0])
     return sum_vector
 
 def vector_mult(v, w):
@@ -37,6 +45,19 @@ def vector_mult(v, w):
         for i in range(len(v)):
             product_vector += (v[i] * w[i][0])
         return [product_vector]
+
+def dot(v,w):
+    if len(v) != len(w):
+        raise Exception("Vectors are not the same size.")
+    if (type(v[0]) is float or type(v[0]) is int): # row vectors
+        product = 0
+        for i in range(len(v)):
+            product += (v[i] * w[i])
+    else: #column vectors  
+        product = 0
+        for i in range(len(v)):
+            product += (v[i][0] * w[i][0])
+    return product
 
 def transpose(v):
     v_t = []
