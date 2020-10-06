@@ -6,7 +6,7 @@ import matrix_functions as m
 
 training_in = [[[1],[0.05],[0.10]]]     # column vectors, already augmented
 training_out = [[[0.01],[0.99]]]
-v_weights = [[[0.35],[0.15],[0.25]],[[0.35],[0.2],[0.3]]]   # two column vectors [bias, v11,v21]t, [bias,v21,v22]t
+v_weights = [[[0.35],[0.15],[0.20]],[[0.35],[0.25],[0.3]]]   # two column vectors [bias, v11,v21]t, [bias,v21,v22]t
 w_weights = [[[0.6],[0.4],[0.45]],[[0.6],[0.5],[0.55]]]     # two column vectors [bias, w11,w21]t, [bias,w21,w22]t
 tolerance = 10 ** -6
 alpha = 0.5
@@ -28,7 +28,7 @@ for i in range(m):
     e.append(0)            # fill errors with 0s
 
 def f(x):
-    return 1 / (1 + math.e ** (x))
+    return 1 / (1 + math.e ** (-x))
 
 def f_prime(x):
     return f(x) * (1 - f(x))
@@ -51,10 +51,10 @@ while True:
     for b in range(m):                                  
         Yin[b] = v.dot(w_weights[b],[[1]] + z)        # [1] is the augment/bias
         y[b] = f(Yin[b])
-        e[b] = training_out[k][b][0] - y[b]                    # errors
-    error = abs(sum(e))                                          # error is sum of errors
+        e[b] = 0.5 * ((training_out[k][b][0] - y[b])  ** 2)                  # errors
+    error = sum(e)                                         # error is sum of errors
     
-    if error < tolerance or iterations > 10000:
+    if error < tolerance: #or iterations >= 10000:
         break
 
     # find changes for weights for outputs
@@ -62,7 +62,7 @@ while True:
     delta_w = []
     for b in range(m):
         changes_w.append([])
-        delta_w.append([e[b] * f_prime(Yin[b])])
+        delta_w.append([-(training_out[k][b][0] - y[b]) * f_prime(Yin[b])])
         for j in range(h + 1):
             if j == 0:
                 changes_w[b].append(alpha * delta_w[b][0])
@@ -87,6 +87,5 @@ while True:
         w_weights[i] = v.vector_add(w_weights[i], v.scalar_mult(-1, changes_w[i]))
     for i in range(len(v_weights)):
         v_weights[i] = v.vector_add(v_weights[i], v.scalar_mult(-1, changes_v[i]))
-
 
 print(v_weights,'\n',w_weights,'\n',y, error, iterations)
