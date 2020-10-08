@@ -35,12 +35,12 @@ print(f(x[0]))
 
 def BFGSupdate(B, y, d):
     ydt = v.vector_mult(y, v.transpose(d))
-    dyt = v.vector_mult(d, v.transpose(y)) 
-    dty = v.vector_mult(v.transpose(d), y)
+    dyt = v.vector_mult(d, v.transpose(y))
+    dty = v.dot(v.transpose(d), y)
     ddt = v.vector_mult(d, v.transpose(d))
-    term2 = m.scalar_mult(-1 / dty[0], m.matrix_add(m.matrix_mult(B, ydt), m.matrix_mult(dyt, B)))
-    ytBinvy = m.matrix_mult([v.transpose(y)], m.matrix_mult(B, y))
-    term3 = m.scalar_mult((1 + (ytBinvy[0][0] / (dty[0] * dty[0]))), ddt)
+    term2 = m.scalar_mult(-1 / dty, m.matrix_add(m.matrix_mult(B, ydt), m.matrix_mult(dyt, B)))
+    ytBinvy = v.dot(v.transpose(y), m.matrix_mult(B, y))
+    term3 = m.scalar_mult((1 + (ytBinvy / (dty * dty))), ddt)
     return m.matrix_add(B, m.matrix_add(term2, term3))
 
 B.append(BFGSupdate(B[0], y[0], d[0]))              #B1

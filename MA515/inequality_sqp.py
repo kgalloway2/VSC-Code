@@ -2,6 +2,8 @@ import math
 import vector_functions as v
 import matrix_functions as m  
 
+'''unfinished and not even close.'''
+
 H2 = [[17.7529,5.3882],[5.3882,1.9137]]
 gamma2 = [[2.898],[-1.124]]
 change_x2 = [[1.004],[-2.566]]

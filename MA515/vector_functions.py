@@ -25,26 +25,30 @@ def vector_add(v, w):
     return sum_vector
 
 def vector_mult(v, w):
-    if len(v) != len(w):
-        raise Exception("Vectors are not the same size.")
-    if (type(v[0]) is float or type(v[0]) is int) and (type(w[0]) is float or type(w[0]) is int):
-        product_vector = []
-        for i in range(len(v)):
-            product_vector.append(v[i] * w[i])
-        return product_vector
-    product_vector = []
-    if type(v[0]) == list:
-        for i in range(len(v)):
-            current_row = []
-            for j in range(len(w)):
-                current_row.append(v[i][0] * w[j])
-            product_vector.append(current_row)
-        return product_vector
+    if len(v) == len(w) or len(v[0]) == len(w) or len(v) == len(w[0]):
+        if (type(v[0]) is float or type(v[0]) is int) and (type(w[0]) is float or type(w[0]) is int):
+            product_vector = []
+            for i in range(len(v)):
+                product_vector.append(v[i] * w[i])
+            return product_vector
+        
+        if len(v[0]) > 1: # row * column
+            product_vector = 0
+            for i in range(len(v)):
+                product_vector += (v[0][i] * w[i][0])
+            return [product_vector]
+            
+        else: # column * row
+            product_vector = []
+            for i in range(len(v)):
+                current_row = []
+                for j in range(len(w[0])):
+                    current_row.append(v[i][0] * w[0][j])
+                product_vector.append(current_row)
+            return product_vector
+            
     else:
-        product_vector = 0
-        for i in range(len(v)):
-            product_vector += (v[i] * w[i][0])
-        return [product_vector]
+        raise Exception("Vectors are not the same size.")
 
 def dot(v,w):
     if len(v[0]) == len(w):
