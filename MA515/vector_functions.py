@@ -5,23 +5,17 @@ scalar_1 = -1
 scalar_2 = 0.5
 
 def vector_add(v, w):
-    if len(v) != len(w):
+    if len(v[0]) != len(w[0]):
         raise Exception("Vectors are not the same size.")
     sum_vector = []
-    if type(v[0]) == type(w[0]):
-        if type(v[0]) == list:
-            for i in range(len(v)):
-                sum_vector.append([v[i][0] + w[i][0]])
-        else:
-            for i in range(len(v)):
-                sum_vector.append(v[i] + w[i])
-    else:
-        if type(v[0]) == list:
-            for i in range(len(v)):
-                sum_vector.append([v[i][0] + w[i]])
-        else:
-            for i in range(len(v)):
-                sum_vector.append(v[i] + w[i][0])
+    if len(v[0]) > 1: # 2 row vectors
+        sum_vector.append([])
+        for i in range(len(v[0])):
+            sum_vector[0].append(v[0][i] + w[0][i])
+    else: # 2 column vectors
+        for i in range(len(v)):
+            sum_vector.append([])
+            sum_vector[i].append(v[i][0] + w[i][0])
     return sum_vector
 
 def vector_mult(v, w):
@@ -83,21 +77,23 @@ def transpose(v):
 def scalar_mult(c, v):
     if type(v) != list or (type(c) != float and type(c) != int):
         raise Exception('Cannot multiply these. Check input.')
-    product = []
-    if type(v[0]) != list:
+    if type(v[0]) != list: # row vector
+        product = [[]]
         for i in range(len(v)):
-            product.append(c * v[i])
+            product[0].append(c * v[i])
+        return product[0]
     else:
+        product = []
         for i in range(len(v)):
             product.append([c * v[i][0]])
     return product
 
 def euc_norm(v):
     norm2 = 0
-    if type(v[0]) == list:
+    if len(v[0]) > 1: # row vector
         for i in range(len(v)):
-            norm2 += v[i][0] ** 2
+            norm2 += v[0][i] ** 2
     else:
-        for i in range(len(v)):
-            norm2 += v[i] ** 2
+        for i in range(len(v)): # column vector
+            norm2 += v[i][0] ** 2
     return norm2 ** 0.5
