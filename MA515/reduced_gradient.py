@@ -36,7 +36,7 @@ def gradfR(x):
 
 def s(x):
     temp = gradfR(x)
-    c = v.euc_norm(temp) # don't use the norm becuase s is a singleton so normalizing would just use 1 every time
+    #c = v.euc_norm(temp) # don't use the norm becuase s is a singleton so normalizing would just use 1 every time
     return v.scalar_mult(-1, temp)
 
 def alpha(x,s): # just going to guess it
@@ -51,7 +51,7 @@ while True:
     z = v.vector_add([x[-1][0]], change_z)
     change_y = v.vector_mult([m.inverse(gradypsi(x[-1]))],v.vector_mult([gradzpsi(x[-1])],change_z))
     y = v.vector_add([x[-1][1]], v.scalar_mult(-1,change_y))
-    print(iterations,x[-1],a[-1],S[-1],change_z,change_y)
+    print(iterations,x[-1],a[-1],S[-1],change_z,change_y, f(x[-1]))
     x.append([z[0],y[0]])
     print('error', abs(f(x[-1]) - f(x[-2])))
     iterations += 1
