@@ -5,7 +5,7 @@ import matrix_functions as m
 # initial data, parameters, functions
 
 training_in = [[[1],[2],[4]]]     # column vectors, already augmented
-training_out = [[[1],[-1]]]
+training_out = [[[1],[-1]]]     #note it needs to be bipolar sigmoid to be able to achieve a value of -1
 v_weights = [[[0.2],[0.1],[-0.1]]]   # one column vector [bias, v11,v21]t
 w_weights = [[[-0.2],[-0.1]],[[0.2],[0.1]]]     # two column vectors [bias, w11]t, [bias,w12]t
 tolerance = 10 ** -6
@@ -28,16 +28,16 @@ for i in range(m):
     e.append(0)            # fill errors with 0s
 
 def f(x):
-    return 1 / (1 + math.e ** (-x))
+    return (2 / (1 + math.e ** (-x))) - 1
 
 def f_prime(x):
-    return f(x) * (1 - f(x))
+    return (1 - f(x)) * (1 + f(x)) / 2
 
 # algorithm
 
 k = -1
 iterations = 0
-while True and iterations < 1:
+while True:
     k = (k + 1) % N
     if k == 0:
         iterations += 1
@@ -54,7 +54,7 @@ while True and iterations < 1:
         e[b] = 0.5 * ((training_out[k][b][0] - y[b])  ** 2)                  # errors
     error = sum(e)                                         # error is sum of errors
     
-    if error < tolerance: #or iterations >= 10000:
+    if error < tolerance or iterations >= 10000:
         break
 
     # find changes for weights for hidden to outputs

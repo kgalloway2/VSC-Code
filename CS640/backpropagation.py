@@ -6,12 +6,12 @@ import matrix_functions as m
 
 # initial data, parameters, functions
 
-training_in = [[[1],[0.05],[0.10]]]     # column vectors, already augmented
-training_out = [[[0.01],[0.99]]]
-v_weights = [[[0.35],[0.15],[0.20]],[[0.35],[0.25],[0.3]]]   # two column vectors [bias, v11,v21]t, [bias,v21,v22]t
-w_weights = [[[0.6],[0.4],[0.45]],[[0.6],[0.5],[0.55]]]     # two column vectors [bias, w11,w21]t, [bias,w21,w22]t
+training_in = [[[1],[2],[3]]]     # column vectors, already augmented
+training_out = [[[-1],[1]]]
+v_weights = [[[0.5],[0.5],[-0.2]],[[0.5],[0.3],[-0.5]]]   # two column vectors [bias, v11,v21]t, [bias,v12,v22]t
+w_weights = [[[0.5],[-0.4],[-0.2]],[[0.5],[0.2],[0.4]]]     # two column vectors [bias, w11,w21]t, [bias,w12,w22]t
 tolerance = 10 ** -6
-alpha = 0.5
+alpha = 0.1
 N = len(training_in)       # number of data input and output
 Yin = []                   # initialize output layer inputs
 y = []                     # initialize output layer outputs
@@ -35,11 +35,17 @@ def f(x):
 def f_prime(x):
     return f(x) * (1 - f(x))
 
+def g(x):
+    return (2 / (1 + math.e ** (-x))) - 1
+
+def g_prime(x):
+    return (1 - g(x)) * (1 + g(x)) / 2
+
 # algorithm
 
 k = -1
 iterations = 0
-while True:
+while True and iterations < 1:
     k = (k + 1) % N
     if k == 0:
         iterations += 1
@@ -48,11 +54,10 @@ while True:
     for j in range(h):
         Zin[j] = v.dot(v_weights[j],training_in[k])     # should be a dot product that returns a scalar// [1] is the augment/bias
         z[j] = [f(Zin[j])]                                    # hidden unit j's output
-
     # hidden layer to output layer
     for b in range(m):                                  
         Yin[b] = v.dot(w_weights[b],[[1]] + z)        # [1] is the augment/bias
-        y[b] = f(Yin[b])
+        y[b] = g(Yin[b])
         e[b] = 0.5 * ((training_out[k][b][0] - y[b])  ** 2)                  # errors
     error = sum(e)                                         # error is sum of errors
     
@@ -64,7 +69,7 @@ while True:
     delta_w = []
     for b in range(m):
         changes_w.append([])
-        delta_w.append([-(training_out[k][b][0] - y[b]) * f_prime(Yin[b])])
+        delta_w.append([-(training_out[k][b][0] - y[b]) * g_prime(Yin[b])])
         for j in range(h + 1):
             if j == 0:
                 changes_w[b].append(alpha * delta_w[b][0])
@@ -76,15 +81,14 @@ while True:
     delta_v = []
     for i in range(h):
         changes_v.append([])
-        delta_v.append([v.dot(delta_w, w_weights[i][1:]) * f_prime(Zin[i])])  # don't include bias weight
+        delta_v.append([v.dot(delta_w, [[w_weights[0][i + 1][0]],[w_weights[1][i + 1][0]]]) * f_prime(Zin[i])])  # don't include bias weight
         for b in range(m + 1):
             if b == 0:
                 changes_v[i].append(alpha * delta_v[i][0])
             else:
-                changes_v[i].append(alpha * delta_v[i][0] * training_in[k][b - 1][0])
+                changes_v[i].append(alpha * delta_v[i][0] * training_in[k][b][0])
 
     # find new weights
-
     for i in range(len(w_weights)):
         w_weights[i] = v.vector_add(w_weights[i], v.scalar_mult(-1, changes_w[i]))
     for i in range(len(v_weights)):

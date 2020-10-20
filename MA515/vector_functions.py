@@ -77,11 +77,11 @@ def transpose(v):
 def scalar_mult(c, v):
     if type(v) != list or (type(c) != float and type(c) != int):
         raise Exception('Cannot multiply these. Check input.')
-    if type(v[0]) != list: # row vector
+    if len(v[0]) > 1: # row vector
         product = [[]]
-        for i in range(len(v)):
-            product[0].append(c * v[i])
-        return product[0]
+        for i in range(len(v[0])):
+            product[0].append(c * v[0][i])
+        return product
     else:
         product = []
         for i in range(len(v)):
