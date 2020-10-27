@@ -78,7 +78,7 @@ def determinant(m):
 
 def inverse(m):
     if len(m) == 1:
-        return [1 / m[0]]
+        return [[1 / m[0][0]]]
     if len(m[0]) != 2 or len(m) != 2:
         raise Exception('Not a 2 x 2 matrix.')
     else:

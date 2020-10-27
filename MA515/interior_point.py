@@ -60,7 +60,7 @@ while True and iterations < 10:
                 [gradxg1(x[-1])[0][0],gradxg1(x[-1])[1][0],-1,0,-gradlL(x[-1],s[-1])]]
     temp2 = g.gelim(matrix)
     
-    '''alpha = a()
+    alpha = a()
     while s[-1][0] + alpha * temp2[2] < 0:
         alpha *= 0.748
     new_s = s[-1][0] + alpha * temp2[2]
@@ -84,7 +84,7 @@ while True and iterations < 10:
             x.append([[new_x1],[new_x2]])
             break
         else:
-            alpha *= 0.27 # change step length'''
+            alpha *= 0.27 # change step length
     print(iterations,'x:', x[-1],'lambdas:',l[-1], 's',s[-1],'f(x) =',f(x[-1]))
     print('g1=', g1(x[-1]),'-----------------')
     mu /= 5

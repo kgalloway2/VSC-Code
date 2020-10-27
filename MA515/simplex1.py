@@ -11,6 +11,11 @@ matrix2 = [[2,3,2,1,0,0,1000],
 [1,1,2,0,1,0,800],
 [-7,-8,-10,0,0,1,0]]
 
+matrix3 = [[1,2,1,0,0,0,16],
+[1,1,0,1,0,0,9],
+[3,2,0,0,1,0,24],
+[-40,-30,0,0,0,1,0]]
+
 def negative_in_obj(m):
     for i in m[-1]:
         if i < 0:
@@ -46,7 +51,7 @@ def simplex1(matrix):
                 factor = matrix[i][pivot_column]
                 matrix[i] = v.vector_add([matrix[i]], v.scalar_mult(-factor, [matrix[pivot_row]]))[0]
 
-simplex1(matrix1)
+simplex1(matrix3)
     
-for i in range(len(matrix1)):
-    print(matrix1[i])
+for i in range(len(matrix3)):
+    print(matrix3[i])

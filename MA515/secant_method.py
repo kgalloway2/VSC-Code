@@ -1,6 +1,6 @@
 import math
 
-'''This finds roots.'''
+'''This finds roots. It requires two initial guesses. It approximates the derivative using a secant line.'''
 
 x = [-2,-2.9]
 

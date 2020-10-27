@@ -2,6 +2,8 @@ import vector_functions as v
 import matrix_functions as m
 import csv
 
+'''uses conjugate gradient method to find minimum of 2d function. Uses exact line search to find alpha.'''
+
 x = [[[-1.2],[1]]]              # initialize list of x with x0
 tolerance = 5 * 10 ** -5
 

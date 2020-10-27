@@ -2,7 +2,7 @@ import math
 import vector_functions as v 
 import matrix_functions as m 
 
-'''2d f with single constraint g. based on hw3p1b.'''
+'''2d f with single constraint g. based on hw3p1b. not very accurate because of inexact line search'''
 
 # initial values
 x = [[[0],[2 ** 0.5]]]

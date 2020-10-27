@@ -11,11 +11,11 @@ m2 = [[0.08701924763831913, 0.08935899685109217, 1.4, -0.008339749212773043],
 def gelim(m):
     coeff = [[]]
     for j in range(len(m) - 1):
-        m[j] = v.scalar_mult(1 / m[j][j] , m[j])
+        m[j] = v.scalar_mult(1 / m[j][j] , [m[j]])[0]
         coeff.append([])
         for i in range(0, len(m)):
             if i != j:
-                m[i] = v.vector_add([m[i]], [v.scalar_mult(-1 * m[i][j], m[j])])[0]
+                m[i] = v.vector_add([m[i]], v.scalar_mult(-1 * m[i][j], [m[j]]))[0]
             
 
     coeff[-1] = (m[-1][-1] / m[-1][-2])

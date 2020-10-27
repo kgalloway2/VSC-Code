@@ -47,7 +47,7 @@ def hessian(H, gamma, change_x):
     term3 = m.scalar_mult(1 / v.dot(m.matrix_mult(xt,H),change_x),m.matrix_mult(H,m.matrix_mult(xxt, H)))
     return m.matrix_add(term1, m.matrix_add(term2, m.scalar_mult(-1, term3)))
 
-# algorithm
+# algorithm 
 print(x[-1],f(x[-1]),g1(x[-1]),g2(x[-1]))
 iterations = 0
 penalties.append(f(x[-1]))

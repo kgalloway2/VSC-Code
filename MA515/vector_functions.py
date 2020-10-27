@@ -28,7 +28,7 @@ def vector_mult(v, w):
         
         if len(v[0]) > 1: # row * column
             product_vector = 0
-            for i in range(len(v)):
+            for i in range(len(v[0])):
                 product_vector += (v[0][i] * w[i][0])
             return [product_vector]
             
@@ -64,14 +64,14 @@ def dot(v,w):
 
 def transpose(v):
     v_t = []
-    if type(v[0]) == list:
+    if len(v[0]) == 1:
         v_t.append([])
         for i in v:
             v_t[0].append(i[0])
         return v_t
     else:
-        for i in range(len(v)):
-            v_t.append([v[i]])
+        for i in range(len(v[0])):
+            v_t.append([v[0][i]])
         return v_t
 
 def scalar_mult(c, v):

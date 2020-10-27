@@ -11,7 +11,7 @@ def f(x):
 def bisector(a, b, r, tolerance, f):
     mid = (a + b) / 2
     if ((abs(a - b) / abs(a))< tolerance) and (abs(f(mid)) < tolerance):
-        print(mid)
+        print(mid, f(mid))
     else:
         if f(a) * f(mid) < 0:
             bisector(a, mid, r, tolerance, f)

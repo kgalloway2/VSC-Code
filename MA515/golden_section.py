@@ -1,6 +1,6 @@
 import math
 
-'''Finds the min.'''
+'''Finds the min of 1d functions.'''
 
 phi = ((5 ** 0.5) - 1) / 2
 

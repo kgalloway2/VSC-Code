@@ -1,5 +1,3 @@
-'''This is Newton's method applied to a 2d function.'''
-
 previous_1 = [0.5, 0.5]
 iterations = 3
 

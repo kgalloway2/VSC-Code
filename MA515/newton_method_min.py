@@ -1,3 +1,7 @@
+'''This is newton's method applied to find the minimum of a function. 
+Like newton's method, it will return the min nearest to the initial guess.'''
+
+
 x = [1]
 
 def f(x):

@@ -5,7 +5,7 @@ import guassian as g
 
 '''this is the best I could do for hw3p2. brute forced to find the best initial alpha value at the bottom'''
 
-# initial guesses and stuff
+# initial guesses and stuff 
 x = [[[2.56155],[-1.56155]]]
 Hessians = [[[1,0],[0,1]]]
 l = []

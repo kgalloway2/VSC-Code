@@ -1,8 +1,8 @@
 import math
 
-'''This finds roots.'''
+'''This finds roots. If there are more than one, it will find the nearest to its initial guess.'''
 
-x = [1]
+x = [-2]
 
 def f(x):
     return (x - 1) * x * (x + 1)

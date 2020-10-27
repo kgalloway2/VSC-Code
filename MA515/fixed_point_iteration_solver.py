@@ -9,4 +9,4 @@ while abs(previous - current) > tolerance:
     previous = current
     current = g(current)
 
-print(current)
+print(current, g(current))
