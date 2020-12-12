@@ -4,8 +4,8 @@ import math
 
 phi = ((5 ** 0.5) - 1) / 2
 
-a = -2
-b = 1 
+a = 0
+b = 2
 d = phi * (b - a)
 x1 = a + d
 x2 = b - d
@@ -13,7 +13,7 @@ x2 = b - d
 tolerance = 10 ** -3
 
 def f(x):
-    return x ** 4 + 10 * x * math.sin(x ** 2)
+    return (x ** 4) - (14 * (x ** 3)) + (60 * (x ** 2)) - (70 * x)
 
 def golden(a, b, x1, x2, tolerance, f):
     print((a,b,x1,x2,abs(a-b)))

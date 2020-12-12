@@ -5,13 +5,13 @@ Like newton's method, it will return the min nearest to the initial guess.'''
 x = [1]
 
 def f(x):
-    return (x ** 4) - (14 * (x ** 3)) + (60 * (x ** 2)) - (70 * x)
+    return (2 * (x ** 2)) - (4 * x) + 4
 
 def f_prime(x):
-    return 4 * (x ** 3) - 42 * (x ** 2) + 120 * x - 70
+    return 4 * x - 4
 
 def f_prime2(x):
-    return 12 * (x ** 2) - 84 * x + 120
+    return 4
 
 x.append(x[0] - f_prime(x[0]) / f_prime2(x[0]))
 
