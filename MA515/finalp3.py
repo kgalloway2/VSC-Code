@@ -5,7 +5,7 @@ import matrix_functions as m
 '''2d f with single constraint g. based on hw3p1b. not very accurate because of inexact line search''' 
 
 # initial values
-x = [[[0.5],[0.55]]]
+x = [[[0.5],[1.5]]]
 S = []
 a = []
 
@@ -40,7 +40,7 @@ def s(x):
     return v.scalar_mult(-1, temp)
 
 def alpha(x,s): # just going to guess it
-    return 0.1
+    return 0.2
 
 # algorithm
 iterations = 0
