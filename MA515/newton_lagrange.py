@@ -1,6 +1,6 @@
 import guassian as g
 
-data = [(1,0),(2,1),(4,2)]
+data = [(2,2),(4,3),(6,1),(8,3),(10,2)]
 k = len(data)
 
 '''based on newton lagrange mtehod from page 108. worked on example he did.'''
