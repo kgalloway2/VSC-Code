@@ -10,14 +10,15 @@ the admin then approves or rejects the customers booking request.
 
 The hotel has a capcity of 100 with 25 rooms. Up to 4 people from a single party can fit into a room.
 Currently, the hotel can do the following:
-1. Accept bookings which would not overfill the hotel (> 100 guests or > 25 rooms).
-2. Return info on a booking based on the name of the party who booked rooms.
-3. Return the total bill for a booking based on the name of the party.
-4. Checkout a party (vacate their rooms and return the bill).
-5. add room service charges (which are added to the bill when it is calculated).
+- Accept bookings which would not overfill the hotel (> 100 guests or > 25 rooms).
+- Return info on a booking based on the name of the party who booked rooms.
+- Return the total bill for a booking based on the name of the party.
+- Checkout a party (vacate their rooms and return the bill).
+- add room service charges (which are added to the bill when it is calculated).
 */
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class hotel{
     int hotelCapacity;
@@ -108,17 +109,63 @@ public class hotel{
     }
 
     public static void main(String[] args) {
-        hotel hotel1 = new hotel(0,0);
-        System.out.println("The hotel currently has " + hotel1.checkHotelCapacity() + " guests in " + hotel1.checkRoomCapacity() + " rooms.");
-        hotel1.bookAParty("Smith", 45, 2);
-        System.out.println("The hotel currently has " + hotel1.checkHotelCapacity() + " guests in " + hotel1.checkRoomCapacity() + " rooms.");
-        hotel1.bookAParty("Doe", 3, 4);
-        System.out.println("The hotel currently has " + hotel1.checkHotelCapacity() + " guests in " + hotel1.checkRoomCapacity() + " rooms.");
-        hotel1.bookAParty("Kunthala", 22, 6);
-        System.out.println("The hotel currently has " + hotel1.checkHotelCapacity() + " guests in " + hotel1.checkRoomCapacity() + " rooms.");
-        hotel1.checkBooking("Kunthala");
-        hotel1.roomService("Doe", 59.99);
-        hotel1.checkOut("Doe");
-        System.out.println("The hotel currently has " + hotel1.checkHotelCapacity() + " guests in " + hotel1.checkRoomCapacity() + " rooms.");
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("What is the current number of guests in your hotel?");
+        int inputCapacity = myObj.nextInt();
+        System.out.println("What is the current number of occupied rooms in your hotel?");
+        int inputRooms = myObj.nextInt();
+        hotel hotel1 = new hotel(inputCapacity,inputRooms);
+
+        while (true) {
+            System.out.println("-=-=-=-=-=-=-=-=-=-");
+            System.out.println("What would you like to do?");
+            System.out.println("1. Book a party.");
+            System.out.println("2. Check out a party.");
+            System.out.println("3. Order room service");
+            System.out.println("4. Check a guest's bill.");
+            System.out.println("5. Check hotel capacity.");
+            System.out.println("6. Exit.");
+            System.out.println("-=-=-=-=-=-=-=-=-=-");
+            System.out.println("Input the number of your selection:");
+            int currentAction = myObj.nextInt();
+
+            if (currentAction == 1) {
+                System.out.println("What is the name of the party?");
+                String inputName = myObj.next();
+                System.out.println("What is the size of the party?");
+                int inputSize = myObj.nextInt();
+                System.out.println("How many nights will you be staying?");
+                int inputNights = myObj.nextInt();
+                hotel1.bookAParty(inputName, inputSize, inputNights);
+
+            } else if (currentAction == 2) {
+                System.out.println("Which party is checking out?");
+                String inputName = myObj.next();
+                hotel1.checkOut(inputName);
+
+            } else if (currentAction == 3) {
+                System.out.println("Which party is ordering?");
+                String inputName = myObj.next();
+                System.out.println("How much was it? ($)");
+                double inputAmount = myObj.nextDouble();
+                hotel1.roomService(inputName, inputAmount);
+
+            } else if (currentAction == 4) {
+                System.out.println("What is the name of the party?");
+                String inputName = myObj.next();
+                System.out.println("The " + inputName + " party has accrued a bill of $" + hotel1.calculateBill(inputName) + " so far.");
+
+            } else if (currentAction == 5) {
+                System.out.println("There are currently " + hotel1.checkHotelCapacity() + " guests in " + hotel1.checkRoomCapacity() + " rooms.");
+                
+            } else if (currentAction == 6) {
+                myObj.close();
+                break;
+            } else {
+                System.out.println("That is not a valid option.");
+                continue;
+            }
+
+        }
     }
 }
