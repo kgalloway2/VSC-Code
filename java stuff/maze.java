@@ -71,7 +71,6 @@ public class maze {
                    newLengthWalls.remove(Integer.valueOf(wallHoleBD[1]));
                    newLengthWalls.remove(Integer.valueOf(wallHoleCD[1]));
             
-                   int[] submazeDDim = {recHeight - 1, recLength - 1};
                    String[][] submazeD = recursiveMaze(heightPoint + 1, h2 - 1, lengthPoint + 1, l2 - 1, newHeightWalls, newLengthWalls);
                    for (int di = 0; di < submazeD.length; di++) {
                        for (int dj = 0; dj < submazeD[0].length; dj++) {
@@ -91,7 +90,6 @@ public class maze {
                    newLengthWalls.remove(Integer.valueOf(wallHoleCD[1]));
                    newLengthWalls.remove(Integer.valueOf(wallHoleAC[1]));
             
-                   int[] submazeCDim = {recHeight - 1, recLength - 1};
                    String[][] submazeC = recursiveMaze(heightPoint + 1, h2 - 1, l1 + 1, lengthPoint - 1, newHeightWalls, newLengthWalls);
                    for (int ci = 0; ci < submazeC.length; ci++) {
                        for (int cj = 0; cj < submazeC[0].length; cj++) {
@@ -117,14 +115,12 @@ public class maze {
                    newLengthWalls.remove(Integer.valueOf(wallHoleAC[1]));
             
             
-                   int[] submazeCDim = {recHeight - 1, lengthPoint};
                    String[][] submazeC = recursiveMaze(heightPoint + 1, h2 - 1, l1 + 1, lengthPoint - 1, newHeightWalls, newLengthWalls);
                    for (int ci = 0; ci < submazeC.length; ci++) {
                        for (int cj = 0; cj < submazeC[0].length; cj++) {
                            tempMaze[ci + heightPoint + 1][cj] = submazeC[ci][cj];
                        }
                    }
-                   int[] submazeDDim = {recHeight - 1, recLength - lengthPoint - 1};
                    String[][] submazeD = recursiveMaze(heightPoint + 1, h2 - 1, lengthPoint + 1, l2 - 1, newHeightWalls, newLengthWalls);
                    for (int di = 0; di < submazeD.length; di++) {
                        for (int dj = 0; dj < submazeD[0].length; dj++) {
@@ -146,7 +142,6 @@ public class maze {
                    newLengthWalls.remove(Integer.valueOf(wallHoleAB[1]));
                    newLengthWalls.remove(Integer.valueOf(wallHoleBD[1]));
             
-                   int[] submazeBDim = {recHeight - 1, recLength - 1};
                    String[][] submazeB = recursiveMaze(h1 + 1, heightPoint - 1, lengthPoint + 1, l2 - 1, newHeightWalls, newLengthWalls);
                    for (int bi = 0; bi < submazeB.length; bi++) {
                        for (int bj = 0; bj < submazeB[0].length; bj++) {
@@ -165,7 +160,6 @@ public class maze {
                    newLengthWalls.remove(Integer.valueOf(wallHoleAB[1]));
                    newLengthWalls.remove(Integer.valueOf(wallHoleAC[1]));
             
-                   int[] submazeADim = {recHeight - 1, recLength - 1};
                    String[][] submazeA = recursiveMaze(h1 + 1, heightPoint - 1, l1 + 1, lengthPoint - 1, newHeightWalls, newLengthWalls);
                    for (int ai = 0; ai < submazeA.length; ai++) {
                        for (int aj = 0; aj < submazeA[0].length; aj++) {
@@ -188,14 +182,12 @@ public class maze {
                    newLengthWalls.remove(Integer.valueOf(wallHoleBD[1]));
                    newLengthWalls.remove(Integer.valueOf(wallHoleAC[1]));
             
-                   int[] submazeADim = {recHeight - 1, lengthPoint};
                    String[][] submazeA = recursiveMaze(h1 + 1, heightPoint - 1, l1 + 1, lengthPoint - 1, newHeightWalls, newLengthWalls);
                    for (int ai = 0; ai < submazeA.length; ai++) {
                        for (int aj = 0; aj < submazeA[0].length; aj++) {
                            tempMaze[ai][aj] = submazeA[ai][aj];
                        }
                    }
-                   int[] submazeBDim = {recHeight - 1, recLength - lengthPoint - 1};
                    String[][] submazeB = recursiveMaze(h1 + 1, heightPoint - 1, lengthPoint + 1, l2 - 1, newHeightWalls, newLengthWalls);
                    for (int bi = 0; bi < submazeB.length; bi++) {
                        for (int bj = 0; bj < submazeB[0].length; bj++) {
@@ -221,14 +213,12 @@ public class maze {
                    newLengthWalls.remove(Integer.valueOf(wallHoleBD[1]));
                    newLengthWalls.remove(Integer.valueOf(wallHoleCD[1]));
             
-                   int[] submazeBDim = {heightPoint, recLength - 1};
                    String[][] submazeB = recursiveMaze(h1 + 1, heightPoint - 1, lengthPoint + 1, l2 - 1, newHeightWalls, newLengthWalls);
                    for (int bi = 0; bi < submazeB.length; bi++) {
                        for (int bj = 0; bj < submazeB[0].length; bj++) {
                            tempMaze[bi][bj + lengthPoint + 1] = submazeB[bi][bj];
                        }
                    }
-                   int[] submazeDDim = {recHeight - heightPoint - 1, recLength - 1};
                    String[][] submazeD = recursiveMaze(heightPoint + 1, h2 - 1, lengthPoint + 1, l2 - 1, newHeightWalls, newLengthWalls);
                    for (int di = 0; di < submazeD.length; di++) {
                        for (int dj = 0; dj < submazeD[0].length; dj++) {
@@ -251,14 +241,12 @@ public class maze {
                    newLengthWalls.remove(Integer.valueOf(wallHoleCD[1]));
                    newLengthWalls.remove(Integer.valueOf(wallHoleAC[1]));
             
-                   int[] submazeADim = {heightPoint, recLength - 1};
                    String[][] submazeA = recursiveMaze(h1 + 1, heightPoint - 1, l1 + 1, lengthPoint - 1, newHeightWalls, newLengthWalls);
                    for (int ai = 0; ai < submazeA.length; ai++) {
                        for (int aj = 0; aj < submazeA[0].length; aj++) {
                            tempMaze[ai][aj] = submazeA[ai][aj];
                        }
                    }
-                   int[] submazeCDim = {recHeight - heightPoint - 1, recLength - 1};
                    String[][] submazeC = recursiveMaze(heightPoint + 1, h2 - 1, l1 + 1, lengthPoint - 1, newHeightWalls, newLengthWalls);
                    for (int ci = 0; ci < submazeC.length; ci++) {
                        for (int cj = 0; cj < submazeC[0].length; cj++) {
@@ -286,28 +274,24 @@ public class maze {
                    newLengthWalls.remove(Integer.valueOf(wallHoleCD[1]));
                    newLengthWalls.remove(Integer.valueOf(wallHoleAC[1]));
             
-                   int[] submazeADim = {heightPoint, lengthPoint};
                    String[][] submazeA = recursiveMaze(h1 + 1, heightPoint - 1, l1 + 1, lengthPoint - 1, newHeightWalls, newLengthWalls);
                    for (int ai = 0; ai < submazeA.length; ai++) {
                        for (int aj = 0; aj < submazeA[0].length; aj++) {
                            tempMaze[ai][aj] = submazeA[ai][aj];
                        }
                    }
-                   int[] submazeBDim = {heightPoint, recLength - lengthPoint - 1};
                    String[][] submazeB = recursiveMaze(h1 + 1, heightPoint - 1, lengthPoint + 1, l2 - 1, newHeightWalls, newLengthWalls);
                    for (int bi = 0; bi < submazeB.length; bi++) {
                        for (int bj = 0; bj < submazeB[0].length; bj++) {
                            tempMaze[bi][bj + lengthPoint + 1] = submazeB[bi][bj];
                        }
                    }
-                   int[] submazeCDim = {recHeight - heightPoint - 1, lengthPoint};
                    String[][] submazeC = recursiveMaze(heightPoint + 1, h2 - 1, l1 + 1, lengthPoint - 1, newHeightWalls, newLengthWalls);
                    for (int ci = 0; ci < submazeC.length; ci++) {
                        for (int cj = 0; cj < submazeC[0].length; cj++) {
                            tempMaze[ci + heightPoint + 1][cj] = submazeC[ci][cj];
                        }
                    }
-                   int[] submazeDDim = {recHeight - heightPoint - 1, recLength - lengthPoint - 1};
                    String[][] submazeD = recursiveMaze(heightPoint + 1, h2 - 1, lengthPoint + 1, l2 - 1, newHeightWalls, newLengthWalls);
                    for (int di = 0; di < submazeD.length; di++) {
                        for (int dj = 0; dj < submazeD[0].length; dj++) {
