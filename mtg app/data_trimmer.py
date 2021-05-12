@@ -67,10 +67,6 @@ with open(file_name, encoding='utf-8') as file:
         except KeyError:
             pass
         try:
-            i.pop("image_uris")
-        except KeyError:
-            pass
-        try:
             i.pop("art_crop")
         except KeyError:
             pass
