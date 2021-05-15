@@ -38,6 +38,7 @@ def on_select(event):
 # functions for finding photo url of given card
 
 def index_of(card_name):
+    card_name = card_name.strip().lower()
     if card_name == '':
         return -1
     for i in range(len(cards)):
@@ -54,6 +55,22 @@ def selection():
         return -1
     else:
         return list_box.curselection()
+
+# functions to change shown picture
+
+def show_picture(card_name):
+    if card_name == 'default':
+        photo_url = "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/3/036ef8c9-72ac-46ce-af07-83b79d736538.jpg?1562730661"
+    else:
+        photo_url = url_of(index_of(card_name))
+    card_page = urlopen(photo_url)
+    card_picture = io.BytesIO(card_page.read())
+    pil_img = Image.open(card_picture)
+    tk_img = ImageTk.PhotoImage(pil_img)
+    picture = Label(root)
+    picture.configure(image=tk_img)
+    picture.image = tk_img
+    picture.grid(column=0,row=0)
 
 # widgets for display
 
@@ -74,17 +91,10 @@ list_box.grid(column=2,row=0)
 list_box.bind('<<ListBoxSelect>>', on_select)
 list_box_update(cards)
 
+show_pic_button = Button(root, text='Show Selected Card') 
+show_pic_button.configure(command=lambda :show_picture(list_box.get(selection())))
+show_pic_button.grid(column=3, row=0)
 
-photo_url = url_of(index_of(list_box.get(selection())))
-card_page = urlopen(photo_url)
-card_picture = io.BytesIO(card_page.read())
-pil_img = Image.open(card_picture)
-tk_img = ImageTk.PhotoImage(pil_img)
-
-label = Label(root, image=tk_img)
-label.grid(column=0,row=0)
-
-temp = Label(root, text=list_box.get(selection()))
-temp.grid(column=3, row=0)
+# show_picture('default')
 
 mainloop()
