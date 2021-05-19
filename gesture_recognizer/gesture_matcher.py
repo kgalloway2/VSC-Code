@@ -4,7 +4,7 @@ from PIL import Image
 import cv2
 
 predicted = []
-for k in range(0,104):
+for k in range(0,106):
     print("checking image: ", k)
     im_1 = Image.open("C:/Users/kgtrm/Documents/VSC Code/gesture_recognizer/screenshots/test_hands/cropped_test_hand"+ str(k) +".jpg")
     ar1 = array(im_1)
