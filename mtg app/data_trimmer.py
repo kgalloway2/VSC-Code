@@ -214,6 +214,10 @@ with open(file_name, encoding='utf-8') as file:
             i.pop("related_uris")
         except KeyError:
             pass
+        try:
+            i.pop("content_warning")
+        except KeyError:
+            pass
 
 with open('trimmed_cards.txt', 'w') as json_file:
   json.dump(data, json_file)
