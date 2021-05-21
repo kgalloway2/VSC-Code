@@ -1,0 +1,38 @@
+1. Automatic Timetable generation
+Java Project Idea: This project can be built to reduce manual work and extra time to create timetables in educational institutions. 
+The timetable has to be generated in such a way that all the subjects are covered within the given time slots with the respective 
+faculties and timings also must not overlap. This system automatically generates the scheduled timetable for faculties and students. 
+There is an admin page. The admin can be either any faculty of the college or any other authorized employee.
+
+After login, the admin can add faculty, subjects. In faculty details, he will give inputs like name, email id, and mobile number. 
+Then, while adding subjects, he will enter the subject name, year, faculty name. Then after adding the required subjects and faculties, 
+the admin can generate the timetable of a particular year and view it.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+1. Online House Renting System
+Java Project Idea: House rental portal is a web-based java project where house owners, clients, customers can exchange information 
+effectively and inexpensively. This system provides a user-friendly interface, satisfying the needs of the consumers. It also employs 
+a new strategy that facilitates easy management of rental houses.
+
+There are three users in this system- Owner, Admin, and Customer. The owner is the user who owns the house and wants it to give it 
+for rent. The owner will upload all the details of the house, including the number of rooms, locality, rent. Admin manages all the 
+users of the system. Customer is the one who is looking for a rental house. He can search the house according to the requirements 
+and get the results accordingly.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+5. Data Visualization Software
+The presentation creation and visual representation of data in the graphical or pictorial format are referred to as Data Visualization. 
+Data Visualization has become an active field of research & development by being closely related to information graphics and 
+visualization, statistical graphics and scientific visualization.
+
+The project displays the node connectivity in networking in data visualization form. This node connectivity can be located at 
+different locations via mouse or trackpad. The project has the following goals & objectives:
+
+ - Effective and Clear Communication of information using graphical & pictorial means.
+ - It should have both functionality and Aesthetic.
+ - It should convey ideas effectively & provide necessary insights into complex sets of data & information.
+
+Data Visualization software makes it easier for the user to understand & grasp the information when they are displayed or 
+represented as charts or graphs rather than report pages.
