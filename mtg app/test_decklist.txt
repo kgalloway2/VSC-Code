@@ -82,6 +82,7 @@
 1x Solemn Simulacrum (m21) [Maybeboard{noDeck}{noPrice}] 
 1x Soul of the Harvest (jmp) [Maybeboard{noDeck}{noPrice}] 
 1x Spore Frog (mh1) [Payoffs] 
+1x Staff of Domination (cmr)
 1x Stitcher's Supplier (m19) [Mill] 
 1x Stonecoil Serpent (eld) [Payoffs] 
 1x Sunpetal Grove (xln)
