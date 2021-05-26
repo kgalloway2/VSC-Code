@@ -491,5 +491,4 @@ while (true)
         println("Press \'Enter\' to continue to your turn.")
         readline()
     end
-
 end

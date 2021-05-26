@@ -329,20 +329,9 @@ for class in symmetry_classes
     end
 end
 
-# for i in 1:5
-#     println("board")
-#     display_board(solved_boards[i])
-#     println("solution")
-#     display_board(solutions[i])
-#     println("-------------")
-# end
 
-# writedlm("data.txt", "[")
 writedlm("data.txt", [solved_boards, solutions], ",")
-# writedlm("data.txt", "]")
-# writedlm("data.txt", "[")
-# writedlm("data.txt", solutions, ",")
-# writedlm("data.txt", "]")
+
 
 
 # https://en.wikipedia.org/wiki/Tic-tac-toe#Strategy
