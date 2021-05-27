@@ -311,7 +311,7 @@ public class maze {
             }
             }
             
-                public static void main(String[] args){
+    public static void main(String[] args){
         int height = 10;
         int length = 10;
         maze myMaze = new maze(height, length);

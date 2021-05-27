@@ -1,4 +1,8 @@
 using DelimitedFiles
+using CSV
+using DataFrames
+using JLD
+using LinearAlgebra
 
 function generate_blank_board()
     board = []
@@ -257,6 +261,7 @@ for i in 1:3^9
     end
     push!(boards, temp_board)
 end
+
 println(length(boards))
 
 # trim boards with impossible numbers of Xs or Os
@@ -328,9 +333,22 @@ for class in symmetry_classes
         end
     end
 end
+# println(typeof(solved_boards))
+matrix_solved_boards = zeros(length(solved_boards), length(solved_boards[1]))
+for i in 1:length(solved_boards)
+    for j in 1:length(solved_boards[1])
+        matrix_solved_boards[i,j] = solved_boards[i][j]
+    end
+end
+matrix_solutions = zeros(length(solutions), length(solutions[1]))
+for i in 1:length(solutions)
+    for j in 1:length(solutions[1])
+        matrix_solutions[i,j] = solutions[i][j]
+    end
+end
 
-
-writedlm("data.txt", [solved_boards, solutions], ",")
+save("dataX.jld", "data", matrix_solved_boards)
+save("dataY.jld", "data", matrix_solutions)
 
 
 
