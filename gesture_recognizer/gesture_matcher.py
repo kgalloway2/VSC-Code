@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report,confusion_matrix
+import pickle 
 
 X_data = []
 for i in range(200):
@@ -44,3 +45,17 @@ predictions = mlp.predict(X_test)
 print(confusion_matrix(Y_test,predictions))
 
 print(classification_report(Y_test,predictions))
+
+neural_net = mlp
+filehandler = open("C:/Users/kgtrm/Documents/VSC Code/gesture_recognizer/trained_nn.pkl", 'wb') 
+pickle.dump(neural_net, filehandler)
+
+# these "print" the weights and biases. however they are too large to be displayed so it is better to put them into a file or something
+
+# for i in range(len(mlp.coefs_)):
+#     print("weight matrix between layer ", i, " and layer ", (i+1))
+#     print(mlp.coefs_[i])
+
+# for i in range(len(mlp.intercepts_)):
+#     print("bias vector at index ", (i+1))
+#     print(mlp.intercepts_[i])
