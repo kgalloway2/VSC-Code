@@ -8,6 +8,6 @@ the database with every operation performed on the frontend will be a challenge 
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-Hangman Game
+DONE Hangman Game
 
-Write a C++ program to check triangle by entering 3 angles
+DONE Write a C++ program to check triangle by entering 3 angles
