@@ -13,7 +13,7 @@ with open('trimmed_cards.txt', 'r') as f_in:
 pre_all_cards.pop(0)
 pre_all_cards[-1] = pre_all_cards[-1][0:-1]
 
-
+# print(type(pre_all_cards[0]))
 all_cards = []
 for card in pre_all_cards:
     all_cards.append((ast.literal_eval(card)))
@@ -170,6 +170,34 @@ def begin_game(current_game_cards):
         the_stack.insert("1.0", "\n\n")
         the_stack.insert("1.0", new_insert)
 
+    # functions for rulings
+
+    def view_rulings(card):
+        index = index_of(card)
+        rulings_url = cards[index]["rulings_uri"]
+        rulings_page = urlopen(rulings_url)
+        rulings_string = rulings_page.read().decode('UTF-8')
+        rulings_string = rulings_string[:-1]
+        rulings_list = rulings_string.split('\"data\":')
+        actual_rulings = ast.literal_eval(rulings_list[1])
+        rulings = []
+        for dictionary in actual_rulings:
+            rulings.append(dictionary["comment"])
+        
+        rulings_page = Tk()
+        page_title = "Card Rulings - " + card
+        rulings_page.title(page_title)
+        rulings_page.geometry("500x500")
+
+        rulings_text = Text(rulings_page)
+        rulings_text.place(x=1,y=1)
+        rulings_text['height'] = 30
+        rulings_text['width'] = 60
+        rulings_text['wrap'] = WORD
+        
+        for ruling in rulings:
+            rulings_text.insert("end", ruling)
+            rulings_text.insert("end", "\n\n")
 
     # widgets for display
 
@@ -191,6 +219,10 @@ def begin_game(current_game_cards):
     show_pic_button = Button(displayer, text='Show Selected Card') 
     show_pic_button.configure(command=lambda :show_picture(card_list.get(selection())))
     show_pic_button.place(x=630,y=1)
+
+    show_rulings_button = Button(displayer, text='View Rulings') 
+    show_rulings_button.configure(command=lambda :view_rulings(card_list.get(selection())))
+    show_rulings_button.place(x=745,y=1)
 
     ability_list = Listbox(displayer)
     ability_list.place(x=630,y=25)
