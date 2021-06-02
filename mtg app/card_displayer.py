@@ -5,20 +5,16 @@ import io
 from PIL import Image, ImageTk
 import ast
 
-# all_cards = open("C:/Users/kgtrm/Documents/VSC Code/mtg app/trimmed_cards.txt")
-
 with open('trimmed_cards.txt', 'r') as f_in:
     pre_all_cards = [line for line in f_in]
 
 pre_all_cards.pop(0)
 pre_all_cards[-1] = pre_all_cards[-1][0:-1]
 
-# print(type(pre_all_cards[0]))
 all_cards = []
 for card in pre_all_cards:
     all_cards.append((ast.literal_eval(card)))
 
-# print(all_cards[0:3])
 
 root = Tk()
 root.title("Decklist Submission Screen")
