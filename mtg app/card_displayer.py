@@ -141,28 +141,44 @@ def begin_game(current_game_cards):
     # functions for updating the stack
 
     def add_ability_to_stack(card, ability):
-        new_insert = card + ": " + ability
+        new_insert = "x1: " + card + ": " + ability
         the_stack.insert("1.0", "\n\n")
         the_stack.insert("1.0", new_insert)
 
     def delete_ability_from_stack():
-        the_stack.delete("1.0", "3.0")
+        top_ability = the_stack.get("1.0", "3.0")
+        first_chars = []
+        for i in range(8):
+            first_chars.append(top_ability[i:i + 1])
+        if first_chars[0] != "x" or (first_chars[1] == "1" and first_chars[2] == ":"):
+            the_stack.delete("1.0", "3.0")
+        else:
+            current_num = ""
+            last_index = -1
+            for j in first_chars:
+                if j in "0123456789":
+                    current_num += j
+                elif j == ":":
+                    last_index = first_chars.index(":")
+            current_num = int(current_num) - 1
+            new_insert = "x" + str(current_num) + the_stack.get("1.0", "3.0")[last_index:]
+            the_stack.delete("1.0", "3.0")
+            the_stack.insert("1.0", new_insert)
 
     def delete_entire_stack():
         the_stack.delete("1.0", "end")
 
     def add_multi_to_stack(card, ability,num_times):
-        for i in range(num_times):
-            new_insert = card + ": " + ability
-            the_stack.insert("1.0", "\n\n")
-            the_stack.insert("1.0", new_insert)
+        new_insert = "x" + str(num_times) + ": " + card + ": " + ability
+        the_stack.insert("1.0", "\n\n")
+        the_stack.insert("1.0", new_insert)
 
     def add_card_to_stack(card):
         the_stack.insert("1.0", "\n\n")
         the_stack.insert("1.0", card)
 
     def add_notes_to_stack(card, ability, notes):
-        new_insert = card + ": " + ability + " With notes: " + notes
+        new_insert = "x1: " + card + ": " + ability + " With notes: " + notes
         the_stack.insert("1.0", "\n\n")
         the_stack.insert("1.0", new_insert)
 
