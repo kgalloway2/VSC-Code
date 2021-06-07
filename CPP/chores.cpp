@@ -9,7 +9,7 @@ int main() {
     bool exit_con = false;
     while (!exit_con) {
         int choice;
-        std::cout << "OPTIONS:\n";
+        std::cout << "\nOPTIONS:\n";
         std::cout << "1. VIEW CURRENT SCHEDULE\n";
         std::cout << "2. MANAGE SCHEDULES\n";
         std::cout << "3. MANAGE PEOPLE\n";
@@ -21,8 +21,9 @@ int main() {
         
         switch (choice) {
             case 1 :
-                show_current_schedule(schedules[-1]);
-                break;
+                {int n = schedules.size();
+                show_current_schedule(schedules[n - 1]);
+                break;}
             case 2 :
                 generate_schedule_menu();
                 break;

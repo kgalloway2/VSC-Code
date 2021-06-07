@@ -1,10 +1,6 @@
 #include <iostream>
 #include <vector>
 
-int num_people = 0;
-std::vector<person> people = {};
-std::vector<chore> chores = {};
-std::vector<schedule> schedules = {};
 
 class person {
     public:
@@ -47,7 +43,7 @@ class schedule {
     std::vector<std::vector<int>> week_schedule;
     int num_people;
     std::vector<person> people;
-    std::vector<chore> chores;
+    std::vector<chore> my_chores;
 
     schedule(int new_num_people, std::vector<person> new_people, std::vector<chore> new_chores);
     ~schedule();
@@ -59,3 +55,8 @@ void show_current_schedule(schedule input_schedule);
 void generate_schedule_menu();
 void manage_people_menu();
 void manage_chores_menu();
+
+extern int num_people;
+extern std::vector<person> people;
+extern std::vector<chore> chores;
+extern std::vector<schedule> schedules;
