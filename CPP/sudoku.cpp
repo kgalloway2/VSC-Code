@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <algorithm>
 
 void display_board(int current_board[][9]);
 
@@ -14,6 +15,10 @@ void fill_block_one(int current_board[][9], int start[], int end[]);
 // this is for filling the off diagonal blocks with valid moves
 void fill_block_two(int current_board[][9], int start[], int end[]);
 
+// this is to remove entries form a puzzle to make it ready to solve
+void remove_entries(int current_board[][9], int number_to_remove);
+
+std::vector<int> distinct_random_numbers(int number_of_numbers);
 
 int main() {
 
@@ -210,6 +215,8 @@ void generate_sudoku_board(int current_board[][9]) {
     end[0] = 5;
     end[1] = 2;
     fill_block_two(current_board, start, end);
+
+    remove_entries(current_board, 30);
 }
 
 void fill_block_one(int current_board[][9], int start[], int end[]) {
@@ -227,33 +234,61 @@ void fill_block_one(int current_board[][9], int start[], int end[]) {
             cur_pos[0] = cur_pos[0] + 1;
             cur_pos[1] = start[1];
         }
-        cur_pos[1] = cur_pos[1] + 1;
+        else {
+            cur_pos[1] = cur_pos[1] + 1;
+        }
         count--;
     }
 }
 
 void fill_block_two(int current_board[][9], int start[], int end[]) {
     std::vector<int> entries =  {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int temp_entry_index;
-    int temp_entry;
     int cur_pos[] {start[0], start[1]};
     int count = 9;
     while (count > 0) {
-        temp_entry_index = rand() % count;
-        temp_entry = entries[temp_entry_index];
-        if (check_valid_move(current_board, cur_pos, temp_entry)) {
-            current_board[cur_pos[0]][cur_pos[1]] = temp_entry;
-            entries.erase(entries.begin() + temp_entry_index);
-        }
-        else {
-            current_board[cur_pos[0]][cur_pos[1]] = 0;
+        for (int const& number : entries) {
+            if (check_valid_move(current_board, cur_pos, number)) {
+                current_board[cur_pos[0]][cur_pos[1]] = number;
+                break;
+            } 
         }
         if (cur_pos[1] == end[1]) {
             cur_pos[0] = cur_pos[0] + 1;
             cur_pos[1] = start[1];
         }
-        cur_pos[1] = cur_pos[1] + 1;
+        else {
+            cur_pos[1] = cur_pos[1] + 1;
+        }
         count--;
     }
+}
+
+void remove_entries(int current_board[][9], int number_to_remove) {
+    std::vector<int> indices = distinct_random_numbers(number_to_remove);
+    for (int i = 0; i < number_to_remove; i++) {
+        int r_index = indices[i] % 9;
+        int q_index = (indices[i] - r_index) / 9;
+        std::cout << indices[i] << ", q: " << q_index << ", r: " << r_index << "\n";
+        current_board[q_index][r_index] = 0;
+    }
+}
+
+std::vector<int> distinct_random_numbers(int number_of_numbers) {
+    std::vector<int> nums;
+    int count = 0;
+    while (count < number_of_numbers) {
+        int potential_number = rand() % 81;
+        bool duplicate = false;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] == potential_number) {
+                duplicate = true;
+            }
+        }
+        if (!duplicate) {
+            nums.push_back(potential_number);
+            count++;
+        }
+    }
+    return nums;
 }
 
