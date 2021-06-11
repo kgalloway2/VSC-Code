@@ -1,3 +1,6 @@
+// board generator not generating solvable board every time
+// need to code what happens when you win
+
 #include <iostream>
 #include <random>
 #include <vector>
