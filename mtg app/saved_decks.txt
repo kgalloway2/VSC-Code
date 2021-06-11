@@ -1,0 +1,453 @@
+*** Brago
+Aetherize
+Agent of Treachery
+Amphin Mutineer
+Aqueous Form
+Archaeomancer's Map
+Austere Command
+Azorius Signet
+Banishing Light
+Brago, King Eternal
+Castle Vantress
+Clone
+Cloudcrest Lake
+Command Tower
+Conclave Tribunal
+Counterspell
+Curator's Ward
+Deputy of Detention
+Detention Sphere
+Dismantling Blow
+Displace
+Dovin's Acuity
+Elite Guardmage
+Elspeth Conquers Death
+End Hostilities
+Ephemerate
+Evolving Wilds
+Fblthp, the Lost
+Field of Ruin
+Flooded Strand
+Forbidding Spirit
+Fumigate
+Gates of Istfell
+Glacial Floodplain
+Glorious Protector
+Hall of Heliod's Generosity
+Hedron Archive
+Heliod's Intervention
+Island
+Jace, Wielder of Mysteries
+Kasmina's Transmutation
+Key to the City
+Labyrinth of Skophos
+Lavinia of the Tenth
+Lumbering Battlement
+Lyev Skyknight
+Manifold Key
+Meteor Golem
+Mind Stone
+Mirrormade
+Myr Battlesphere
+Myriad Landscape
+Mystic Sanctuary
+Omen of the Sea
+Omen of the Sun
+Otherworldly Journey
+Pentarch Ward
+Peregrine Drake
+Phyrexian Ingester
+Pilgrim's Eye
+Plains
+Port Town
+Prowler's Helm
+Rogue's Passage
+Sakashima's Protege
+Sanctum of Eternity
+Sea Gate Oracle
+Sea of Clouds
+Settle Beyond Reality
+Slip Through Space
+Sol Ring
+Solemn Simulacrum
+Sphinx of Uthuun
+Sun Titan
+Swords to Plowshares
+Teferi's Time Twist
+Temple of Enlightenment
+Terramorphic Expanse
+Thassa's Oracle
+Thassa, Deep-Dwelling
+Thraben Inspector
+Toothy, Imaginary Friend
+Unquestioned Authority
+Vanish into Memory
+Vizier of Deferment
+Yorion, Sky Nomad
+*** Colfenor
+Acolyte of Affliction
+Algae Gharial
+Arcane Signet
+Archers' Parapet
+Assault Formation
+Austere Command
+Bar the Door
+Bastion of Remembrance
+Beast Whisperer
+Beast Within
+Belligerent Brontodon
+Blisterpod
+Blood Artist
+Bosk Banneret
+Bountiful Promenade
+Bronzehide Lion
+Catacomb Sifter
+Cathodion
+Colfenor, the Last Yew
+Command Tower
+Corpse Knight
+Crawling Sensation
+Crow of Dark Tidings
+Cultivate
+Desecrated Tomb
+Despark
+Diabolic Tutor
+Dire Fleet Hoarder
+Doomed Traveler
+Eerie Ultimatum
+Elvish Mystic
+Elvish Visionary
+Embodiment of Agonies
+Evolving Wilds
+Excavation Mole
+Exotic Orchard
+Faeburrow Elder
+Falkenrath Noble
+Farseek
+Fertilid
+Filigree Familiar
+Forest
+Funeral Rites
+Fyndhorn Elves
+Genesis Hydra
+Greater Good
+Guardian Project
+Heroic Intervention
+Hooded Hydra
+Huatli, the Sun's Heart
+Indatha Triome
+Kodama's Reach
+Lightning Greaves
+Liliana's Indignation
+Llanowar Elves
+Lumberknot
+Midnight Reaper
+Mind Stone
+Mindless Automaton
+Ministrant of Obligation
+Mire Triton
+Moldervine Reclamation
+Moss Diamond
+Multani, Yavimaya's Avatar
+Mythos of Nethroi
+Noosegraf Mob
+Nyx Weaver
+Parapet
+Path of Ancestry
+Perpetual Timepiece
+Pitiless Plunderer
+Plains
+Poison-Tip Archer
+Polukranos, Unchained
+Rampant Growth
+Reclamation Sage
+Screaming Shield
+Skola Grovedancer
+Skull Prophet
+Skyshroud Claim
+Sol Ring
+Solemn Simulacrum
+Soul of the Harvest
+Spore Frog
+Staff of Domination
+Stitcher's Supplier
+Stonecoil Serpent
+Sunpetal Grove
+Swamp
+Swords to Plowshares
+Syr Konrad, the Grim
+Temple Garden
+Temple of Malady
+Temple of Plenty
+Temple of Silence
+Terramorphic Expanse
+The Binding of the Titans
+The Mending of Dominaria
+Thrashing Brontodon
+Three Visits
+Tormod, the Desecrator
+Tower Defense
+Trove Warden
+Ugin's Conjurant
+Undergrowth Stadium
+Veteran Armorer
+Veteran Explorer
+Victimize
+Vindictive Vampire
+Viscera Seer
+Wailing Ghoul
+Woe Strider
+Woodland Cemetery
+Yavimaya Elder
+Zulaport Cutthroat
+*** Izoni (Umori)
+Acolyte of Affliction
+Ainok Survivalist
+Ambush Viper
+Barren Moor
+Battle Mammoth
+Beanstalk Giant // Fertile Footsteps
+Beast Whisperer
+Big Game Hunter
+Blood Artist
+Bonders' Enclave
+Boneyard Lurker
+Brutalizer Exarch
+Burnished Hart
+Castle Garenbrig
+Caustic Caterpillar
+Champion of Stray Souls
+Command Tower
+Cryptic Caves
+Deathbringer Regent
+Desert of the Indomitable
+Drownyard Temple
+Elvish Visionary
+Evolving Wilds
+Falkenrath Noble
+Fertilid
+Fiend Artisan
+Forest
+Foulmire Knight // Profane Insight
+Fyndhorn Elves
+Genesis
+Genesis Hydra
+Gonti, Lord of Luxury
+Gravebreaker Lamia
+Hatchery Spider
+Haunted Fengraf
+Incubation Druid
+Izoni, Thousand-Eyed
+Korozda Guildmage
+Liliana's Standard Bearer
+Llanowar Visionary
+Loaming Shaman
+Massacre Girl
+Massacre Wurm
+Memorial to Folly
+Meteor Golem
+Midnight Reaper
+Mire Triton
+Mortuary Mire
+Nessian Demolok
+Nighthowler
+Nylea, Keen-Eyed
+Nyx Weaver
+Order of Midnight // Alter Fate
+Plague Reaver
+Plaguecrafter
+Poison-Tip Archer
+Polukranos, Unchained
+Priest of Forgotten Gods
+Rootweaver Druid
+Satyr Wayfinder
+Shefet Monitor
+Skemfar Elderhall
+Skola Grovedancer
+Skull Prophet
+Slippery Karst
+Solemn Simulacrum
+Soul of Innistrad
+Soul of the Harvest
+Springbloom Druid
+Stitcher's Supplier
+Svogthos, the Restless Tomb
+Swamp
+Sweet-Gum Recluse
+Syr Konrad, the Grim
+Temple of Malady
+Terramorphic Expanse
+Thorn Mammoth
+Toski, Bearer of Secrets
+Twilight Mire
+Umori, the Collector
+Undergrowth Stadium
+Viscera Dragger
+Viscera Seer
+Voracious Hydra
+Woe Strider
+Woodland Cemetery
+Zulaport Cutthroat
+*** Jeleva
+Arcane Signet
+Ashiok, Nightmare Muse
+Beacon of Tomorrows
+Burnished Hart
+Castle Vantress
+Chain Reaction
+Chaos Warp
+Charmbreaker Devils
+Command Tower
+Counterspell
+Crosis's Catacombs
+Cruel Ultimatum
+Crumbling Necropolis
+Deflecting Swat
+Diluvian Primordial
+Dire Fleet Daredevil
+Dragonskull Summit
+Drawn from Dreams
+Dreadbore
+Drowned Catacomb
+Dualcaster Mage
+Etali, Primal Storm
+Evil Twin
+Exotic Orchard
+Fact or Fiction
+Fated Return
+Feed the Serpent
+Field of Ruin
+Flood of Tears
+Frantic Search
+Game Plan
+Gonti, Lord of Luxury
+Graven Cairns
+Grixis Panorama
+Heartless Act
+In Garruk's Wake
+Increasing Vengeance
+Island
+Izzet Signet
+Jeleva, Nephalia's Scourge
+Jeska's Will
+Lightning Greaves
+Luxury Suite
+Marchesa's Smuggler
+Melek, Izzet Paragon
+Mind's Desire
+Mission Briefing
+Mnemonic Betrayal
+Mnemonic Deluge
+Morphic Pool
+Mountain
+Mystic Confluence
+Mystic Retrieval
+Nicol Bolas, God-Pharaoh
+Nightscape Familiar
+Nivix Guildmage
+Overflowing Insight
+Poison the Cup
+Preordain
+Primal Amulet // Primal Wellspring
+Rapid Hybridization
+Ravenform
+Repeated Reverberation
+River of Tears
+Rogue's Passage
+Shark Typhoon
+Sol Ring
+Solemn Simulacrum
+Soulfire Eruption
+Steam Vents
+Stolen Strategy
+Sulfur Falls
+Sunbird's Invocation
+Swamp
+Swarm Intelligence
+Talisman of Dominance
+Talisman of Indulgence
+Temple of Deceit
+Temple of Epiphany
+The Mirari Conjecture
+Training Center
+Treasure Cruise
+Victim of Night
+Volcanic Vision
+Watery Grave
+Wheel of Misfortune
+Wildfire Devils
+Windfall
+*** Birgi
+Arcane Signet
+Birgi, God of Storytelling // Harnfel, Horn of Bounty
+Blindblast
+Bonus Round
+Catalyst Elemental
+Cathartic Reunion
+Chandra's Regulator
+Chandra, Acolyte of Flame
+Chandra, Torch of Defiance
+Chaos Warp
+Commander's Sphere
+Commune with Lava
+Crash Through
+Deflecting Swat
+Desperate Ritual
+Dire Fleet Daredevil
+Doublecast
+Dualcaster Mage
+Empty the Warrens
+Expedite
+Experimental Frenzy
+Fire Diamond
+Fists of Flame
+Forgotten Cave
+Geier Reach Sanitarium
+Geomancer's Gambit
+Glint-Horn Buccaneer
+Grapeshot
+Grinning Ignus
+Impact Tremors
+Implement of Combustion
+Impulsive Pilferer
+Increasing Vengeance
+Infernal Plunge
+Insolent Neonate
+Jeska's Will
+Light Up the Stage
+Lightning Bolt
+Lightning Greaves
+Madblind Mountain
+Magus of the Wheel
+Merchant of the Vale // Haggle
+Mind Stone
+Mishra's Bauble
+Mountain
+Myriad Landscape
+Neheb, Dreadhorde Champion
+Panic Spellbomb
+Primal Amulet // Primal Wellspring
+Renegade Tactics
+Rile
+Runaway Steam-Kin
+Seize the Spoils
+Shreds of Sanity
+Smoldering Crater
+Sol Ring
+Solemn Simulacrum
+Soul-Guide Lantern
+Spark of Creativity
+Springleaf Drum
+Starstorm
+Stun
+Thrill of Possibility
+Tormenting Voice
+Underworld Breach
+Vance's Blasting Cannons // Spitfire Bastion
+Vessel of Volatility
+War Room
+Warlord's Fury
+Wheel of Misfortune
+Wily Goblin
+Young Pyromancer
+Zada, Hedron Grinder

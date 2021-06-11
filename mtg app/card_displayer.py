@@ -4,6 +4,7 @@ from urllib.request import urlopen
 import io
 from PIL import Image, ImageTk
 import ast
+import os
 
 with open('trimmed_cards.txt', 'r') as f_in:
     pre_all_cards = [line for line in f_in]
@@ -22,7 +23,8 @@ root.geometry("683x345")
 
 # functions for submission screen
 
-def get_cards():
+def import_decklist():
+    deck_name = deck_name_entry.get()
     unfiltered_cards_string = decklist_entry.get("1.0", "end")
     unfiltered_cards_list = unfiltered_cards_string.split("\n")
     filtered_cards = []
@@ -32,7 +34,11 @@ def get_cards():
             end_index = line.index("(") - 1
             new_line = line[begin_index:end_index]
             filtered_cards.append(new_line)
-    return filtered_cards
+    with open("saved_decks.txt", 'a') as decks:
+        decks.write("*** " + deck_name + '\n')
+        for card in filtered_cards:
+            decks.write(str(card) + '\n')
+    saved_decks_list.insert('end', deck_name)
 
 def index_of(card_name):
         card_name = card_name.strip().lower()
@@ -43,19 +49,95 @@ def index_of(card_name):
                 return i
 
 def format_cards_for_game(card_list):
+    card_list.sort()
+    card_list = list(dict.fromkeys(card_list))
     new_card_list = []
     for card in card_list:
         new_card_list.append(all_cards[index_of(card)])
     return new_card_list
 
-decklist_entry = Text()
-decklist_entry.grid(column=0,row=0)
+def get_decklists():
+    decklist_indices = saved_decks_list.curselection()
+    deck_names = []
+    card_list = []
+    for i in decklist_indices:
+        deck_names.append(saved_decks_list.get(i))
+    for deck in deck_names:
+        with open("saved_decks.txt", 'r') as decks_file:
+            add_to_list = False
+            for line in decks_file:
+                if line == "*** " + deck:
+                    add_to_list = True
+                elif line[0:3] == "***":
+                    add_to_list = False
+                elif add_to_list:
+                    card_list.append(line)
+    return card_list
+
+def delete_deck_function():
+    decklist_indices = saved_decks_list.curselection()
+    deck_names = []
+    new_file = []
+    for i in decklist_indices:
+        deck_names.append(saved_decks_list.get(i))
+    for deck in deck_names:
+        with open("saved_decks.txt", 'r') as decks_file:
+            keep_line = True
+            for line in decks_file:
+                if line[0:3] == "***":
+                    if line == "*** " + deck:
+                        keep_line = False
+                    else:
+                        keep_line = True
+                if keep_line:
+                    new_file.append(line)
+    os.remove("saved_decks.txt")
+    with open("saved_decks.txt", 'w') as new_decks_file:
+        for line in new_file:
+            new_decks_file.write(str(line))
+    for index in decklist_indices:
+        saved_decks_list.delete(index)
+    
+
+
+decklist_entry = Text(root)
+decklist_entry.place(x=1,y=1)
 decklist_entry['height'] = 21
 decklist_entry['width'] = 50
 
-import_decklists_button = Button(root, text='Import Decklists') 
-import_decklists_button.configure(command=lambda :begin_game(format_cards_for_game(get_cards())))
-import_decklists_button.grid(column=1,row=0)
+saved_label = Label(root, text="Deck Name:")
+saved_label.place(x = 406, y = 1)
+
+deck_name_entry = Entry(root)
+deck_name_entry.place(x=473,y=1)
+
+import_decklists_button = Button(root, text='Import') 
+import_decklists_button.configure(command=lambda :import_decklist())
+import_decklists_button.place(x=602,y=0)
+
+saved_label = Label(root, text="Saved Decks:")
+saved_label.place(x = 406, y = 110)
+
+deck_names = []
+with open('saved_decks.txt', 'r') as decks:
+    for line in decks:
+        if line[0:3] == "***":
+            deck_names.append(line[4:])
+
+saved_decks_list = Listbox(root, selectmode='multiple')
+saved_decks_list.place(x = 406, y = 130)
+saved_decks_list['height'] = 13
+saved_decks_list['width'] = 25
+for deck in deck_names:
+    saved_decks_list.insert('end', deck)
+
+begin_game = Button(root, text="Start Game")
+begin_game.configure(command=lambda :begin_game(format_cards_for_game(get_decklists())))
+begin_game.place(x=406,y=60)
+
+delete_deck = Button(root, text="Delete")
+delete_deck.configure(command=lambda :delete_deck_function())
+delete_deck.place(x=600,y=130)
 
 def begin_game(current_game_cards):
     displayer = Tk()
