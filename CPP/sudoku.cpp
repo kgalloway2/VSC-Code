@@ -1,5 +1,4 @@
 // board generator not generating solvable board every time
-// need to code what happens when you win
 
 #include <iostream>
 #include <random>
@@ -22,6 +21,8 @@ void fill_block_two(int current_board[][9], int start[], int end[]);
 void remove_entries(int current_board[][9], int number_to_remove);
 
 std::vector<int> distinct_random_numbers(int number_of_numbers);
+
+bool check_win (int current_board[][9]);
 
 int main() {
 
@@ -56,6 +57,10 @@ int main() {
         if (strikes >= 3) {
             std::cout << "You have lost. Please try again.";
             game_over = true;
+        }
+        if (check_win(my_board)) {
+            std::cout << "You have won! Congratulations!";
+            game_over = true; 
         }
     }
 }
@@ -293,5 +298,21 @@ std::vector<int> distinct_random_numbers(int number_of_numbers) {
         }
     }
     return nums;
+}
+
+bool check_win (int current_board[][9]) {
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            int position[] {i, j};
+            if (current_board[i][j] == 0) {
+                return false;
+            }
+            else if (!check_valid_move(current_board, position, current_board[i][j])) {
+                return false;
+            }
+        }
+    }
+    return true;
+
 }
 
