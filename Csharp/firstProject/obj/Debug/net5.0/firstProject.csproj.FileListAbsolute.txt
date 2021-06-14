@@ -1,0 +1,16 @@
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\obj\Debug\net5.0\firstProject.csproj.AssemblyReference.cache
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\obj\Debug\net5.0\firstProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\obj\Debug\net5.0\firstProject.AssemblyInfoInputs.cache
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\obj\Debug\net5.0\firstProject.AssemblyInfo.cs
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\obj\Debug\net5.0\firstProject.csproj.CoreCompileInputs.cache
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\bin\Debug\net5.0\firstProject.exe
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\bin\Debug\net5.0\firstProject.deps.json
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\bin\Debug\net5.0\firstProject.runtimeconfig.json
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\bin\Debug\net5.0\firstProject.runtimeconfig.dev.json
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\bin\Debug\net5.0\firstProject.dll
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\bin\Debug\net5.0\ref\firstProject.dll
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\bin\Debug\net5.0\firstProject.pdb
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\obj\Debug\net5.0\firstProject.dll
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\obj\Debug\net5.0\ref\firstProject.dll
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\obj\Debug\net5.0\firstProject.pdb
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstProject\obj\Debug\net5.0\firstProject.genruntimeconfig.cache

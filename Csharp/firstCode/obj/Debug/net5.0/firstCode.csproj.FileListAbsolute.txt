@@ -1,0 +1,16 @@
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\bin\Debug\net5.0\firstCode.exe
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\bin\Debug\net5.0\firstCode.deps.json
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\bin\Debug\net5.0\firstCode.runtimeconfig.json
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\bin\Debug\net5.0\firstCode.runtimeconfig.dev.json
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\bin\Debug\net5.0\firstCode.dll
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\bin\Debug\net5.0\ref\firstCode.dll
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\bin\Debug\net5.0\firstCode.pdb
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\obj\Debug\net5.0\firstCode.csproj.AssemblyReference.cache
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\obj\Debug\net5.0\firstCode.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\obj\Debug\net5.0\firstCode.AssemblyInfoInputs.cache
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\obj\Debug\net5.0\firstCode.AssemblyInfo.cs
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\obj\Debug\net5.0\firstCode.csproj.CoreCompileInputs.cache
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\obj\Debug\net5.0\firstCode.dll
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\obj\Debug\net5.0\ref\firstCode.dll
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\obj\Debug\net5.0\firstCode.pdb
+C:\Users\kgtrm\Documents\VSC Code\Csharp\firstCode\obj\Debug\net5.0\firstCode.genruntimeconfig.cache

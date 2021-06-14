@@ -79,24 +79,25 @@ def delete_deck_function():
     deck_names = []
     new_file = []
     for i in decklist_indices:
-        deck_names.append(saved_decks_list.get(i))
-    for deck in deck_names:
-        with open("saved_decks.txt", 'r') as decks_file:
-            keep_line = True
-            for line in decks_file:
-                if line[0:3] == "***":
-                    if line == "*** " + deck:
-                        keep_line = False
-                    else:
-                        keep_line = True
-                if keep_line:
-                    new_file.append(line)
+        deck_names.append("*** " + saved_decks_list.get(i) + '\n')
+    with open("saved_decks.txt", 'r') as decks_file:
+        keep_line = True
+        for line in decks_file:
+            if line[0:3] == "***":
+                if line in deck_names:
+                    keep_line = False
+                else:
+                    keep_line = True
+            if keep_line:
+                new_file.append(line)
     os.remove("saved_decks.txt")
     with open("saved_decks.txt", 'w') as new_decks_file:
         for line in new_file:
             new_decks_file.write(str(line))
-    for index in decklist_indices:
-        saved_decks_list.delete(index)
+    for deck in deck_names:
+        deck = deck[4:-1]
+        index_in_list = saved_decks_list.get(0, "end").index(deck)
+        saved_decks_list.delete(index_in_list)
     
 
 
