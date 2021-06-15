@@ -28,13 +28,25 @@ public class picToASCII extends Canvas{
 
     public static void main(String[] args){
         String picture = "grookey.png";
+        int height = 0;
+        int width = 0;
+        try {
+            BufferedImage bi = ImageIO.read(new File("C:/Users/kgtrm/Desktop/Files/Pictures/julia_thing/", picture));
+            height = bi.getHeight();
+            width = bi.getWidth();
+        }
+        catch (IOException e) {
+            String workingDir = System.getProperty("user.dir");
+            System.out.println("Current working directory : " + workingDir);
+            e.printStackTrace();
+        }
 
         // view original picture
         System.out.println("Displaying original picture.");
         Canvas m = new picToASCII(picture);  
         JFrame f = new JFrame();  
         f.add(m);  
-        f.setSize(256, 256);  
+        f.setSize(width, height);  
         f.setVisible(true);  
         System.out.println("Original picture displayed.");
 
@@ -51,23 +63,25 @@ public class picToASCII extends Canvas{
         System.out.println("Converted grayscale to ascii.");
 
         // view new picture
-        // System.out.println("Displaying new picture.");
-        // JFrame g = new JFrame();  
-        // TextArea ascii;  
-        // ascii = new TextArea(ASCIIPicture);  
-        // ascii.setBounds(0, 0, 256, 256);
-        // ascii.setPreferredSize(new Dimension(256, 256));
-        // g.add(ascii);
-        // g.setSize(256, 256); 
-        // g.setVisible(true);
-        // System.out.println("New picture displayed!");
-        System.out.println();
-        for (int i = 0; i < 256; i++) {
-            System.out.println();
-            for (int j = 0; j < 3*256; j++) {
-                System.out.printf(String.valueOf(ASCIIPicture.charAt(i * 3 * 256 + j)));
+        System.out.println("Displaying new picture.");
+        JFrame g = new JFrame();  
+        TextArea ascii;  
+        ascii = new TextArea("");  
+        ascii.setFont(new Font("monospaced", Font.PLAIN, 1));
+        String currentLine;
+        for (int i = 0; i < height; i++) {
+            currentLine = "";
+            for (int j = 0; j < 3 * width; j++) {
+                currentLine += String.valueOf(ASCIIPicture.charAt(i * 3 * width + j));
             }
+            ascii.append("\n");
+            ascii.append(currentLine);
         }
+        g.add(ascii);
+        g.setSize(3 * width, 3 * height); 
+        g.setVisible(true);
+        System.out.println("New picture displayed!");
+        
     }
 
 }

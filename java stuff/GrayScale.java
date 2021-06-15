@@ -31,13 +31,8 @@ public class GrayScale {
                  int blue = (int)(c.getBlue()); //  *0.114);
                  double newColor = (red + green + blue) / 3;
                  grayArray[i][j] = newColor;
-                 // old_image.setRGB(j,i,newColor.getRGB());
               }
-           }
-        
-            // File output = new File("C:/Users/kgtrm/Documents/VSC Code/test_images/", "grayscale1.jpg");
-            // ImageIO.write(old_image, "jpg", output);
-            
+           }            
            
         } catch (Exception e) {
             System.out.println("Unable to convert image to grayscale.");
