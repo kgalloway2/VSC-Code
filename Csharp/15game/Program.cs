@@ -37,7 +37,7 @@ namespace _15game
             }
 
             newGame.viewBoard();
-            Console.WriteLine($"Congratulaions! You won in {moves} moves!");
+            Console.WriteLine($"Congratulations! You won in {moves} moves!");
         }
     }
 }
