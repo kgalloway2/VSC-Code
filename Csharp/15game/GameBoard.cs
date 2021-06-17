@@ -1,5 +1,3 @@
-// fix formatting of gameboard and make it so someone can actually play the game
-
 using System;
 using System.Collections.Generic;
 
@@ -38,10 +36,22 @@ namespace _15game
 
         // METHODS
         public void viewBoard() {
-            Console.WriteLine($"| {board[0,0]} | {board[0,1]} | {board[0,2]} | {board[0,3]} |");
-            Console.WriteLine($"| {board[1,0]} | {board[1,1]} | {board[1,2]} | {board[1,3]} |");
-            Console.WriteLine($"| {board[2,0]} | {board[2,1]} | {board[2,2]} | {board[2,3]} |");
-            Console.WriteLine($"| {board[3,0]} | {board[3,1]} | {board[3,2]} | {board[3,3]} |");
+            string[,] padding = new string[4,4];
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (board[i,j] < 10) {
+                        padding[i,j] = " ";
+                    }
+                    else {
+                        padding[i,j] = "";
+                    }
+                }
+            }
+
+            Console.WriteLine($"| {padding[0,0]}{board[0,0]} | {padding[0,1]}{board[0,1]} | {padding[0,2]}{board[0,2]} | {padding[0,3]}{board[0,3]} |");
+            Console.WriteLine($"| {padding[1,0]}{board[1,0]} | {padding[1,1]}{board[1,1]} | {padding[1,2]}{board[1,2]} | {padding[1,3]}{board[1,3]} |");
+            Console.WriteLine($"| {padding[2,0]}{board[2,0]} | {padding[2,1]}{board[2,1]} | {padding[2,2]}{board[2,2]} | {padding[2,3]}{board[2,3]} |");
+            Console.WriteLine($"| {padding[3,0]}{board[3,0]} | {padding[3,1]}{board[3,1]} | {padding[3,2]}{board[3,2]} | {padding[3,3]}{board[3,3]} |");
             
         }
 
@@ -130,6 +140,22 @@ namespace _15game
             }
 
             return validMovesList;
+        }
+
+        public bool isWin() {
+            int check = 1;
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 4; j++) {
+                    if (i == 3 && j == 3) {
+                        break;
+                    }
+                    if (board[i,j] != check) {
+                        return false;
+                    }
+                    check++;
+                }
+            }
+            return true;
         }
     }
 }
