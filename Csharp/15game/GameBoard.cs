@@ -6,7 +6,8 @@ namespace _15game
     class GameBoard
     {
         // FIELDS
-        int[,] board = new int[,] {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 0}};
+        public int[,] board = new int[,] {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 0}};
+        public List<int> movesMade = new List<int>();
 
         // PROPERTIES
 
@@ -29,6 +30,7 @@ namespace _15game
                 currentMove = currentValidMoves[randChoice];
                 // Console.WriteLine(currentMove);
                 makeMove(currentMove);
+                movesMade.Add(currentMove);
                 // this.viewBoard();
                 // Console.WriteLine("------------------");
             }
@@ -157,5 +159,7 @@ namespace _15game
             }
             return true;
         }
+
+        
     }
 }
