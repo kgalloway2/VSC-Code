@@ -30,7 +30,15 @@ namespace _15game
                 currentMove = currentValidMoves[randChoice];
                 // Console.WriteLine(currentMove);
                 makeMove(currentMove);
-                movesMade.Add(currentMove);
+                if (i == 0) {
+                    movesMade.Add(currentMove);
+                }
+                else if (movesMade[movesMade.Count - 1] != currentMove) {
+                    movesMade.Add(currentMove);                    
+                }
+                else {
+                    movesMade.RemoveAt(movesMade.Count - 1);
+                }
                 // this.viewBoard();
                 // Console.WriteLine("------------------");
             }
