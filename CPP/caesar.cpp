@@ -20,20 +20,25 @@ int main() {
     int shift;
     std::string post_message;
 
-    std::cout << "What is the message to encrypt? (ALL CAPS)\n";
+    std::cout << "What is the message to encrypt?\n";
     std::getline(std::cin, pre_message);
 
     std::cout << "What is the amount of shift? (positive int)\n";
     std::cin >> shift;
 
     for (int j = 0; j < pre_message.size(); j++) {
-        if (pre_message[j] == ' ') {
-            post_message += " ";
+        if (!isalnum(pre_message[j])) {
+            post_message += pre_message[j];
         }
         else {
-            int letter_index = letter_map[pre_message[j]];
+            int letter_index = letter_map[toupper(pre_message[j])];
             letter_index = (letter_index + shift) % 26;
-            post_message += cipher_map[letter_index];
+            if (islower(pre_message[j])) {
+                post_message += tolower(cipher_map[letter_index]);
+            } else {
+                post_message += cipher_map[letter_index];
+            }
+            
         }
     }
 
