@@ -1,0 +1,9 @@
+The client wants to determine the best/worst pokemon in general. A sound definition will be needed for best/wsorst. The top priority is to have many different supporting statistics for any conclusions reached. 
+
+Potential Methodologies
+    Regression analysis - determine correlations between various characteristics of the pokemon
+    
+    
+Data available
+    "C:\Users\kgtrm\Documents\R projects data\archive pokemon.zip"
+    Will this data be enough? It should very likely be updated. Document this process.

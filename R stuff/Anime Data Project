@@ -1,0 +1,16 @@
+The client wants to know what makes an anime popular, successful, long-lasting, high-selling, etc. Find shared characteristics of historically successful anime that can be used to develop a new anime. 
+
+Potential methodologies:
+    Regression analysis - look for correlations bewteen characteristics and success
+    Sentiment Analysis - examine social media impressions to find indicators for success
+    
+Potential limitations:
+    Regression analysis - numeric quantities can fail to capture the more artistic and subjective aspects of what makes an anime sucessful
+    Sentiment analysis - data would be limited to the last few years of anime, data could be difficult to obtain
+    
+    
+Datsets available
+    "C:\Users\kgtrm\Documents\R projects data\archive anime.zip"
+    
+Note: This could be a good way to learn about pandas in Python by gathering data from Twitter (see bookmarks) to do sentiment analysis
+

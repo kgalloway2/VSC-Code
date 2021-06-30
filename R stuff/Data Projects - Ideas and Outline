@@ -1,0 +1,55 @@
+Initial stuff:
+    questions to answer
+        what are we looking for? 
+        what is the question you are trying to solve? (describe a scenario if possible)
+        what is the top priority?
+        what is the context of this analysis? why do we need this analysis?
+    
+    planning stage
+        where are we looking for it?
+        how do we think the data will answer our questions?
+        brief description of methodologies (outline the use cases and scenarios, summarize strenghts and limitations)
+        
+Data collection
+    If possible, estimate how much data will be needed to satisfactorily meet the objectives. Alternatively (if more data collection is not possible), determine to what extent the data available will meet those objectives. (Sample size calculations).
+
+Collect the data in raw form, if not provided.
+
+Data Specification
+    What does clean data look like?
+    What are you assuming about the data? These properties are assumptions we make about the data by what it is supposed to represent (that is, the type and distribution of its corresponding population) or how it was collected (like whether it is an independent sample, identically distributed, etc.) These properties need to be addressed as part of the modeling process.
+
+Model Evaluation
+    Residuals
+    Permutation Tests: Compare to the same model fit on a randomised response. Can help detect overfitting.
+    Benchmarking
+    
+    
+
+End results:
+    graphics with findings
+    revisit questions from beginning
+    were the questions answered?
+    was the data appropriate?
+    did the data help to answer questions?
+    
+    
+Lifecycle:
+    understand and plan
+        translate the business question to analytics question
+    data
+        work cross functionally to gather and process data
+    analysis
+        solve problems
+    presentation
+        present results and tell a story
+    documentation and reflection
+        make your project a happy ending (explain this better)
+        
+        
+1. Generate your hypotheses
+2. Study the data
+3. Clean the data
+4. Engineer the features
+5. Create predictive models
+6. Communicate your results
