@@ -1,0 +1,607 @@
+! <small>Average</small>
+{{lop/base|003|Venusaur|80|82|83|100|100|80}}
+{{lop/base|003M|Venusaur|80|100|123|122|120|80|Mega Venusaur}}
+{{lop/base|006|Charizard|78|84|78|109|85|100}}
+{{lop/base|006MX|Charizard|78|130|111|130|85|100|Mega Charizard X}}
+{{lop/base|006MY|Charizard|78|104|78|159|115|100|Mega Charizard Y}}
+{{lop/base|009|Blastoise|79|83|100|85|105|78}}
+{{lop/base|009M|Blastoise|79|103|120|135|115|78|Mega Blastoise}}
+{{lop/base|012|Butterfree|60|45|50|90|80|70}}
+{{lop/base|015|Beedrill|65|90|40|45|80|75}}
+{{lop/base|015M|Beedrill|65|150|40|15|80|145|Mega Beedrill}}
+{{lop/base|018|Pidgeot|83|80|75|70|70|101}}
+{{lop/base|018M|Pidgeot|83|80|80|135|80|121|Mega Pidgeot}}
+{{lop/base|020|Raticate|55|81|60|50|70|97}}
+{{lop/base|020A|Raticate|75|71|70|40|80|77|Alolan Raticate}}
+{{lop/base|022|Fearow|65|90|65|61|61|100}}
+{{lop/base|024|Arbok|60|95|69|65|79|80}}
+{{lop/base|026|Raichu|60|90|55|90|80|110}}
+{{lop/base|026A|Raichu|60|85|50|95|85|110|Alolan Raichu}}
+{{lop/base|028|Sandslash|75|100|110|45|55|65}}
+{{lop/base|028A|Sandslash|75|100|120|25|65|65|Alolan Sandslash}}
+{{lop/base|031|Nidoqueen|90|92|87|75|85|76}}
+{{lop/base|034|Nidoking|81|102|77|85|75|85}}
+{{lop/base|036|Clefable|95|70|73|95|90|60}}
+{{lop/base|038|Ninetales|73|76|75|81|100|100}}
+{{lop/base|038A|Ninetales|73|67|75|81|100|109|Alolan Ninetales}}
+{{lop/base|040|Wigglytuff|140|70|45|85|50|45}}
+{{lop/base|045|Vileplume|75|80|85|110|90|50}}
+{{lop/base|047|Parasect|60|95|80|60|80|30}}
+{{lop/base|049|Venomoth|70|65|60|90|75|90}}
+{{lop/base|051|Dugtrio|35|100|50|50|70|120}}
+{{lop/base|051A|Dugtrio|35|100|60|50|70|110|Alolan Dugtrio}}
+{{lop/base|053|Persian|65|70|60|65|65|115}}
+{{lop/base|053A|Persian|65|60|60|75|65|115|Alolan Persian}}
+{{lop/base|055|Golduck|80|82|78|95|80|85}}
+{{lop/base|057|Primeape|65|105|60|60|70|95}}
+{{lop/base|059|Arcanine|90|110|80|100|80|95}}
+{{lop/base|062|Poliwrath|90|95|95|70|90|70}}
+{{lop/base|065|Alakazam|55|50|45|135|95|120}}
+{{lop/base|065M|Alakazam|55|50|65|175|105|150|Mega Alakazam}}
+{{lop/base|068|Machamp|90|130|80|65|85|55}}
+{{lop/base|071|Victreebel|80|105|65|100|70|70}}
+{{lop/base|073|Tentacruel|80|70|65|80|120|100}}
+{{lop/base|076|Golem|80|120|130|55|65|45}}
+{{lop/base|076A|Golem|80|120|130|55|65|45|Alolan Golem}}
+{{lop/base|078|Rapidash|65|100|70|80|80|105}}
+{{lop/base|078G|Rapidash|65|100|70|80|80|105|Galarian Rapidash}}
+{{lop/base|080|Slowbro|95|75|110|100|80|30}}
+{{lop/base|080G|Slowbro|95|100|95|100|70|30|Galarian Slowbro}}
+{{lop/base|080M|Slowbro|95|75|180|130|80|30|Mega Slowbro}}
+{{lop/base|083|Farfetch'd|52|90|55|58|62|60}}
+{{lop/base|085|Dodrio|60|110|70|60|60|110}}
+{{lop/base|087|Dewgong|90|70|80|70|95|70}}
+{{lop/base|089|Muk|105|105|75|65|100|50}}
+{{lop/base|089A|Muk|105|105|75|65|100|50|Alolan Muk}}
+{{lop/base|091|Cloyster|50|95|180|85|45|70}}
+{{lop/base|094|Gengar|60|65|60|130|75|110}}
+{{lop/base|094M|Gengar|60|65|80|170|95|130|Mega Gengar}}
+{{lop/base|097|Hypno|85|73|70|73|115|67}}
+{{lop/base|099|Kingler|55|130|115|50|50|75}}
+{{lop/base|101|Electrode|60|50|70|80|80|150}}
+{{lop/base|103|Exeggutor|95|95|85|125|75|55}}
+{{lop/base|103A|Exeggutor|95|105|85|125|75|45|Alolan Exeggutor}}
+{{lop/base|105|Marowak|60|80|110|50|80|45}}
+{{lop/base|105A|Marowak|60|80|110|50|80|45|Alolan Marowak}}
+{{lop/base|106|Hitmonlee|50|120|53|35|110|87}}
+{{lop/base|107|Hitmonchan|50|105|79|35|110|76}}
+{{lop/base|110|Weezing|65|90|120|85|70|60}}
+{{lop/base|110G|Weezing|65|90|120|85|70|60|Galarian Weezing}}
+{{lop/base|115|Kangaskhan|105|95|80|40|80|90}}
+{{lop/base|115M|Kangaskhan|105|125|100|60|100|100|Mega Kangaskhan}}
+{{lop/base|119|Seaking|80|92|65|65|80|68}}
+{{lop/base|121|Starmie|60|75|85|100|85|115}}
+{{lop/base|122|Mr. Mime|40|45|65|100|120|90}}
+{{lop/base|124|Jynx|65|50|35|115|95|95}}
+{{lop/base|127|Pinsir|65|125|100|55|70|85}}
+{{lop/base|127M|Pinsir|65|155|120|65|90|105|Mega Pinsir}}
+{{lop/base|128|Tauros|75|100|95|40|70|110}}
+{{lop/base|130|Gyarados|95|125|79|60|100|81}}
+{{lop/base|130M|Gyarados|95|155|109|70|130|81|Mega Gyarados}}
+{{lop/base|131|Lapras|130|85|80|85|95|60}}
+{{lop/base|132|Ditto|48|48|48|48|48|48}}
+{{lop/base|134|Vaporeon|130|65|60|110|95|65}}
+{{lop/base|135|Jolteon|65|65|60|110|95|130}}
+{{lop/base|136|Flareon|65|130|60|95|110|65}}
+{{lop/base|139|Omastar|70|60|125|115|70|55}}
+{{lop/base|141|Kabutops|60|115|105|65|70|80}}
+{{lop/base|142|Aerodactyl|80|105|65|60|75|130}}
+{{lop/base|142M|Aerodactyl|80|135|85|70|95|150|Mega Aerodactyl}}
+{{lop/base|143|Snorlax|160|110|65|65|110|30}}
+{{lop/base|144|Articuno|90|85|100|95|125|85}}
+{{lop/base|144G|Articuno|90|85|85|125|100|95|Galarian Articuno}}
+{{lop/base|145|Zapdos|90|90|85|125|90|100}}
+{{lop/base|145G|Zapdos|90|125|90|85|90|100|Galarian Zapdos}}
+{{lop/base|146|Moltres|90|100|90|125|85|90}}
+{{lop/base|146G|Moltres|90|85|90|100|125|90|Galarian Moltres}}
+{{lop/base|149|Dragonite|91|134|95|100|100|80}}
+{{lop/base|150|Mewtwo|106|110|90|154|90|130}}
+{{lop/base|150MX|Mewtwo|106|190|100|154|100|130|Mega Mewtwo X}}
+{{lop/base|150MY|Mewtwo|106|150|70|194|120|140|Mega Mewtwo Y}}
+{{lop/base|151|Mew|100|100|100|100|100|100}}
+{{lop/base|154|Meganium|80|82|100|83|100|80}}
+{{lop/base|157|Typhlosion|78|84|78|109|85|100}}
+{{lop/base|160|Feraligatr|85|105|100|79|83|78}}
+{{lop/base|162|Furret|85|76|64|45|55|90}}
+{{lop/base|164|Noctowl|100|50|50|86|96|70}}
+{{lop/base|166|Ledian|55|35|50|55|110|85}}
+{{lop/base|168|Ariados|70|90|70|60|70|40}}
+{{lop/base|169|Crobat|85|90|80|70|80|130}}
+{{lop/base|171|Lanturn|125|58|58|76|76|67}}
+{{lop/base|178|Xatu|65|75|70|95|70|95}}
+{{lop/base|181|Ampharos|90|75|85|115|90|55}}
+{{lop/base|181M|Ampharos|90|95|105|165|110|45|Mega Ampharos}}
+{{lop/base|182|Bellossom|75|80|95|90|100|50}}
+{{lop/base|184|Azumarill|100|50|80|60|80|50}}
+{{lop/base|185|Sudowoodo|70|100|115|30|65|30}}
+{{lop/base|186|Politoed|90|75|75|90|100|70}}
+{{lop/base|189|Jumpluff|75|55|70|55|95|110}}
+{{lop/base|192|Sunflora|75|75|55|105|85|30}}
+{{lop/base|195|Quagsire|95|85|85|65|65|35}}
+{{lop/base|196|Espeon|65|65|60|130|95|110}}
+{{lop/base|197|Umbreon|95|65|110|60|130|65}}
+{{lop/base|199|Slowking|95|75|80|100|110|30}}
+{{lop/base|199G|Slowking|95|65|80|110|110|30|Galarian Slowking}}
+{{lop/base|201|Unown|48|72|48|72|48|48}}
+{{lop/base|202|Wobbuffet|190|33|58|33|58|33}}
+{{lop/base|203|Girafarig|70|80|65|90|65|85}}
+{{lop/base|205|Forretress|75|90|140|60|60|40}}
+{{lop/base|206|Dunsparce|100|70|70|65|65|45}}
+{{lop/base|208|Steelix|75|85|200|55|65|30}}
+{{lop/base|208M|Steelix|75|125|230|55|95|30|Mega Steelix}}
+{{lop/base|210|Granbull|90|120|75|60|60|45}}
+{{lop/base|211|Qwilfish|65|95|85|55|55|85}}
+{{lop/base|212|Scizor|70|130|100|55|80|65}}
+{{lop/base|212M|Scizor|70|150|140|65|100|75|Mega Scizor}}
+{{lop/base|213|Shuckle|20|10|230|10|230|5}}
+{{lop/base|214|Heracross|80|125|75|40|95|85}}
+{{lop/base|214M|Heracross|80|185|115|40|105|75|Mega Heracross}}
+{{lop/base|217|Ursaring|90|130|75|75|75|55}}
+{{lop/base|219|Magcargo|60|50|120|90|80|30}}
+{{lop/base|222|Corsola|65|55|95|65|95|35}}
+{{lop/base|224|Octillery|75|105|75|105|75|45}}
+{{lop/base|225|Delibird|45|55|45|65|45|75}}
+{{lop/base|226|Mantine|85|40|70|80|140|70}}
+{{lop/base|227|Skarmory|65|80|140|40|70|70}}
+{{lop/base|229|Houndoom|75|90|50|110|80|95}}
+{{lop/base|229M|Houndoom|75|90|90|140|90|115|Mega Houndoom}}
+{{lop/base|230|Kingdra|75|95|95|95|95|85}}
+{{lop/base|232|Donphan|90|120|120|60|60|50}}
+{{lop/base|234|Stantler|73|95|62|85|65|85}}
+{{lop/base|235|Smeargle|55|20|35|20|45|75}}
+{{lop/base|237|Hitmontop|50|95|95|35|110|70}}
+{{lop/base|241|Miltank|95|80|105|40|70|100}}
+{{lop/base|242|Blissey|255|10|10|75|135|55}}
+{{lop/base|243|Raikou|90|85|75|115|100|115}}
+{{lop/base|244|Entei|115|115|85|90|75|100}}
+{{lop/base|245|Suicune|100|75|115|90|115|85}}
+{{lop/base|248|Tyranitar|100|134|110|95|100|61}}
+{{lop/base|248M|Tyranitar|100|164|150|95|120|71|Mega Tyranitar}}
+{{lop/base|249|Lugia|106|90|130|90|154|110}}
+{{lop/base|250|Ho-Oh|106|130|90|110|154|90}}
+{{lop/base|251|Celebi|100|100|100|100|100|100}}
+{{lop/base|254|Sceptile|70|85|65|105|85|120}}
+{{lop/base|254M|Sceptile|70|110|75|145|85|145|Mega Sceptile}}
+{{lop/base|257|Blaziken|80|120|70|110|70|80}}
+{{lop/base|257M|Blaziken|80|160|80|130|80|100|Mega Blaziken}}
+{{lop/base|260|Swampert|100|110|90|85|90|60}}
+{{lop/base|260M|Swampert|100|150|110|95|110|70|Mega Swampert}}
+{{lop/base|262|Mightyena|70|90|70|60|60|70}}
+{{lop/base|264|Linoone|78|70|61|50|61|100}}
+{{lop/base|267|Beautifly|60|70|50|100|50|65}}
+{{lop/base|269|Dustox|60|50|70|50|90|65}}
+{{lop/base|272|Ludicolo|80|70|70|90|100|70}}
+{{lop/base|275|Shiftry|90|100|60|90|60|80}}
+{{lop/base|277|Swellow|60|85|60|75|50|125}}
+{{lop/base|279|Pelipper|60|50|100|95|70|65}}
+{{lop/base|282|Gardevoir|68|65|65|125|115|80}}
+{{lop/base|282M|Gardevoir|68|85|65|165|135|100|Mega Gardevoir}}
+{{lop/base|284|Masquerain|70|60|62|100|82|80}}
+{{lop/base|286|Breloom|60|130|80|60|60|70}}
+{{lop/base|289|Slaking|150|160|100|95|65|100}}
+{{lop/base|291|Ninjask|61|90|45|50|50|160}}
+{{lop/base|292|Shedinja|1|90|45|30|30|40}}
+{{lop/base|295|Exploud|104|91|63|91|73|68}}
+{{lop/base|297|Hariyama|144|120|60|40|60|50}}
+{{lop/base|301|Delcatty|70|65|65|55|55|90}}
+{{lop/base|302|Sableye|50|75|75|65|65|50}}
+{{lop/base|302M|Sableye|50|85|125|85|115|20|Mega Sableye}}
+{{lop/base|303|Mawile|50|85|85|55|55|50}}
+{{lop/base|303M|Mawile|50|105|125|55|95|50|Mega Mawile}}
+{{lop/base|306|Aggron|70|110|180|60|60|50}}
+{{lop/base|306M|Aggron|70|140|230|60|80|50|Mega Aggron}}
+{{lop/base|308|Medicham|60|60|75|60|75|80}}
+{{lop/base|308M|Medicham|60|100|85|80|85|100|Mega Medicham}}
+{{lop/base|310|Manectric|70|75|60|105|60|105}}
+{{lop/base|310M|Manectric|70|75|80|135|80|135|Mega Manectric}}
+{{lop/base|311|Plusle|60|50|40|85|75|95}}
+{{lop/base|312|Minun|60|40|50|75|85|95}}
+{{lop/base|313|Volbeat|65|73|75|47|85|85}}
+{{lop/base|314|Illumise|65|47|75|73|85|85}}
+{{lop/base|317|Swalot|100|73|83|73|83|55}}
+{{lop/base|319|Sharpedo|70|120|40|95|40|95}}
+{{lop/base|319M|Sharpedo|70|140|70|110|65|105|Mega Sharpedo}}
+{{lop/base|321|Wailord|170|90|45|90|45|60}}
+{{lop/base|323|Camerupt|70|100|70|105|75|40}}
+{{lop/base|323M|Camerupt|70|120|100|145|105|20|Mega Camerupt}}
+{{lop/base|324|Torkoal|70|85|140|85|70|20}}
+{{lop/base|326|Grumpig|80|45|65|90|110|80}}
+{{lop/base|327|Spinda|60|60|60|60|60|60}}
+{{lop/base|330|Flygon|80|100|80|80|80|100}}
+{{lop/base|332|Cacturne|70|115|60|115|60|55}}
+{{lop/base|334|Altaria|75|70|90|70|105|80}}
+{{lop/base|334M|Altaria|75|110|110|110|105|80|Mega Altaria}}
+{{lop/base|335|Zangoose|73|115|60|60|60|90}}
+{{lop/base|336|Seviper|73|100|60|100|60|65}}
+{{lop/base|337|Lunatone|90|55|65|95|85|70}}
+{{lop/base|338|Solrock|90|95|85|55|65|70}}
+{{lop/base|340|Whiscash|110|78|73|76|71|60}}
+{{lop/base|342|Crawdaunt|63|120|85|90|55|55}}
+{{lop/base|344|Claydol|60|70|105|70|120|75}}
+{{lop/base|346|Cradily|86|81|97|81|107|43}}
+{{lop/base|348|Armaldo|75|125|100|70|80|45}}
+{{lop/base|350|Milotic|95|60|79|100|125|81}}
+{{lop/base|351|Castform|70|70|70|70|70|70}}
+{{lop/base|352|Kecleon|60|90|70|60|120|40}}
+{{lop/base|354|Banette|64|115|65|83|63|65}}
+{{lop/base|354M|Banette|64|165|75|93|83|75|Mega Banette}}
+{{lop/base|357|Tropius|99|68|83|72|87|51}}
+{{lop/base|358|Chimecho|75|50|80|95|90|65}}
+{{lop/base|359|Absol|65|130|60|75|60|75}}
+{{lop/base|359M|Absol|65|150|60|115|60|115|Mega Absol}}
+{{lop/base|362|Glalie|80|80|80|80|80|80}}
+{{lop/base|362M|Glalie|80|120|80|120|80|100|Mega Glalie}}
+{{lop/base|365|Walrein|110|80|90|95|90|65}}
+{{lop/base|367|Huntail|55|104|105|94|75|52}}
+{{lop/base|368|Gorebyss|55|84|105|114|75|52}}
+{{lop/base|369|Relicanth|100|90|130|45|65|55}}
+{{lop/base|370|Luvdisc|43|30|55|40|65|97}}
+{{lop/base|373|Salamence|95|135|80|110|80|100}}
+{{lop/base|373M|Salamence|95|145|130|120|90|120|Mega Salamence}}
+{{lop/base|376|Metagross|80|135|130|95|90|70}}
+{{lop/base|376M|Metagross|80|145|150|105|110|110|Mega Metagross}}
+{{lop/base|377|Regirock|80|100|200|50|100|50}}
+{{lop/base|378|Regice|80|50|100|100|200|50}}
+{{lop/base|379|Registeel|80|75|150|75|150|50}}
+{{lop/base|380|Latias|80|80|90|110|130|110}}
+{{lop/base|380M|Latias|80|100|120|140|150|110|Mega Latias}}
+{{lop/base|381|Latios|80|90|80|130|110|110}}
+{{lop/base|381M|Latios|80|130|100|160|120|110|Mega Latios}}
+{{lop/base|382|Kyogre|100|100|90|150|140|90}}
+{{lop/base|382P|Kyogre|100|150|90|180|160|90|Primal Kyogre}}
+{{lop/base|383|Groudon|100|150|140|100|90|90}}
+{{lop/base|383P|Groudon|100|180|160|150|90|90|Primal Groudon}}
+{{lop/base|384|Rayquaza|105|150|90|150|90|95}}
+{{lop/base|384M|Rayquaza|105|180|100|180|100|115|Mega Rayquaza}}
+{{lop/base|385|Jirachi|100|100|100|100|100|100}}
+{{lop/base|386|Deoxys|50|150|50|150|50|150|Normal Forme}}
+{{lop/base|386A|Deoxys|50|180|20|180|20|150|Attack Forme}}
+{{lop/base|386D|Deoxys|50|70|160|70|160|90|Defense Forme}}
+{{lop/base|386S|Deoxys|50|95|90|95|90|180|Speed Forme}}
+{{lop/base|389|Torterra|95|109|105|75|85|56}}
+{{lop/base|392|Infernape|76|104|71|104|71|108}}
+{{lop/base|395|Empoleon|84|86|88|111|101|60}}
+{{lop/base|398|Staraptor|85|120|70|50|60|100}}
+{{lop/base|400|Bibarel|79|85|60|55|60|71}}
+{{lop/base|402|Kricketune|77|85|51|55|51|65}}
+{{lop/base|405|Luxray|80|120|79|95|79|70}}
+{{lop/base|407|Roserade|60|70|65|125|105|90}}
+{{lop/base|409|Rampardos|97|165|60|65|50|58}}
+{{lop/base|411|Bastiodon|60|52|168|47|138|30}}
+{{lop/base|413|Wormadam|60|59|85|79|105|36|Plant Cloak}}
+{{lop/base|413G|Wormadam|60|79|105|59|85|36|Sandy Cloak}}
+{{lop/base|413S|Wormadam|60|69|95|69|95|36|Trash Cloak}}
+{{lop/base|414|Mothim|70|94|50|94|50|66}}
+{{lop/base|416|Vespiquen|70|80|102|80|102|40}}
+{{lop/base|417|Pachirisu|60|45|70|45|90|95}}
+{{lop/base|419|Floatzel|85|105|55|85|50|115}}
+{{lop/base|421|Cherrim|70|60|70|87|78|85}}
+{{lop/base|423|Gastrodon|111|83|68|92|82|39}}
+{{lop/base|424|Ambipom|75|100|66|60|66|115}}
+{{lop/base|426|Drifblim|150|80|44|90|54|80}}
+{{lop/base|428|Lopunny|65|76|84|54|96|105}}
+{{lop/base|428M|Lopunny|65|136|94|54|96|135|Mega Lopunny}}
+{{lop/base|429|Mismagius|60|60|60|105|105|105}}
+{{lop/base|430|Honchkrow|100|125|52|105|52|71}}
+{{lop/base|432|Purugly|71|82|64|64|59|112}}
+{{lop/base|435|Skuntank|103|93|67|71|61|84}}
+{{lop/base|437|Bronzong|67|89|116|79|116|33}}
+{{lop/base|441|Chatot|76|65|45|92|42|91}}
+{{lop/base|442|Spiritomb|50|92|108|92|108|35}}
+{{lop/base|445|Garchomp|108|130|95|80|85|102}}
+{{lop/base|445M|Garchomp|108|170|115|120|95|92|Mega Garchomp}}
+{{lop/base|448|Lucario|70|110|70|115|70|90}}
+{{lop/base|448M|Lucario|70|145|88|140|70|112|Mega Lucario}}
+{{lop/base|450|Hippowdon|108|112|118|68|72|47}}
+{{lop/base|452|Drapion|70|90|110|60|75|95}}
+{{lop/base|454|Toxicroak|83|106|65|86|65|85}}
+{{lop/base|455|Carnivine|74|100|72|90|72|46}}
+{{lop/base|457|Lumineon|69|69|76|69|86|91}}
+{{lop/base|460|Abomasnow|90|92|75|92|85|60}}
+{{lop/base|460M|Abomasnow|90|132|105|132|105|30|Mega Abomasnow}}
+{{lop/base|461|Weavile|70|120|65|45|85|125}}
+{{lop/base|462|Magnezone|70|70|115|130|90|60}}
+{{lop/base|463|Lickilicky|110|85|95|80|95|50}}
+{{lop/base|464|Rhyperior|115|140|130|55|55|40}}
+{{lop/base|465|Tangrowth|100|100|125|110|50|50}}
+{{lop/base|466|Electivire|75|123|67|95|85|95}}
+{{lop/base|467|Magmortar|75|95|67|125|95|83}}
+{{lop/base|468|Togekiss|85|50|95|120|115|80}}
+{{lop/base|469|Yanmega|86|76|86|116|56|95}}
+{{lop/base|470|Leafeon|65|110|130|60|65|95}}
+{{lop/base|471|Glaceon|65|60|110|130|95|65}}
+{{lop/base|472|Gliscor|75|95|125|45|75|95}}
+{{lop/base|473|Mamoswine|110|130|80|70|60|80}}
+{{lop/base|474|Porygon-Z|85|80|70|135|75|90}}
+{{lop/base|475|Gallade|68|125|65|65|115|80}}
+{{lop/base|475M|Gallade|68|165|95|65|115|110|Mega Gallade}}
+{{lop/base|476|Probopass|60|55|145|75|150|40}}
+{{lop/base|477|Dusknoir|45|100|135|65|135|45}}
+{{lop/base|478|Froslass|70|80|70|80|70|110}}
+{{lop/base|479|Rotom|50|50|77|95|77|91}}
+{{lop/base|479O|Rotom|50|65|107|105|107|86|Heat Rotom}}
+{{lop/base|479W|Rotom|50|65|107|105|107|86|Wash Rotom}}
+{{lop/base|479R|Rotom|50|65|107|105|107|86|Frost Rotom}}
+{{lop/base|479F|Rotom|50|65|107|105|107|86|Fan Rotom}}
+{{lop/base|479L|Rotom|50|65|107|105|107|86|Mow Rotom}}
+{{lop/base|480|Uxie|75|75|130|75|130|95}}
+{{lop/base|481|Mesprit|80|105|105|105|105|80}}
+{{lop/base|482|Azelf|75|125|70|125|70|115}}
+{{lop/base|483|Dialga|100|120|120|150|100|90}}
+{{lop/base|484|Palkia|90|120|100|150|120|100}}
+{{lop/base|485|Heatran|91|90|106|130|106|77}}
+{{lop/base|486|Regigigas|110|160|110|80|110|100}}
+{{lop/base|487|Giratina|150|100|120|100|120|90|Altered Forme}}
+{{lop/base|487O|Giratina|150|120|100|120|100|90|Origin Forme}}
+{{lop/base|488|Cresselia|120|70|120|75|130|85}}
+{{lop/base|489|Phione|80|80|80|80|80|80}}
+{{lop/base|490|Manaphy|100|100|100|100|100|100}}
+{{lop/base|491|Darkrai|70|90|90|135|90|125}}
+{{lop/base|492|Shaymin|100|100|100|100|100|100|Land Forme}}
+{{lop/base|492S|Shaymin|100|103|75|120|75|127|Sky Forme}}
+{{lop/base|493|Arceus|120|120|120|120|120|120}}
+{{lop/base|494|Victini|100|100|100|100|100|100}}
+{{lop/base|497|Serperior|75|75|95|75|95|113}}
+{{lop/base|500|Emboar|110|123|65|100|65|65}}
+{{lop/base|503|Samurott|95|100|85|108|70|70}}
+{{lop/base|505|Watchog|60|85|69|60|69|77}}
+{{lop/base|508|Stoutland|85|110|90|45|90|80}}
+{{lop/base|510|Liepard|64|88|50|88|50|106}}
+{{lop/base|512|Simisage|75|98|63|98|63|101}}
+{{lop/base|514|Simisear|75|98|63|98|63|101}}
+{{lop/base|516|Simipour|75|98|63|98|63|101}}
+{{lop/base|518|Musharna|116|55|85|107|95|29}}
+{{lop/base|521|Unfezant|80|115|80|65|55|93}}
+{{lop/base|523|Zebstrika|75|100|63|80|63|116}}
+{{lop/base|526|Gigalith|85|135|130|60|80|25}}
+{{lop/base|528|Swoobat|67|57|55|77|55|114}}
+{{lop/base|530|Excadrill|110|135|60|50|65|88}}
+{{lop/base|531|Audino|103|60|86|60|86|50}}
+{{lop/base|531M|Audino|103|60|126|80|126|50|Mega Audino}}
+{{lop/base|534|Conkeldurr|105|140|95|55|65|45}}
+{{lop/base|537|Seismitoad|105|95|75|85|75|74}}
+{{lop/base|538|Throh|120|100|85|30|85|45}}
+{{lop/base|539|Sawk|75|125|75|30|75|85}}
+{{lop/base|542|Leavanny|75|103|80|70|80|92}}
+{{lop/base|545|Scolipede|60|100|89|55|69|112}}
+{{lop/base|547|Whimsicott|60|67|85|77|75|116}}
+{{lop/base|549|Lilligant|70|60|75|110|75|90}}
+{{lop/base|550|Basculin|70|92|65|80|55|98}}
+{{lop/base|553|Krookodile|95|117|80|65|70|92}}
+{{lop/base|555|Darmanitan|105|140|55|30|55|95|Standard Mode}}
+{{lop/base|555Z|Darmanitan|105|30|105|140|105|55|Zen Mode}}
+{{lop/base|555G|Darmanitan|105|140|55|30|55|95|Galarian Standard Mode}}
+{{lop/base|555GZ|Darmanitan|105|160|55|30|55|135|Galarian Zen Mode}}
+{{lop/base|556|Maractus|75|86|67|106|67|60}}
+{{lop/base|558|Crustle|70|105|125|65|75|45}}
+{{lop/base|560|Scrafty|65|90|115|45|115|58}}
+{{lop/base|561|Sigilyph|72|58|80|103|80|97}}
+{{lop/base|563|Cofagrigus|58|50|145|95|105|30}}
+{{lop/base|565|Carracosta|74|108|133|83|65|32}}
+{{lop/base|567|Archeops|75|140|65|112|65|110}}
+{{lop/base|569|Garbodor|80|95|82|60|82|75}}
+{{lop/base|571|Zoroark|60|105|60|120|60|105}}
+{{lop/base|573|Cinccino|75|95|60|65|60|115}}
+{{lop/base|576|Gothitelle|70|55|95|95|110|65}}
+{{lop/base|579|Reuniclus|110|65|75|125|85|30}}
+{{lop/base|581|Swanna|75|87|63|87|63|98}}
+{{lop/base|584|Vanilluxe|71|95|85|110|95|79}}
+{{lop/base|586|Sawsbuck|80|100|70|60|70|95}}
+{{lop/base|587|Emolga|55|75|60|75|60|103}}
+{{lop/base|589|Escavalier|70|135|105|60|105|20}}
+{{lop/base|591|Amoonguss|114|85|70|85|80|30}}
+{{lop/base|593|Jellicent|100|60|70|85|105|60}}
+{{lop/base|594|Alomomola|165|75|80|40|45|65}}
+{{lop/base|596|Galvantula|70|77|60|97|60|108}}
+{{lop/base|598|Ferrothorn|74|94|131|54|116|20}}
+{{lop/base|601|Klinklang|60|100|115|70|85|90}}
+{{lop/base|604|Eelektross|85|115|80|105|80|50}}
+{{lop/base|606|Beheeyem|75|75|75|125|95|40}}
+{{lop/base|609|Chandelure|60|55|90|145|90|80}}
+{{lop/base|612|Haxorus|76|147|90|60|70|97}}
+{{lop/base|614|Beartic|95|130|80|70|80|50}}
+{{lop/base|615|Cryogonal|80|50|50|95|135|105}}
+{{lop/base|617|Accelgor|80|70|40|100|60|145}}
+{{lop/base|618|Stunfisk|109|66|84|81|99|32}}
+{{lop/base|618G|Stunfisk|109|81|99|66|84|32|Galarian Stunfisk}}
+{{lop/base|620|Mienshao|65|125|60|95|60|105}}
+{{lop/base|621|Druddigon|77|120|90|60|90|48}}
+{{lop/base|623|Golurk|89|124|80|55|80|55}}
+{{lop/base|625|Bisharp|65|125|100|60|70|70}}
+{{lop/base|626|Bouffalant|95|110|95|40|95|55}}
+{{lop/base|628|Braviary|100|123|75|57|75|80}}
+{{lop/base|630|Mandibuzz|110|65|105|55|95|80}}
+{{lop/base|631|Heatmor|85|97|66|105|66|65}}
+{{lop/base|632|Durant|58|109|112|48|48|109}}
+{{lop/base|635|Hydreigon|92|105|90|125|90|98}}
+{{lop/base|637|Volcarona|85|60|65|135|105|100}}
+{{lop/base|638|Cobalion|91|90|129|90|72|108}}
+{{lop/base|639|Terrakion|91|129|90|72|90|108}}
+{{lop/base|640|Virizion|91|90|72|90|129|108}}
+{{lop/base|641|Tornadus|79|115|70|125|80|111|Incarnate Forme}}
+{{lop/base|641T|Tornadus|79|100|80|110|90|121|Therian Forme}}
+{{lop/base|642|Thundurus|79|115|70|125|80|111|Incarnate Forme}}
+{{lop/base|642T|Thundurus|79|105|70|145|80|101|Therian Forme}}
+{{lop/base|643|Reshiram|100|120|100|150|120|90}}
+{{lop/base|644|Zekrom|100|150|120|120|100|90}}
+{{lop/base|645|Landorus|89|125|90|115|80|101|Incarnate Forme}}
+{{lop/base|645T|Landorus|89|145|90|105|80|91|Therian Forme}}
+{{lop/base|646|Kyurem|125|130|90|130|90|95}}
+{{lop/base|646B|Kyurem|125|170|100|120|90|95|Black Kyurem}}
+{{lop/base|646W|Kyurem|125|120|90|170|100|95|White Kyurem}}
+{{lop/base|647|Keldeo|91|72|90|129|90|108}}
+{{lop/base|648|Meloetta|100|77|77|128|128|90|Aria Forme}}
+{{lop/base|648P|Meloetta|100|128|90|77|77|128|Pirouette Forme}}
+{{lop/base|649|Genesect|71|120|95|120|95|99}}
+{{lop/base|652|Chesnaught|88|107|122|74|75|64}}
+{{lop/base|655|Delphox|75|69|72|114|100|104}}
+{{lop/base|658|Greninja|72|95|67|103|71|122}}
+{{lop/base|658A|Greninja|72|145|67|153|71|132|Ash-Greninja}}
+{{lop/base|660|Diggersby|85|56|77|50|77|78}}
+{{lop/base|663|Talonflame|78|81|71|74|69|126}}
+{{lop/base|666|Vivillon|80|52|50|90|50|89}}
+{{lop/base|668|Pyroar|86|68|72|109|66|106}}
+{{lop/base|671|Florges|78|65|68|112|154|75}}
+{{lop/base|673|Gogoat|123|100|62|97|81|68}}
+{{lop/base|675|Pangoro|95|124|78|69|71|58}}
+{{lop/base|676|Furfrou|75|80|60|65|90|102}}
+{{lop/base|678|Meowstic|74|48|76|83|81|104}}
+{{lop/base|681|Aegislash|60|50|140|50|140|60|Shield Forme}}
+{{lop/base|681B|Aegislash|60|140|50|140|50|60|Blade Forme}}
+{{lop/base|683|Aromatisse|101|72|72|99|89|29}}
+{{lop/base|685|Slurpuff|82|80|86|85|75|72}}
+{{lop/base|687|Malamar|86|92|88|68|75|73}}
+{{lop/base|689|Barbaracle|72|105|115|54|86|68}}
+{{lop/base|691|Dragalge|65|75|90|97|123|44}}
+{{lop/base|693|Clawitzer|71|73|88|120|89|59}}
+{{lop/base|695|Heliolisk|62|55|52|109|94|109}}
+{{lop/base|697|Tyrantrum|82|121|119|69|59|71}}
+{{lop/base|699|Aurorus|123|77|72|99|92|58}}
+{{lop/base|700|Sylveon|95|65|65|110|130|60}}
+{{lop/base|701|Hawlucha|78|92|75|74|63|118}}
+{{lop/base|702|Dedenne|67|58|57|81|67|101}}
+{{lop/base|703|Carbink|50|50|150|50|150|50}}
+{{lop/base|706|Goodra|90|100|70|110|150|80}}
+{{lop/base|707|Klefki|57|80|91|80|87|75}}
+{{lop/base|709|Trevenant|85|110|76|65|82|56}}
+{{lop/base|711|Gourgeist|55|85|122|58|75|99|Small Size}}
+{{lop/base|711|Gourgeist|65|90|122|58|75|84|Average Size}}
+{{lop/base|711|Gourgeist|75|95|122|58|75|69|Large Size}}
+{{lop/base|711|Gourgeist|85|100|122|58|75|54|Super Size}}
+{{lop/base|713|Avalugg|95|117|184|44|46|28}}
+{{lop/base|715|Noivern|85|70|80|97|80|123}}
+{{lop/base|716|Xerneas|126|131|95|131|98|99}}
+{{lop/base|717|Yveltal|126|131|95|131|98|99}}
+{{lop/base|718|Zygarde|108|100|121|81|95|95|50% Forme}}
+{{lop/base|718T|Zygarde|54|100|71|61|85|115|10% Forme}}
+{{lop/base|718C|Zygarde|216|100|121|91|95|85|Complete Forme}}
+{{lop/base|719|Diancie|50|100|150|100|150|50}}
+{{lop/base|719M|Diancie|50|160|110|160|110|110|Mega Diancie}}
+{{lop/base|720|Hoopa|80|110|60|150|130|70|Hoopa Confined}}
+{{lop/base|720U|Hoopa|80|160|60|170|130|80|Hoopa Unbound}}
+{{lop/base|721|Volcanion|80|110|120|130|90|70}}
+{{lop/base|724|Decidueye|78|107|75|100|100|70}}
+{{lop/base|727|Incineroar|95|115|90|80|90|60}}
+{{lop/base|730|Primarina|80|74|74|126|116|60}}
+{{lop/base|733|Toucannon|80|120|75|75|75|60}}
+{{lop/base|735|Gumshoos|88|110|60|55|60|45}}
+{{lop/base|738|Vikavolt|77|70|90|145|75|43}}
+{{lop/base|740|Crabominable|97|132|77|62|67|43}}
+{{lop/base|741|Oricorio|75|70|70|98|70|93}}
+{{lop/base|743|Ribombee|60|55|60|95|70|124}}
+{{lop/base|745|Lycanroc|75|115|65|55|65|112|Midday Form}}
+{{lop/base|745Mn|Lycanroc|85|115|75|55|75|82|Midnight Form}}
+{{lop/base|745D|Lycanroc|75|117|65|55|65|110|Dusk Form}}
+{{lop/base|746|Wishiwashi|45|20|20|25|25|40|Solo Form}}
+{{lop/base|746Sc|Wishiwashi|45|140|130|140|135|30|School Form}}
+{{lop/base|748|Toxapex|50|63|152|53|142|35}}
+{{lop/base|750|Mudsdale|100|125|100|55|85|35}}
+{{lop/base|752|Araquanid|68|70|92|50|132|42}}
+{{lop/base|754|Lurantis|70|105|90|80|90|45}}
+{{lop/base|756|Shiinotic|60|45|80|90|100|30}}
+{{lop/base|758|Salazzle|68|64|60|111|60|117}}
+{{lop/base|760|Bewear|120|125|80|55|60|60}}
+{{lop/base|763|Tsareena|72|120|98|50|98|72}}
+{{lop/base|764|Comfey|51|52|90|82|110|100}}
+{{lop/base|765|Oranguru|90|60|80|90|110|60}}
+{{lop/base|766|Passimian|100|120|90|40|60|80}}
+{{lop/base|768|Golisopod|75|125|140|60|90|40}}
+{{lop/base|770|Palossand|85|75|110|100|75|35}}
+{{lop/base|771|Pyukumuku|55|60|130|30|130|5}}
+{{lop/base|773|Silvally|95|95|95|95|95|95}}
+{{lop/base|774|Minior|60|60|100|60|100|60|Meteor Form}}
+{{lop/base|774R|Minior|60|100|60|100|60|120|Core}}
+{{lop/base|775|Komala|65|115|65|75|95|65}}
+{{lop/base|776|Turtonator|60|78|135|91|85|36}}
+{{lop/base|777|Togedemaru|65|98|63|40|73|96}}
+{{lop/base|778|Mimikyu|55|90|80|50|105|96}}
+{{lop/base|779|Bruxish|68|105|70|70|70|92}}
+{{lop/base|780|Drampa|78|60|85|135|91|36}}
+{{lop/base|781|Dhelmise|70|131|100|86|90|40}}
+{{lop/base|784|Kommo-o|75|110|125|100|105|85}}
+{{lop/base|785|Tapu Koko|70|115|85|95|75|130}}
+{{lop/base|786|Tapu Lele|70|85|75|130|115|95}}
+{{lop/base|787|Tapu Bulu|70|130|115|85|95|75}}
+{{lop/base|788|Tapu Fini|70|75|115|95|130|85}}
+{{lop/base|791|Solgaleo|137|137|107|113|89|97}}
+{{lop/base|792|Lunala|137|113|89|137|107|97}}
+{{lop/base|793|Nihilego|109|53|47|127|131|103}}
+{{lop/base|794|Buzzwole|107|139|139|53|53|79}}
+{{lop/base|795|Pheromosa|71|137|37|137|37|151}}
+{{lop/base|796|Xurkitree|83|89|71|173|71|83}}
+{{lop/base|797|Celesteela|97|101|103|107|101|61}}
+{{lop/base|798|Kartana|59|181|131|59|31|109}}
+{{lop/base|799|Guzzlord|223|101|53|97|53|43}}
+{{lop/base|800|Necrozma|97|107|101|127|89|79}}
+{{lop/base|800DM|Necrozma|97|157|127|113|109|77|Dusk Mane}}
+{{lop/base|800DW|Necrozma|97|113|109|157|127|77|Dawn Wings}}
+{{lop/base|800U|Necrozma|97|167|97|167|97|129|Ultra Necrozma}}
+{{lop/base|801|Magearna|80|95|115|130|115|65}}
+{{lop/base|802|Marshadow|90|125|80|90|90|125}}
+{{lop/base|804|Naganadel|73|73|73|127|73|121}}
+{{lop/base|805|Stakataka|61|131|211|53|101|13}}
+{{lop/base|806|Blacephalon|53|127|53|151|79|107}}
+{{lop/base|807|Zeraora|88|112|75|102|80|143}}
+{{lop/base|809|Melmetal|135|143|143|80|65|34}}
+{{lop/base|812|Rillaboom|100|125|90|60|70|85}}
+{{lop/base|815|Cinderace|80|116|75|65|75|119}}
+{{lop/base|818|Inteleon|70|85|65|125|65|120}}
+{{lop/base|820|Greedent|120|95|95|55|75|20}}
+{{lop/base|823|Corviknight|98|87|105|53|85|67}}
+{{lop/base|826|Orbeetle|60|45|110|80|120|90}}
+{{lop/base|828|Thievul|70|58|58|87|92|90}}
+{{lop/base|830|Eldegoss|60|50|90|80|120|60}}
+{{lop/base|832|Dubwool|72|80|100|60|90|88}}
+{{lop/base|834|Drednaw|90|115|90|48|68|74}}
+{{lop/base|836|Boltund|69|90|60|90|60|121}}
+{{lop/base|839|Coalossal|110|80|120|80|90|30}}
+{{lop/base|841|Flapple|70|110|80|95|60|70}}
+{{lop/base|842|Appletun|110|85|80|100|80|30}}
+{{lop/base|844|Sandaconda|72|107|125|65|70|71}}
+{{lop/base|845|Cramorant|70|85|55|85|95|85}}
+{{lop/base|847|Barraskewda|61|123|60|60|50|136}}
+{{lop/base|849|Toxtricity|75|98|70|114|70|75|Amped Form}}
+{{lop/base|849L|Toxtricity|75|98|70|114|70|75|Low Key Form}}
+{{lop/base|851|Centiskorch|100|115|65|90|90|65}}
+{{lop/base|853|Grapploct|80|118|90|70|80|42}}
+{{lop/base|855|Polteageist|60|65|65|134|114|70}}
+{{lop/base|858|Hatterene|57|90|95|136|103|29}}
+{{lop/base|861|Grimmsnarl|95|120|65|95|75|60}}
+{{lop/base|862|Obstagoon|93|90|101|60|81|95}}
+{{lop/base|863|Perrserker|70|110|100|50|60|50}}
+{{lop/base|864|Cursola|60|95|50|145|130|30}}
+{{lop/base|865|Sirfetch'd|62|135|95|68|82|65}}
+{{lop/base|866|Mr. Rime|80|85|75|110|100|70}}
+{{lop/base|867|Runerigus|58|95|145|50|105|30}}
+{{lop/base|869|Alcremie|65|60|75|110|121|64}}
+{{lop/base|870|Falinks|65|100|100|70|60|75}}
+{{lop/base|871|Pincurchin|48|101|95|91|85|15}}
+{{lop/base|873|Frosmoth|70|65|60|125|90|65}}
+{{lop/base|874|Stonjourner|100|125|135|20|20|70}}
+{{lop/base|875|Eiscue|75|80|110|65|90|50|Ice Face}}
+{{lop/base|875N|Eiscue|75|80|70|65|50|130|Noice Face}}
+{{lop/base|876|Indeedee|60|65|55|105|95|95|Male}}
+{{lop/base|876F|Indeedee|70|55|65|95|105|85|Female}}
+{{lop/base|877|Morpeko|58|95|58|70|58|97}}
+{{lop/base|879|Copperajah|122|130|69|80|69|30}}
+{{lop/base|880|Dracozolt|90|100|90|80|70|75}}
+{{lop/base|881|Arctozolt|90|100|90|90|80|55}}
+{{lop/base|882|Dracovish|90|90|100|70|80|75}}
+{{lop/base|883|Arctovish|90|90|100|80|90|55}}
+{{lop/base|884|Duraludon|70|95|115|120|50|85}}
+{{lop/base|887|Dragapult|88|120|75|100|75|142}}
+{{lop/base|888|Zacian|92|130|115|80|115|138|Hero of Many Battles}}
+{{lop/base|888C|Zacian|92|170|115|80|115|148|Crowned Sword}}
+{{lop/base|889|Zamazenta|92|130|115|80|115|138|Hero of Many Battles}}
+{{lop/base|889C|Zamazenta|92|130|145|80|145|128|Crowned Shield}}
+{{lop/base|890|Eternatus|140|85|95|145|95|130}}
+{{lop/base|890E|Eternatus|255|115|250|125|250|130|Eternamax Eternatus}}
+{{lop/base|892|Urshifu|100|130|100|63|60|97}}
+{{lop/base|893|Zarude|105|120|105|70|95|105}}
+{{lop/base|894|Regieleki|80|100|50|100|50|200}}
+{{lop/base|895|Regidrago|200|100|50|100|50|80}}
+{{lop/base|896|Glastrier|100|145|130|65|110|30}}
+{{lop/base|897|Spectrier|100|65|60|145|80|130}}
+{{lop/base|898|Calyrex|100|80|80|80|80|80}}
+{{lop/base|898I|Calyrex|100|165|150|85|130|50|Ice Rider Calyrex}}
+{{lop/base|898S|Calyrex|100|85|80|165|100|150|Shadow Rider Calyrex}}
