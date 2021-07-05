@@ -4,9 +4,25 @@ Potential Methodologies
     Regression analysis - determine correlations between various characteristics of the pokemon
     
     
+Defining best/worst as strongest.weakest by BST (base stat total)
+    
 Data available
     "C:\Users\kgtrm\Documents\R projects data\archive pokemon.zip"
     Will this data be enough? It should very likely be updated. Document this process.
     found base stats in source information on bulbapedia. parsed the file to create a df 
         using more information from bulbapedia, creating dataframes with each data piece needed, then joing them on name, ignoring all alternate forms
         then I found a better dataset and added the last bit of data I want (fully evolved, generation of origin)
+        
+        
+Correlation Invesigations
+    with the data cleaned, I looked for strong corrlations between any of the numeric characteristics, focusing on all pokemon and fully-evolved pokemon
+    results are in the correlations investigations file (nothing too notable or against expectations)
+    
+Strongest types
+    dragon outranked everything always haha looked at evolved and not, legendary and not, number of types, comparing all against BST
+    psychic and steel were 2nd and 3rd
+    
+Just straight BSTs
+
+Look into top three types
+
