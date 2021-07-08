@@ -14,7 +14,7 @@ Data available
         then I found a better dataset and added the last bit of data I want (fully evolved, generation of origin)
         
         
-Correlation Invesigations
+Correlation Investigations
     with the data cleaned, I looked for strong corrlations between any of the numeric characteristics, focusing on all pokemon and fully-evolved pokemon
     results are in the correlations investigations file (nothing too notable or against expectations)
     
@@ -29,4 +29,10 @@ Look into top three types
     looked at the mean/median of each of the six stats for the three type, by legendary and not, evolved, and all together
 
 strength by generation (with and without legendaries)
+    correlation was significant
+    strength tends to increase, not only in bst, but most all stats
+    gen 6 skewed with megs so I looked without and still saw the same results (also without legendaries)
 
+
+summary of results
+    http://www.stat.cmu.edu/~brian/701/notes/paper-structure.pdf
