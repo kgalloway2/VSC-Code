@@ -14,3 +14,5 @@ Datsets available
     
 Note: This could be a good way to learn about pandas in Python by gathering data from Twitter (see bookmarks) to do sentiment analysis
 
+Analysis notes:
+    data was not nearly enough to support an in-depth analysis. there were very few attributes available for analysis
