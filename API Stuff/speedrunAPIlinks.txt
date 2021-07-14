@@ -1,0 +1,11 @@
+"https://www.speedrun.com/api/v1/series"
+
+"https://www.speedrun.com/api/v1/games"
+
+"https://www.speedrun.com/api/v1/platforms"       
+
+"https://www.speedrun.com/api/v1/regions"
+
+"https://www.speedrun.com/api/v1/runs"
+
+"https://www.speedrun.com/api/v1/users"
