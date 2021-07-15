@@ -25,7 +25,7 @@ def searchAPI(search_term):
                     mid_name = mid_name.replace(x, "")
             # print("just found: ", mid_name)
             if mid_name == search_term:
-                return "uri abbreviation: " + current_response.json()["data"][0]["abbreviation"]
+                return current_response.json()["data"][0]
             elif mid_name < search_term:
                 left_index = mid
             else: 
@@ -34,4 +34,4 @@ def searchAPI(search_term):
             return "Search inconclusive. Status code: " + str(current_response.status_code)
 
 
-print(searchAPI("the legend of zelda: twilight princess hd"))
+print(searchAPI("super mario bros"))
