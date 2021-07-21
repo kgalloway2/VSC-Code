@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <h1>Submit a Magic Card</h1>
+    </head>
+    <body>
+        <form>
+            <h1>Create your card!</h1>
+            <section class="name">
+                <label for="cardname">Card Name: </label>
+                <input type="text" name="cardname" id="cardname" placeholder="Your Card Name">
+            </section>
+            <hr>
+            <section class="manacost">
+                <label for="genericCost">Amount of Generic Mana: </label>
+                <input type="number" name="genericCost" id="genericCost" placeholder="0">
+                <br>
+                <input type=radio name="coloredCost" id="white" value="white">
+                <label for="white">W</label>
+                <input type=radio name="coloredCost" id="blue" value="blue">
+                <label for="white">U</label>
+                <input type=radio name="coloredCost" id="black" value="black">
+                <label for="white">B</label>
+                <input type=radio name="coloredCost" id="red" value="white">
+                <label for="white">R</label>
+                <input type=radio name="coloredCost" id="green" value="white">
+                <label for="white">G</label>
+                <input type=radio name="coloredCost" id="colorless" value="colorless">
+                <label for="white">C</label>
+            </section>
+            <hr>
+            <section class="types">
+                <input type=radio name="legendary" id="legendary" value="legendary">
+                <label for="legendary">Legendary</label>
+                <input type=radio name="legendary" id="non-legendary" value="non-legendary">
+                <label for="non-legendary">non-Legendary</label>
+                <br>
+                <input type="checkbox" name="type" id="creature" value="creature">
+                <label for="creature">Creature</label>
+                <input type="checkbox" name="type" id="instant" value="instant">
+                <label for="instant">Instant</label>
+                <input type="checkbox" name="type" id="sorcery" value="sorcery">
+                <label for="sorcery">Sorcery</label>
+                <input type="checkbox" name="type" id="enchantment" value="enchantment">
+                <label for="enchantment">Enchantment</label>
+                <input type="checkbox" name="type" id="artifact" value="artifact">
+                <label for="artifact">Artifact</label>
+                <input type="checkbox" name="type" id="land" value="land">
+                <label for="land">Land</label>
+                <input type="checkbox" name="type" id="planeswalker" value="planeswalker">
+                <label for="planeswalker">Planeswalker</label>
+                <br>
+                <label for="subtype">Subtype</label>
+                <input list="subtypes" id="subtype" name="subtype" placeholder="None">
+                <datalist id="subtypes">
+                    <option value="aura"></option>
+                    <option value="equipment"></option>
+                    <option value="saga"></option>
+                    <option value="human"></option>
+                    <option value="elf"></option>
+                    <option value="druid"></option>
+                    <option value="wizard"></option>
+                    <option value="elf"></option>
+                    <option value="plains"></option>
+                    <option value="island"></option>
+                    <option value="swamp"></option>
+                    <option value="mountain"></option>
+                    <option value="forest"></option>
+                </datalist>
+            </section>
+            <hr>
+            <section class="rules">
+                <label for="rules">Rules Text:</label>
+                <br>
+                <textarea id="rules" name=rules" rows="5" cols="25" placeholder="Your Rules Text"></textarea>
+                
+            </section>
+            <hr>
+            <section class="submission">
+                <input type="submit" value="Make My Card!">
+            </section>
+
+        </form>
+    </body>
+</html>
