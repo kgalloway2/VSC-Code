@@ -31,7 +31,7 @@ public class AWTCounter extends Frame{
     }
 
     public static void main(String[] args) {
-        AWTCounter app = new AWTCounter();
+        new AWTCounter();
     }
 
     // also need another class to handle the "Count" button-click
