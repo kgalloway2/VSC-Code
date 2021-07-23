@@ -1,17 +1,24 @@
 // currently working for the single chord I have put in. It can display an example
-// still need to fix font in everything
+// still need to work on sizing of panels and layout
+// add functionality for adding lick to list button
+// add delete lick from tab button
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 import java.util.Hashtable;
 import java.util.Arrays;
 import java.util.ArrayList;
+
 
 public class tabWriter extends Frame{
     private TextArea tab;
     private List savedLicks;
     private TextArea lickDisplay;
-    private Button addLick;
+    private Button addLickToTab;
+    private Label labLickName;
+    private TextField lickNameEntry;
+    private Button addLickToList;
     private Button displayLickButton;
     private List chords;
     private List mods;
@@ -52,15 +59,16 @@ public class tabWriter extends Frame{
 
 
     public tabWriter() {
-        setLayout(new GridLayout(0, 3));
-        tab = new TextArea(emptyStaff, 30, 50);
+        setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        tab = new TextArea(emptyStaff, 30, 80);
+        tab.setFont(new Font("Monospaced", Font.PLAIN, 11));
         Panel tabPanel = new Panel();
         tabPanel.add(tab);
-        tabPanel.setSize(300,500);
+        tabPanel.setSize(600,500);
         add(tabPanel);
 
-        addLick = new Button("Add Lick");
-        addLick.addActionListener(new ActionListener() {
+        addLickToTab = new Button("Add Lick to Tab");
+        addLickToTab.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 //current stuff
@@ -76,6 +84,7 @@ public class tabWriter extends Frame{
                 String[] newLines = newTab.split("\n");
                 int newLineLength = newLines[0].length();
                 if (currentLineLength + newLineLength >= 80) {
+                    tab.append("\n");
                     tab.append(newTab);
                 } else {
                     for (int i = 0; i <= 5; i++) {
@@ -94,11 +103,22 @@ public class tabWriter extends Frame{
             }
         });
 
-        lickDisplay = new TextArea(emptyMeasure,10,30);
+        labLickName = new Label("Enter New Lick Name:");
+
+        lickNameEntry = new TextField();
+
+        addLickToList = new Button("Add Lick to List");
+
+        lickDisplay = new TextArea(emptyMeasure,10,20);
+        lickDisplay.setFont(new Font("Monospaced", Font.PLAIN, 11));
         Panel lickDisplayPanel = new Panel();
+        lickDisplayPanel.setLayout(new BoxLayout(lickDisplayPanel, BoxLayout.Y_AXIS));
         lickDisplayPanel.add(lickDisplay);
-        lickDisplayPanel.add(addLick);
-        lickDisplayPanel.setSize(50, 300);
+        lickDisplayPanel.add(addLickToTab);
+        lickDisplayPanel.add(labLickName);
+        lickDisplayPanel.add(lickNameEntry);
+        lickDisplayPanel.add(addLickToList);
+        lickDisplayPanel.setSize(20, 300);
         add(lickDisplayPanel);
 
         // create needed lists
@@ -139,7 +159,8 @@ public class tabWriter extends Frame{
         });
 
         Panel chordModPanel = new Panel();
-        chordModPanel.setLayout(new GridLayout(3,0));
+        chordModPanel.setLayout(new BoxLayout(chordModPanel, BoxLayout.Y_AXIS));
+        chordModPanel.setSize(20, 300);
         chordModPanel.add(chords);
         chordModPanel.add(mods);
         chordModPanel.add(savedLicks);
@@ -155,7 +176,7 @@ public class tabWriter extends Frame{
         });
 
         setTitle("Tab Editor");
-        setSize(1200, 600);
+        setSize(900, 600);
         setVisible(true);
 
     }
