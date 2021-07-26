@@ -2,6 +2,13 @@
 // still need to work on sizing of panels and layout, this should wait until all buttons are added
 // add functionality for adding lick to list button
 // add save function
+// swing has file chooser
+// swing has combobox for chord modifications
+// look into look and feel
+// tool tips if you want
+// should be able to use the java.awt.event handlers even with swing components
+// swing supports "undo" look into this
+// a menu bar maybe for loading and saving files
 
 import java.awt.*;
 import java.awt.event.*;
