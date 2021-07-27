@@ -1,5 +1,5 @@
 // currently working for the single chord I have put in. It can display an example
-// add functionality for adding lick to list button
+
 // add save function
 // swing has file chooser
 // tool tips if you want
@@ -12,7 +12,14 @@ import javax.swing.*;
 import javax.swing.UIManager;
 import java.util.Hashtable;
 import java.util.Arrays;
+import java.util.Vector;
 import java.util.ArrayList;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 
 
 public class tabWriter extends JFrame{
@@ -21,44 +28,19 @@ public class tabWriter extends JFrame{
     private JTextArea lickDisplay;
     private JButton addLickToTab;
     private JButton deleteLickFromTab;
-    private JLabel labLickName;
-    private JTextField lickNameEntry;
     private JButton addLickToList;
     private JButton displayLickButton;
     private JList<String> chords;
     private JList<String> mods;
-    // there may need to be one big dictionary later with keys of chord names and values of shapes
-    private Hashtable<String, Integer> lickMatcher;
-    private String[][] licks = {{"lick1", "e-------------","B-------p-----","G-----p---p---","D---p-------p-","A-p-----------","E-------------"},
-                                {"lick2", "e---------------","B-p-------p-----","G-----p-------p-","D---p-------p---","A-p-----p-------","E---------------"},
-                                {"lick3", "e-------------","B-----p-----p-","G---p-----p---","D-------------","A-p-----------","E-------p-----"}};
+
+    private Hashtable<String, String[]> lickMatcher;
     private String[] baseChords = {"A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"};
     private String[] chordMods = {"Maj", "min", "Maj7", "7", "min7", "sus4"};
-    private Hashtable<String, char[]> chordMatcher = new Hashtable<String, char[]>();
-    private String[] chordNames = {"AMaj","Amin","AMaj7","A7","Amin7","Asus4","A#Maj","A#min","A#Maj7","A#7","A#min7","A#sus4",
-                                    "BMaj","Bmin","BMaj7","B7","Bmin7","Bsus4","CMaj","Cmin","CMaj7","C7","Cmin7","Csus4","C#Maj",
-                                    "C#min","C#Maj7","C#7","C#min7","C#sus4","DMaj","Dmin","DMaj7","D7","Dmin7","Dsus4","D#Maj",
-                                    "D#min","D#Maj7","D#7","D#min7","D#sus4","EMaj","Emin","EMaj7","E7","Emin7","Esus4","FMaj",
-                                    "Fmin","FMaj7","F7","Fmin7","Fsus4","F#Maj","F#min","F#Maj7","F#7","F#min7","F#sus4","GMaj",
-                                    "Gmin","GMaj7","G7","Gmin7","Gsus4","G#Maj","G#min","G#Maj7","G#7","G#min7","G#sus4"};
-    private char[][] chordFingerings = {{'0','2','2','2','0','0'},{'0','1','2','2','0','0'},{'0','2','1','2','0','0'},{'0','2','0','2','0','0'},
-    {'0','1','0','2','0','0'},{'0','3','2','2','0','0'},{'1','3','3','3','1','1'},{'1','2','3','3','1','1'},
-    {'1','3','2','3','1','1'},{'1','3','1','3','1','1'},{'1','2','1','3','1','1'},{'1','4','3','3','1','1'},
-    {'2','4','4','4','2','2'},{'2','3','4','4','2','2'},{'2','4','3','4','2','2'},{'2','0','2','1','2','0'},
-    {'2','3','2','4','2','2'},{'2','5','4','4','2','2'},{'0','1','0','2','3','0'},{'0','1','0','1','3','0'},
-    {'0','0','0','2','3','0'},{'0','1','3','2','3','0'},{'0','1','3','1','3','0'},{'1','1','0','3','3','0'},
-    {'4','6','6','6','4','4'},{'4','5','6','6','4','4'},{'4','6','5','6','4','4'},{'4','6','4','6','4','4'},
-    {'4','5','4','6','4','4'},{'4','7','6','6','4','4'},{'2','3','2','0','0','2'},{'1','3','2','0','0','1'},
-    {'2','2','2','0','0','2'},{'2','1','2','0','0','2'},{'1','1','2','0','0','1'},{'3','3','2','0','0','2'},
-    {'3','4','3','1','1','3'},{'2','4','3','1','1','2'},{'3','3','3','1','1','3'},{'3','2','3','1','1','3'},
-    {'2','2','3','1','1','3'},{'4','4','3','1','1','3'},{'0','0','1','2','2','0'},{'0','0','0','2','2','0'},
-    {'0','0','1','1','2','0'},{'0','0','1','0','2','0'},{'0','0','0','0','2','0'},{'0','0','2','2','2','0'},
-    {'1','1','2','3','3','1'},{'1','1','1','3','3','1'},{'0','1','2','2','3','1'},{'1','3','2','1','3','1'},
-    {'1','1','1','1','3','1'},{'1','1','3','3','3','1'},{'2','2','3','4','4','2'},{'2','2','2','4','4','2'},
-    {'2','2','3','3','4','2'},{'2','2','3','2','4','2'},{'2','2','2','2','4','2'},{'2','2','4','4','4','2'},
-    {'3','0','0','0','2','3'},{'3','3','3','5','5','3'},{'2','0','0','0','2','3'},{'1','0','0','0','2','3'},
-    {'3','3','3','3','5','3'},{'3','1','0','0','3','3'},{'4','4','5','6','6','4'},{'4','4','4','6','6','4'},
-    {'4','4','5','5','6','4'},{'4','4','5','4','6','4'},{'4','4','4','4','6','4'},{'4','4','6','6','6','4'}};
+    
+    private Hashtable<String, String[]> chordMatcher = new Hashtable<String, String[]>();
+    private ArrayList<String> chordNames = ReadFile("chordNames.txt");
+    
+    private ArrayList<String> chordFingerings = ReadFile("chordFingerings.txt");
     private String emptyMeasure = "e--------------\nB--------------\nG--------------\nD--------------\nA--------------\nE--------------";
     private String emptyStaff = "e-\nB-\nG-\nD-\nA-\nE-";
     private ArrayList<Integer> lengthsOfAddedLicks;
@@ -70,19 +52,31 @@ public class tabWriter extends JFrame{
         chords = new JList<String>(baseChords);
         
         mods = new JList<String>(chordMods);
-        
-        lickMatcher = new Hashtable<String, Integer>();
-        String[] tempLickVector = new String[3];
-        for (int i = 0; i <= 2; i++) {
-            lickMatcher.put(licks[i][0], i);
-            tempLickVector[i] = licks[i][0];
+
+        chordMatcher = new Hashtable<String, String[]>();        
+        for (int i = 0; i <= chordNames.size() - 1; i++) {
+            String[] currentFingeringList = chordFingerings.get(i).split(",");
+            chordMatcher.put(chordNames.get(i), currentFingeringList);
         }
-        savedLicks = new JList<String>(tempLickVector);
         
-        for (int i = 0; i <= chordNames.length - 1; i++) {
-            chordMatcher.put(chordNames[i], chordFingerings[i]);
-        }
         lengthsOfAddedLicks = new ArrayList<Integer>();
+
+        lickMatcher = new Hashtable<String, String[]>();
+        ArrayList<String> tempLickList = new ArrayList<String>();
+        int count = 1;
+        for (String lick : ReadFile("licks.txt")) {
+            String[] currentLick = lick.split(",");
+            String currentLickName = "lick" + String.valueOf(count);
+            lickMatcher.put(currentLickName, currentLick);
+            tempLickList.add(currentLickName);
+            count++;
+        }
+        DefaultListModel<String> JListLicks = new DefaultListModel<>();
+        for (String lick :tempLickList) {
+            JListLicks.addElement(lick);
+        }
+        savedLicks = new JList<String>(JListLicks);
+
 
         // frame layout
         Container cp = getContentPane();
@@ -195,9 +189,36 @@ public class tabWriter extends JFrame{
             }
         });
 
-        labLickName = new JLabel("Enter New Lick Name:");
-        lickNameEntry = new JTextField();
         addLickToList = new JButton("Add Lick to List");
+        addLickToList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                String lickName = "lick" + String.valueOf(savedLicks.getModel().getSize() + 1);
+                // add lick name to list
+                JListLicks.addElement(lickName);
+                
+                // add lick to current list of licks
+                String[] lickList = lickDisplay.getText().split("\n");
+                lickMatcher.put(lickName, lickList);
+                
+                // add lick to file
+                String lickString = lickList[0];
+                for (int i = 1; i <= 5; i++) {
+                    lickString = lickString.concat("," + lickList[i]);
+                }
+                File lickFile = new File("licks.txt");
+                try {
+                    FileWriter fr = new FileWriter(lickFile, true);
+                    BufferedWriter br = new BufferedWriter(fr);
+                    br.write("\n" + lickString);
+                    br.close();
+                    fr.close();
+                } catch (IOException e) {
+
+                }
+                
+            }
+        });
 
         lickDisplay = new JTextArea(emptyMeasure,10,20);
         lickDisplay.setFont(new Font("Monospaced", Font.PLAIN, 11));
@@ -212,8 +233,6 @@ public class tabWriter extends JFrame{
         // lick display subpanel2
         JPanel lickDisplaySubpanel2 = new JPanel();
         lickDisplaySubpanel2.setLayout(new BorderLayout(3, 3));
-        lickDisplaySubpanel2.add(labLickName, BorderLayout.WEST);
-        lickDisplaySubpanel2.add(lickNameEntry, BorderLayout.CENTER);
         lickDisplaySubpanel2.add(addLickToList, BorderLayout.SOUTH);
 
         // lick display panel
@@ -233,16 +252,8 @@ public class tabWriter extends JFrame{
         displayLickButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                char[] currentChord = chordMatcher.get(chords.getSelectedValue().concat(mods.getSelectedValue()));
-                // System.out.println(savedLicks.getSelectedItem());
-                
-                // System.out.println(lickMatcher.get(savedLicks.getSelectedItem()));
-                // System.out.println(licks[lickMatcher.get(savedLicks.getSelectedItem())][0]);
-
-                String[] currentLick = Arrays.copyOfRange(licks[lickMatcher.get(savedLicks.getSelectedValue())], 1, 7);
-                // for (int i = 0; i <= 5; i++) {
-                //     System.out.println(currentLick[i]);
-                // }
+                String[] currentChord = chordMatcher.get(chords.getSelectedValue().concat(mods.getSelectedValue()));               
+                String[] currentLick = lickMatcher.get(savedLicks.getSelectedValue());
                 lickDisplay.setText(createChord(currentChord, currentLick));
             }
         });
@@ -268,7 +279,7 @@ public class tabWriter extends JFrame{
 
         // declare display info for frame
         setTitle("Tab Editor");
-        setSize(1080, 540);
+        setSize(1080, 580);
         setVisible(true);
 
     }
@@ -282,7 +293,7 @@ public class tabWriter extends JFrame{
         });
     }
 
-    public String createChord(char[] chord, String[] shape) {
+    public String createChord(String[] chord, String[] shape) {
         // for (int i = 0; i <= 5; i++) {
         //     System.out.println(shape[i]);
         // }
@@ -291,7 +302,7 @@ public class tabWriter extends JFrame{
             result.add(i);
         }
         for (int i = 0; i <= 5; i++) {
-            result.set(i, result.get(i).replace('p', chord[i]));
+            result.set(i, result.get(i).replace("p", chord[i]));
         }
         String resultString = "";
         for (String i : result) {
@@ -299,4 +310,21 @@ public class tabWriter extends JFrame{
         }
         return resultString;
     }
+
+    public ArrayList<String> ReadFile(String fileString) {
+        ArrayList<String> fileList = new ArrayList<String>();
+        try {
+            File currentFile = new File(fileString);
+            Scanner reader = new Scanner(currentFile);
+            while (reader.hasNextLine()) {
+                fileList.add(reader.nextLine());
+            } 
+            reader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occured.");
+            e.printStackTrace();
+        } 
+        return fileList;
+    }
+
 }
