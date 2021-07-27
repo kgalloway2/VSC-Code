@@ -1,35 +1,32 @@
 // currently working for the single chord I have put in. It can display an example
-// still need to work on sizing of panels and layout, this should wait until all buttons are added
 // add functionality for adding lick to list button
 // add save function
 // swing has file chooser
-// swing has combobox for chord modifications
-// look into look and feel
 // tool tips if you want
-// should be able to use the java.awt.event handlers even with swing components
 // swing supports "undo" look into this
 // a menu bar maybe for loading and saving files
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.UIManager;
 import java.util.Hashtable;
 import java.util.Arrays;
 import java.util.ArrayList;
 
 
-public class tabWriter extends Frame{
-    private TextArea tab;
-    private List savedLicks;
-    private TextArea lickDisplay;
-    private Button addLickToTab;
-    private Button deleteLickFromTab;
-    private Label labLickName;
-    private TextField lickNameEntry;
-    private Button addLickToList;
-    private Button displayLickButton;
-    private List chords;
-    private List mods;
+public class tabWriter extends JFrame{
+    private JTextArea tab;
+    private JList<String> savedLicks;
+    private JTextArea lickDisplay;
+    private JButton addLickToTab;
+    private JButton deleteLickFromTab;
+    private JLabel labLickName;
+    private JTextField lickNameEntry;
+    private JButton addLickToList;
+    private JButton displayLickButton;
+    private JList<String> chords;
+    private JList<String> mods;
     // there may need to be one big dictionary later with keys of chord names and values of shapes
     private Hashtable<String, Integer> lickMatcher;
     private String[][] licks = {{"lick1", "e-------------","B-------p-----","G-----p---p---","D---p-------p-","A-p-----------","E-------------"},
@@ -70,50 +67,63 @@ public class tabWriter extends Frame{
     public tabWriter() {
         // setup needed lists and dictionaries
         // this creates components needed in the lick create section below
-        chords = new List(13);
-        for (String i : baseChords) {
-            chords.add(i);
-        }
-        mods = new List(6);
-        for (String i : chordMods) {
-            mods.add(i);
-        }
+        chords = new JList<String>(baseChords);
+        
+        mods = new JList<String>(chordMods);
+        
         lickMatcher = new Hashtable<String, Integer>();
-        savedLicks = new List(3);
+        String[] tempLickVector = new String[3];
         for (int i = 0; i <= 2; i++) {
             lickMatcher.put(licks[i][0], i);
-            savedLicks.add(licks[i][0]);
+            tempLickVector[i] = licks[i][0];
         }
-
+        savedLicks = new JList<String>(tempLickVector);
+        
         for (int i = 0; i <= chordNames.length - 1; i++) {
             chordMatcher.put(chordNames[i], chordFingerings[i]);
         }
         lengthsOfAddedLicks = new ArrayList<Integer>();
 
         // frame layout
-        setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-        // window listener to close window
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent evt) {
-                System.exit(0);
-            }
-        });
+        Container cp = getContentPane();
+        cp.setLayout(new FlowLayout());
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (Exception e) {
+
+        }
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // menu bar
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+
+        // add items to file menu
+        fileMenu.add(new JMenuItem("Open Tab File"));
+        fileMenu.add(new JMenuItem("Save This Tab"));
+        
+        // add menu to menuBar to frame
+        menuBar.add(fileMenu);
+        setJMenuBar(menuBar);
         
         // tab display panel and components
         // tab display components
-        tab = new TextArea(emptyStaff, 30, 80);
+        tab = new JTextArea(emptyStaff, 30, 100);
         tab.setFont(new Font("Monospaced", Font.PLAIN, 11));
 
         // tab display panel
-        Panel tabPanel = new Panel();
+        JPanel tabPanel = new JPanel();
         tabPanel.add(tab);
-        tabPanel.setSize(600,500);
-        add(tabPanel);
+        cp.add(tabPanel);
+
+        // lick editor panel
+        JPanel lickPanel = new JPanel();
+        lickPanel.setLayout(new BorderLayout(10,10));
+        cp.add(lickPanel);
 
         // lick display panel and components
         //lick display components
-        addLickToTab = new Button("Add Lick to Tab");
+        addLickToTab = new JButton("Add Lick to Tab");
         addLickToTab.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -150,7 +160,7 @@ public class tabWriter extends Frame{
             }
         });
 
-        deleteLickFromTab = new Button("Delete Last Lick");
+        deleteLickFromTab = new JButton("Delete Last Lick");
         deleteLickFromTab.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -185,39 +195,51 @@ public class tabWriter extends Frame{
             }
         });
 
-        labLickName = new Label("Enter New Lick Name:");
-        lickNameEntry = new TextField();
-        addLickToList = new Button("Add Lick to List");
+        labLickName = new JLabel("Enter New Lick Name:");
+        lickNameEntry = new JTextField();
+        addLickToList = new JButton("Add Lick to List");
 
-        lickDisplay = new TextArea(emptyMeasure,10,20);
+        lickDisplay = new JTextArea(emptyMeasure,10,20);
         lickDisplay.setFont(new Font("Monospaced", Font.PLAIN, 11));
         
+        // lick display subpanel1
+        JPanel lickDisplaySubpanel1 = new JPanel();
+        lickDisplaySubpanel1.setLayout(new BorderLayout(3, 3));
+        lickDisplaySubpanel1.add(lickDisplay, BorderLayout.NORTH);
+        lickDisplaySubpanel1.add(addLickToTab, BorderLayout.WEST);
+        lickDisplaySubpanel1.add(deleteLickFromTab, BorderLayout.EAST);
+
+        // lick display subpanel2
+        JPanel lickDisplaySubpanel2 = new JPanel();
+        lickDisplaySubpanel2.setLayout(new BorderLayout(3, 3));
+        lickDisplaySubpanel2.add(labLickName, BorderLayout.WEST);
+        lickDisplaySubpanel2.add(lickNameEntry, BorderLayout.CENTER);
+        lickDisplaySubpanel2.add(addLickToList, BorderLayout.SOUTH);
+
         // lick display panel
-        Panel lickDisplayPanel = new Panel();
+        JPanel lickDisplayPanel = new JPanel();
         lickDisplayPanel.setLayout(new BoxLayout(lickDisplayPanel, BoxLayout.Y_AXIS));
-        lickDisplayPanel.add(lickDisplay);
-        lickDisplayPanel.add(addLickToTab);
-        lickDisplayPanel.add(deleteLickFromTab);
-        lickDisplayPanel.add(labLickName);
-        lickDisplayPanel.add(lickNameEntry);
-        lickDisplayPanel.add(addLickToList);
+        lickDisplayPanel.add(lickDisplaySubpanel1);
+        lickDisplayPanel.add(Box.createRigidArea(new Dimension(0, 15))); // spacing 
+        lickDisplayPanel.add(lickDisplaySubpanel2);
         lickDisplayPanel.setSize(20, 300);
-        add(lickDisplayPanel);
+        lickPanel.add(lickDisplayPanel, BorderLayout.SOUTH);
 
 
         // lick create panel and components
         // lick create components
         // some components were maded in setup section above
-        displayLickButton = new Button("Show Selected Lick");
+        displayLickButton = new JButton("Show Selected Lick");
         displayLickButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                char[] currentChord = chordMatcher.get(chords.getSelectedItem().concat(mods.getSelectedItem()));
+                char[] currentChord = chordMatcher.get(chords.getSelectedValue().concat(mods.getSelectedValue()));
                 // System.out.println(savedLicks.getSelectedItem());
+                
                 // System.out.println(lickMatcher.get(savedLicks.getSelectedItem()));
                 // System.out.println(licks[lickMatcher.get(savedLicks.getSelectedItem())][0]);
 
-                String[] currentLick = Arrays.copyOfRange(licks[lickMatcher.get(savedLicks.getSelectedItem())], 1, 7);
+                String[] currentLick = Arrays.copyOfRange(licks[lickMatcher.get(savedLicks.getSelectedValue())], 1, 7);
                 // for (int i = 0; i <= 5; i++) {
                 //     System.out.println(currentLick[i]);
                 // }
@@ -226,24 +248,38 @@ public class tabWriter extends Frame{
         });
 
         // lick create panel
-        Panel chordModPanel = new Panel();
-        chordModPanel.setLayout(new BoxLayout(chordModPanel, BoxLayout.Y_AXIS));
-        chordModPanel.setSize(20, 300);
-        chordModPanel.add(chords);
-        chordModPanel.add(mods);
-        chordModPanel.add(savedLicks);
-        chordModPanel.add(displayLickButton);
-        add(chordModPanel);
+        JPanel chordModPanel = new JPanel();
+        JScrollPane scrollChords = new JScrollPane();
+        scrollChords.setViewportView(chords);
+        JScrollPane scrollMods = new JScrollPane();
+        scrollMods.setViewportView(mods);
+        JScrollPane scrollSavedLicks = new JScrollPane();
+        scrollSavedLicks.setViewportView(savedLicks);
+        chordModPanel.setLayout(new BorderLayout(3, 3));
+        chordModPanel.setSize(200, 300);
+        chordModPanel.add(scrollChords, BorderLayout.WEST);
+        scrollChords.setPreferredSize(new Dimension(100,100));
+        chordModPanel.add(scrollMods, BorderLayout.CENTER);
+        scrollMods.setPreferredSize(new Dimension(100,100));
+        chordModPanel.add(scrollSavedLicks, BorderLayout.EAST);
+        scrollSavedLicks.setPreferredSize(new Dimension(100,100));
+        chordModPanel.add(displayLickButton, BorderLayout.SOUTH);
+        lickPanel.add(chordModPanel, BorderLayout.NORTH);
 
         // declare display info for frame
         setTitle("Tab Editor");
-        setSize(900, 600);
+        setSize(1080, 540);
         setVisible(true);
 
     }
 
     public static void main(String[] args) {
-        new tabWriter();
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new tabWriter();
+            }
+        });
     }
 
     public String createChord(char[] chord, String[] shape) {
