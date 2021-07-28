@@ -1,18 +1,16 @@
 // currently working for the single chord I have put in. It can display an example
 
-// add save function
-// swing has file chooser
 // tool tips if you want
 // swing supports "undo" look into this
-// a menu bar maybe for loading and saving files
+
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.UIManager;
 import java.util.Hashtable;
-import java.util.Arrays;
-import java.util.Vector;
+// import java.util.Arrays;
+// import java.util.Vector;
 import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -20,6 +18,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.FileWriter;
 import java.io.IOException;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 public class tabWriter extends JFrame{
@@ -41,8 +40,8 @@ public class tabWriter extends JFrame{
     private ArrayList<String> chordNames = ReadFile("chordNames.txt");
     
     private ArrayList<String> chordFingerings = ReadFile("chordFingerings.txt");
-    private String emptyMeasure = "e--------------\nB--------------\nG--------------\nD--------------\nA--------------\nE--------------";
-    private String emptyStaff = "e-\nB-\nG-\nD-\nA-\nE-";
+    private String emptyMeasure = "e|--------------\nB|--------------\nG|--------------\nD|--------------\nA|--------------\nE|--------------";
+    private String emptyStaff = "e|-\nB|-\nG|-\nD|-\nA|-\nE|-";
     private ArrayList<Integer> lengthsOfAddedLicks;
 
 
@@ -93,8 +92,45 @@ public class tabWriter extends JFrame{
         JMenu fileMenu = new JMenu("File");
 
         // add items to file menu
-        fileMenu.add(new JMenuItem("Open Tab File"));
-        fileMenu.add(new JMenuItem("Save This Tab"));
+        JMenuItem openItem = new JMenuItem("Open Tab File");
+        openItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("Text Files", "txt");               
+                JFileChooser fileOpen = new JFileChooser("C:/Users/kgtrm/Desktop/Files/Sheet Music");
+                fileOpen.setFileFilter(filter);
+                fileOpen.showOpenDialog(null);
+                String textArea = "";
+                for (String line : ReadFile(fileOpen.getSelectedFile().getAbsolutePath())) {
+                    textArea = textArea.concat(line + "\n");
+                }
+                tab.setText(textArea);
+            }
+        });
+        JMenuItem saveItem = new JMenuItem("Save Tab File");
+        saveItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                FileNameExtensionFilter filter = new FileNameExtensionFilter("Only .txt files", "txt");               
+                JFileChooser fileSave = new JFileChooser("C:/Users/kgtrm/Desktop/Files/Sheet Music");
+                fileSave.setAcceptAllFileFilterUsed(false);
+                fileSave.addChoosableFileFilter(filter);
+                fileSave.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                fileSave.showSaveDialog(null);
+
+                String path = fileSave.getSelectedFile().getAbsolutePath();
+
+                try {
+                    FileWriter fr = new FileWriter(path, true);
+                    fr.write(tab.getText());
+                    fr.close();
+                } catch (IOException e) {
+
+                }
+            }
+        });
+        fileMenu.add(openItem);
+        fileMenu.add(saveItem);
         
         // add menu to menuBar to frame
         menuBar.add(fileMenu);
@@ -104,10 +140,11 @@ public class tabWriter extends JFrame{
         // tab display components
         tab = new JTextArea(emptyStaff, 30, 100);
         tab.setFont(new Font("Monospaced", Font.PLAIN, 11));
+        JScrollPane tabScroll = new JScrollPane(tab);
 
         // tab display panel
         JPanel tabPanel = new JPanel();
-        tabPanel.add(tab);
+        tabPanel.add(tabScroll);
         cp.add(tabPanel);
 
         // lick editor panel
@@ -135,10 +172,11 @@ public class tabWriter extends JFrame{
                 int newLineLength = newLines[0].length();
                 if (currentLineLength + newLineLength >= 80) {
                     tab.append("\n");
+                    newTab = newTab.replace("\n","|\n");
                     tab.append(newTab);
                 } else {
                     for (int i = 0; i <= 5; i++) {
-                        lines[currentLength - 6 + i] = lines[currentLength - 6 + i].concat(newLines[i].substring(1));
+                        lines[currentLength - 6 + i] = lines[currentLength - 6 + i].concat(newLines[i].substring(2)+"|");
                         // System.out.println("changed line to ");
                         // System.out.println(lines[currentLength - 6 + i]);
                     }
