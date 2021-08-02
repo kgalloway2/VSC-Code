@@ -1,72 +1,67 @@
+# add filters for graph like fully-evolved, legendary, generation, etc.
+
 import dash
-from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
+from dash.dependencies import Input, Output
 import pandas as pd
+import plotly.express as px
 
-app = dash.Dash(__name__)
-server = app.server
+external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
-global poke_df 
-poke_df = pd.read_csv("C:/Users/kgtrm/Documents/VSC Code/R stuff/Pokemon Project/PokemonDataCleaned.csv", encoding="ISO-8859-1")
+poke_df = pd.read_csv("PokemonDataCleaned.csv")
 
-global names 
-names = poke_df['Pokemon.Name'].tolist()
-global ids 
-ids = poke_df['ï..Pokemon.Id'].tolist()
+poke_dicts = [{'label': poke_df.at[i-1, "Pokemon.Name"], 'value': i-1} for i in poke_df["DFID"]]
 
-global poke_dict_list
-poke_dict_list = []
-for i in range(len(names)):
-    poke_dict_list.append({'label': names[i], 'value': ids[i]})
+stat_dicts = [{'label': "DFID", 'value': "DFID"},
+            {'label': "Pokemon.Height", 'value': "Pokemon.Height"},
+            {'label': "Pokemon.Weight", 'value': "Pokemon.Weight"},
+            {'label': "Male.Ratio", 'value': "Male.Ratio"},
+            {'label': "Female.Ratio", 'value': "Female.Ratio"},
+            {'label': "Base.Happiness", 'value': "Base.Happiness"},
+            {'label': "Health.Stat", 'value': "Health.Stat"},
+            {'label': "Attack.Stat", 'value': "Attack.Stat"},
+            {'label': "Defense.Stat", 'value': "Defense.Stat"},
+            {'label': "Special.Attack.Stat", 'value': "Special.Attack.Stat"},
+            {'label': "Special.Defense.Stat", 'value': "Special.Defense.Stat"},
+            {'label': "Speed.Stat", 'value': "Speed.Stat"},
+            {'label': "Base.Stat.Total", 'value': "Base.Stat.Total"},
+            {'label': "Catch.Rate", 'value': "Catch.Rate"},
+            {'label': "Experience.Growth.Total", 'value': "Experience.Growth.Total"},
+            {'label': "Experience.Yield", 'value': "Experience.Yield"},
+            {'label': "Generation", 'value': "Generation"}
+            ]          
 
 app.layout = html.Div([
     html.Div([
-        html.H1('Pokemon Dashboard'),
-        html.H2('Choose a Pokemon'),
-        dcc.Dropdown(
-            id='pokemon-dropdown',
-            options=poke_dict_list,
-            multi=True,
-            clearable=True,
-            value=[i for i in range(1, 11)]
-        ),
-        dcc.Graph(
-            id='pokemon-bst-bar',
-            figure={'data': [
-                {'x': poke_df['Pokemon.Name'].isin('pokemon-dropdown'),
-                 'y': poke_df['Base.Stat.Total'], 
-                 'type': 'bar'},
-            ],
-            'layout': {
-                'title': 'Bas State Totals'
-                }
-            }
+        dcc.Dropdown(id='xstat-selector',
+        options=stat_dicts,
+        value="DFID")
+    ], style={'width': '49%', 'display': 'inline-block'}),
+
+    html.Div([
+        dcc.Dropdown(id='ystat-selector',
+        options=stat_dicts,
+        value="Pokemon.Height"
         )
-    ], style={'width': '40%', 'display': 'inline-block'}),
+    ], style={'width': '49%', 'float': 'right', 'display': 'inline-block'}),
+
     html.Div([
-        html.H2('Current Pokemon info'),
-        html.Table(id='my-table'),
-        html.P(''),
-    ], style={'width': '55%', 'float': 'right', 'display': 'inline-block'}),
-    html.Div([
-        html.H2('stats graph'),
-        dcc.Graph(id='stats-graph'),
-        html.P('')
-    ], style={'width': '100%', 'display': 'inline-block'})
+        dcc.Graph(id='stat-graph')
     ])
+])
 
-@app.callback(Output('my-table', 'children'), [Input('pokemon-dropdown', 'value')])
+@app.callback(
+    Output('stat-graph', 'figure'),
+    Input('xstat-selector', 'value'),
+    Input('ystat-selector', 'value')
+)
+def update_stat_graph(xstat, ystat):
+    fig = px.scatter(poke_df, x=poke_df[xstat], y=poke_df[ystat], hover_name=poke_df['Pokemon.Name'])
 
-def generate_table(selected_dropdown_value, max_rows=20):
-    pokemon_df_filter = poke_df[(poke_df['ï..Pokemon.Id'].isin(selected_dropdown_value))]
-
-    pokemon_df_filter = pokemon_df_filter.sort_values(['ï..Pokemon.Id'], ascending=True)
-    colsList = [1, 2, 3, 5, 10, 11, 25, 26, 27, 28, 29, 30, 49]
-
-    return [html.Tr([html.Th(col) for col in pokemon_df_filter.columns[colsList]])] + [html.Tr([html.Td(pokemon_df_filter.iloc[i][col]) for col in pokemon_df_filter.columns[colsList]]) for i in range(min(len(pokemon_df_filter), max_rows))]
-
+    return fig
 
 if __name__ == '__main__':
     app.run_server(debug=True)
