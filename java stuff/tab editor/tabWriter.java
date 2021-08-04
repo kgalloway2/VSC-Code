@@ -32,17 +32,22 @@ public class tabWriter extends JFrame{
     private JList<String> chords;
     private JList<String> mods;
 
+    JScrollPane scrollChords;
+    JScrollPane scrollMods;
+    JScrollPane scrollSavedLicks;
+
     private Hashtable<String, String[]> lickMatcher;
     private String[] baseChords = {"A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"};
     private String[] chordMods = {"Maj", "min", "Maj7", "7", "min7", "sus4"};
     
     private Hashtable<String, String[]> chordMatcher = new Hashtable<String, String[]>();
-    private ArrayList<String> chordNames = ReadFile("chordNames.txt");
+    private ArrayList<String> chordNames = ReadFile("GchordNames.txt");
     
-    private ArrayList<String> chordFingerings = ReadFile("chordFingerings.txt");
+    private ArrayList<String> chordFingerings = ReadFile("GchordFingerings.txt");
     private String emptyMeasure = "e|--------------\nB|--------------\nG|--------------\nD|--------------\nA|--------------\nE|--------------";
     private String emptyStaff = "e|-\nB|-\nG|-\nD|-\nA|-\nE|-";
     private ArrayList<Integer> lengthsOfAddedLicks;
+    private int linesInStaff = 6;
 
 
     public tabWriter() {
@@ -63,7 +68,7 @@ public class tabWriter extends JFrame{
         lickMatcher = new Hashtable<String, String[]>();
         ArrayList<String> tempLickList = new ArrayList<String>();
         int count = 1;
-        for (String lick : ReadFile("licks.txt")) {
+        for (String lick : ReadFile("Glicks.txt")) {
             String[] currentLick = lick.split(",");
             String currentLickName = "lick" + String.valueOf(count);
             lickMatcher.put(currentLickName, currentLick);
@@ -152,6 +157,25 @@ public class tabWriter extends JFrame{
         lickPanel.setLayout(new BorderLayout(10,10));
         cp.add(lickPanel);
 
+        // mode select subpanel
+        JRadioButton guitarMode = new JRadioButton("Guitar");
+        guitarMode.setSelected(true);
+        guitarMode.addActionListener(new setMode());
+
+        JRadioButton banjoMode = new JRadioButton("Banjo");
+        banjoMode.addActionListener(new setMode());
+
+        ButtonGroup modeGroup = new ButtonGroup();
+        modeGroup.add(guitarMode);
+        modeGroup.add(banjoMode);
+
+        JPanel modeSelectorSubpanel = new JPanel();
+        modeSelectorSubpanel.setLayout(new FlowLayout());
+        modeSelectorSubpanel.add(guitarMode);
+        modeSelectorSubpanel.add(banjoMode);
+
+        lickPanel.add(modeSelectorSubpanel, BorderLayout.NORTH);
+
         // lick display panel and components
         //lick display components
         addLickToTab = new JButton("Add Lick to Tab");
@@ -175,8 +199,8 @@ public class tabWriter extends JFrame{
                     newTab = newTab.replace("\n","|\n");
                     tab.append(newTab);
                 } else {
-                    for (int i = 0; i <= 5; i++) {
-                        lines[currentLength - 6 + i] = lines[currentLength - 6 + i].concat(newLines[i].substring(2)+"|");
+                    for (int i = 0; i <= linesInStaff - 1; i++) {
+                        lines[currentLength - linesInStaff + i] = lines[currentLength - linesInStaff + i].concat(newLines[i].substring(2)+"|");
                         // System.out.println("changed line to ");
                         // System.out.println(lines[currentLength - 6 + i]);
                     }
@@ -203,19 +227,21 @@ public class tabWriter extends JFrame{
                 int currentLineLength = lines[currentLength - 1].length();
                 int lengthToDelete = lengthsOfAddedLicks.get(lengthsOfAddedLicks.size() - 1) - 2;
                 String afterTab = "";
-
+                
+                // when deleting the last measure in a bar
                 if (currentLineLength - lengthToDelete < 5) {
+                    // when deleting the last measure in the tab
                     if (currentLength <= 7) {
                         afterTab = emptyStaff;
                     } else {
-                        for (int i = 0; i <= currentLength - 8; i++) {
+                        for (int i = 0; i <= currentLength - linesInStaff - 2; i++) {
                             afterTab = afterTab.concat(lines[i] + "\n");
                         }
                     }
-                    
+                // when deleting any but the last measure in a bar
                 } else {
-                    for (int i = 0; i <= 5; i++) {
-                        lines[currentLength - 6 + i] = lines[currentLength - 6 + i].substring(0, currentLineLength - lengthToDelete - 1);
+                    for (int i = 0; i <= linesInStaff - 1; i++) {
+                        lines[currentLength - linesInStaff + i] = lines[currentLength - linesInStaff + i].substring(0, currentLineLength - lengthToDelete - 1);
                     } 
                     for (String i : lines) {
                         afterTab = afterTab.concat(i + "\n");
@@ -241,10 +267,15 @@ public class tabWriter extends JFrame{
                 
                 // add lick to file
                 String lickString = lickList[0];
-                for (int i = 1; i <= 5; i++) {
+                for (int i = 1; i <= linesInStaff - 1; i++) {
                     lickString = lickString.concat("," + lickList[i]);
                 }
-                File lickFile = new File("licks.txt");
+                File lickFile = new File("Glicks.txt");
+                if (guitarMode.isSelected()) {
+                    lickFile = new File("Glicks.txt");
+                } else if (banjoMode.isSelected()) {
+                    lickFile = new File("Blicks.txt");
+                }
                 try {
                     FileWriter fr = new FileWriter(lickFile, true);
                     BufferedWriter br = new BufferedWriter(fr);
@@ -286,6 +317,7 @@ public class tabWriter extends JFrame{
         // lick create panel and components
         // lick create components
         // some components were maded in setup section above
+
         displayLickButton = new JButton("Show Selected Lick");
         displayLickButton.addActionListener(new ActionListener() {
             @Override
@@ -298,11 +330,11 @@ public class tabWriter extends JFrame{
 
         // lick create panel
         JPanel chordModPanel = new JPanel();
-        JScrollPane scrollChords = new JScrollPane();
+        scrollChords = new JScrollPane();
         scrollChords.setViewportView(chords);
-        JScrollPane scrollMods = new JScrollPane();
+        scrollMods = new JScrollPane();
         scrollMods.setViewportView(mods);
-        JScrollPane scrollSavedLicks = new JScrollPane();
+        scrollSavedLicks = new JScrollPane();
         scrollSavedLicks.setViewportView(savedLicks);
         chordModPanel.setLayout(new BorderLayout(3, 3));
         chordModPanel.setSize(200, 300);
@@ -313,7 +345,7 @@ public class tabWriter extends JFrame{
         chordModPanel.add(scrollSavedLicks, BorderLayout.EAST);
         scrollSavedLicks.setPreferredSize(new Dimension(100,100));
         chordModPanel.add(displayLickButton, BorderLayout.SOUTH);
-        lickPanel.add(chordModPanel, BorderLayout.NORTH);
+        lickPanel.add(chordModPanel, BorderLayout.CENTER);
 
         // declare display info for frame
         setTitle("Tab Editor");
@@ -339,7 +371,7 @@ public class tabWriter extends JFrame{
         for (String i : shape) {
             result.add(i);
         }
-        for (int i = 0; i <= 5; i++) {
+        for (int i = 0; i <= linesInStaff - 1; i++) {
             result.set(i, result.get(i).replace("p", chord[i]));
         }
         String resultString = "";
@@ -363,6 +395,94 @@ public class tabWriter extends JFrame{
             e.printStackTrace();
         } 
         return fileList;
+    }
+
+    private class setMode implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent evt) {
+            String mode = evt.getActionCommand();
+            if (mode.equals("Guitar")) {
+                linesInStaff = 6;
+                emptyMeasure = "e|--------------\nB|--------------\nG|--------------\nD|--------------\nA|--------------\nE|--------------";
+                emptyStaff = "e|-\nB|-\nG|-\nD|-\nA|-\nE|-";
+                chordNames = ReadFile("GchordNames.txt");
+                chordFingerings = ReadFile("GchordFingerings.txt");
+                
+                chords = new JList<String>(baseChords);
+                mods = new JList<String>(chordMods);
+
+                chordMatcher = new Hashtable<String, String[]>();        
+                for (int i = 0; i <= chordNames.size() - 1; i++) {
+                    String[] currentFingeringList = chordFingerings.get(i).split(",");
+                    chordMatcher.put(chordNames.get(i), currentFingeringList);
+                }
+
+                lickMatcher = new Hashtable<String, String[]>();
+                ArrayList<String> tempLickList = new ArrayList<String>();
+                int count = 1;
+                for (String lick : ReadFile("Glicks.txt")) {
+                    String[] currentLick = lick.split(",");
+                    String currentLickName = "lick" + String.valueOf(count);
+                    lickMatcher.put(currentLickName, currentLick);
+                    tempLickList.add(currentLickName);
+                    count++;
+                }
+                DefaultListModel<String> JListLicks = new DefaultListModel<>();
+                for (String lick :tempLickList) {
+                    JListLicks.addElement(lick);
+                }
+                savedLicks = new JList<String>(JListLicks);
+
+                tab.setText(emptyStaff);
+                lickDisplay.setText(emptyMeasure);
+                scrollChords.setViewportView(chords);
+                scrollMods.setViewportView(mods);
+                scrollSavedLicks.setViewportView(savedLicks);
+
+
+            } else if (mode.equals("Banjo")) {
+                linesInStaff = 5;
+                emptyMeasure = "d|--------------\nB|--------------\nG|--------------\nD|--------------\ng|--------------";
+                emptyStaff = "d|-\nB|-\nG|-\nD|-\ng|-";
+                chordNames = ReadFile("BchordNames.txt");
+                chordFingerings = ReadFile("BchordFingerings.txt");
+
+                chords = new JList<String>(baseChords);
+                mods = new JList<String>(chordMods);
+
+                chordMatcher = new Hashtable<String, String[]>();        
+                for (int i = 0; i <= chordNames.size() - 1; i++) {
+                    String[] currentFingeringList = chordFingerings.get(i).split(",");
+                    chordMatcher.put(chordNames.get(i), currentFingeringList);
+                }
+
+                lickMatcher = new Hashtable<String, String[]>();
+                ArrayList<String> tempLickList = new ArrayList<String>();
+                int count = 1;
+                for (String lick : ReadFile("Blicks.txt")) {
+                    String[] currentLick = lick.split(",");
+                    String currentLickName = "lick" + String.valueOf(count);
+                    lickMatcher.put(currentLickName, currentLick);
+                    tempLickList.add(currentLickName);
+                    count++;
+                }
+                DefaultListModel<String> JListLicks = new DefaultListModel<>();
+                for (String lick :tempLickList) {
+                    JListLicks.addElement(lick);
+                }
+                savedLicks = new JList<String>(JListLicks);
+
+                tab.setText(emptyStaff);
+                lickDisplay.setText(emptyMeasure);
+                scrollChords.setViewportView(chords);
+                scrollMods.setViewportView(mods);
+                scrollSavedLicks.setViewportView(savedLicks);
+
+
+            } else {
+                System.out.println("This shouldn't happen.");
+            }
+        }
     }
 
 }
