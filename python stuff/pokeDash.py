@@ -1,5 +1,8 @@
 # add selector for displaying info on selected pokemon (a dropdown or maybe selected point)
-# change hover_data for scatterplot to be better data
+# custom filter for data
+# use border in to see layout better
+# trendlines
+
 
 import dash
 import dash_core_components as dcc
@@ -64,7 +67,7 @@ app.layout = html.Div([
             ],
             value=['\"Legendary\"', '\"Sub-Legendary\"', '\"Mythical\"', '\"Non-Legendary\"']
         )
-    ], style={'width': '30%', 'display': 'inline-block'}),
+    ], style={'width': '20%', 'display': 'inline-block'}),
     
     html.Div([
         html.Label("Only Fully-Evolved?"),
@@ -74,7 +77,7 @@ app.layout = html.Div([
             max=1,
             marks={0: "No", 1: "Yes"}
         )
-    ], style={'width': '200px', 'display': 'inline-block'}
+    ], style={'width': '150px', 'display': 'inline-block'}
     ),
 
     html.Div([
@@ -83,7 +86,25 @@ app.layout = html.Div([
             options = [{'label': i, 'value': i} for i in range(1, 9)],
             value=[1, 2, 3, 4, 5, 6, 7, 8]
         )
-    ], style={'width': '30%', 'display': 'inline-block'}),
+    ], style={'width': '10%', 'display': 'inline-block'}),
+
+    html.Div([
+        dcc.Dropdown(
+            id='type-filter',
+            options=[{'label': i, 'value': i} for i in poke_df['Primary.Type'].unique()],
+            multi=True,
+            value=[i for i in poke_df['Primary.Type'].unique()]
+        )
+    ], style={'width': '25%', 'display': 'inline-block'}),
+
+    html.Div([
+        dcc.Dropdown(
+            id='data-selector',
+            options=[{'label': i, 'value': i} for i in poke_df.columns],
+            multi=True,
+            value=["Generation"]
+        )
+    ], style={'width': '25%', 'display': 'inline-block'}),
 
     html.Div([
         dcc.Graph(id='stat-graph')
@@ -96,9 +117,11 @@ app.layout = html.Div([
     Input('ystat-selector', 'value'),
     Input('legend-filter', 'value'),
     Input('evolved-filter', 'value'),
-    Input('generation-filter', 'value')
+    Input('generation-filter', 'value'),
+    Input('type-filter', 'value'),
+    Input('data-selector', 'value')
 )
-def update_stat_graph(xstat, ystat, legend_filter, evolved_filter, gen_filter):
+def update_stat_graph(xstat, ystat, legend_filter, evolved_filter, gen_filter, type_filter, data_list):
     current_df = poke_df[poke_df['Legendary.Type'].isin(legend_filter)]
     
     if evolved_filter:
@@ -106,7 +129,12 @@ def update_stat_graph(xstat, ystat, legend_filter, evolved_filter, gen_filter):
 
     current_df = current_df[current_df['Generation'].isin(gen_filter)]
 
-    fig = px.scatter(current_df, x=xstat, y=ystat, hover_name=current_df['Pokemon.Name'])
+    prim_type = current_df[current_df['Primary.Type'].isin(type_filter)]
+    sec_type = current_df[current_df['Secondary.Type'].isin(type_filter)]
+    current_df = pd.concat([prim_type, sec_type])
+        
+
+    fig = px.scatter(current_df, x=xstat, y=ystat, hover_name=current_df['Pokemon.Name'], hover_data = [xstat, ystat] + data_list)
 
     return fig
 
