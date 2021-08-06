@@ -1,5 +1,6 @@
 import random
 import math
+import csv
 
 
 default_deck = ['wasabi'] * 6 +  ['egg'] * 5 +  ['salmon'] * 10 +  ['squid'] * 5 +  ['sashimi'] * 14 +  ['tempura'] * 14 +  [
@@ -175,7 +176,35 @@ def score_wasabi(selected_cards):
         wasabi_points.append(current_points)
 
     return wasabi_points
-        
+
+def random_strategy(visible_cards, selected_cards):
+    pass 
+
+def strategy_1(visible_cards):
+    if 'sashimi' in visible_cards:
+        return visible_cards.index('sashimi')
+    elif 'tempura' in visible_cards:
+        return visible_cards.index('tempura')
+    elif 'wasabi' in visible_cards:
+        return visible_cards.index('wasabi')
+    elif 'squid' in visible_cards:
+        return visible_cards.index('squid')
+    elif 'salmon' in visible_cards:
+        return visible_cards.index('salmon')
+    elif 'egg' in visible_cards:
+        return visible_cards.index('egg')
+    elif 'dumpling' in visible_cards:
+        return visible_cards.index('dumpling')
+    elif 'maki3' in visible_cards:
+        return visible_cards.index('maki3')
+    elif 'maki2' in visible_cards:
+        return visible_cards.index('maki2')
+    elif 'maki1' in visible_cards:
+        return visible_cards.index('maki1')
+    elif 'pudding' in visible_cards:
+        return visible_cards.index('pudding')
+    else:
+        return 0
 
 def run_game(num_players):
     this_game_deck = default_deck.copy()
@@ -186,35 +215,47 @@ def run_game(num_players):
     totals = [0] * num_players
     
     while round_num < 3:
-        player_list = []
+        players_card_list = []
         selected_cards = []
         # deal hands
         for i in range(num_players):
             # print(this_game_deck)
-            player_list.append(this_game_deck[:10 - (num_players - 2)])
-            # print(player_list)
+            players_card_list.append(this_game_deck[:10 - (num_players - 2)])
+            # print(players_card_list)
             this_game_deck = this_game_deck[10 - (num_players - 2):]
             # print(this_game_deck)
             selected_cards.append([])
         
         # play a round
 
-        while player_list[1]:
+        while players_card_list[1]:
             # each player selects a card
             for i in range(num_players):
-                first_card_index = random.randint(0, len(player_list[i]) - 1)
-                selected_cards[i].append(player_list[i][first_card_index])
-                player_list[i].pop(first_card_index)
+                if i == 0:
+                    picked_card_index = strategy_1(players_card_list[0])
+                elif i == 1:
+                    picked_card_index = strategy_1(players_card_list[1])
+                else: 
+                    picked_card_index = random.randint(0, len(players_card_list[i]) - 1)
+                    
+                selected_cards[i].append(players_card_list[i][picked_card_index])
+                players_card_list[i].pop(picked_card_index)
 
                 if "chopstick" in selected_cards[i]:
                     use_chopstick = random.random()
-                    if use_chopstick > 0.5:
+                    if use_chopstick > 0.5 and players_card_list[i]:
                         # use the chopstick
+                        if i == 0:
+                            second_picked_card_index = strategy_1(players_card_list[0])
+                        elif i == 1:
+                            second_picked_card_index = strategy_1(players_card_list[1])
+                        else:
+                            second_picked_card_index = random.randint(0, len(players_card_list[i]) - 1)
+
                         selected_cards[i].remove("chopstick")
-                        player_list[i].append("chopstick")
-                        second_card_index = random.randint(0, len(player_list[i]) - 1)
-                        selected_cards[i].append(player_list[i][second_card_index])
-                        player_list[i].pop(second_card_index)
+                        players_card_list[i].append("chopstick")
+                        selected_cards[i].append(players_card_list[i][second_picked_card_index])
+                        players_card_list[i].pop(second_picked_card_index)
 
         # score this round
         
@@ -252,10 +293,11 @@ def run_game(num_players):
         for i in range(len(selected_cards)):
             pudding_tracker[i] += selected_cards[i].count("pudding")
 
-        print(round_scores[round_num])
+        #print(round_scores[round_num])
         round_num += 1
         
     pudding_points = score_pudding(selected_cards)
+    round_scores.append([0] * num_players)
 
     for x in pudding_points[0]:
         for key in x.keys():
@@ -270,8 +312,25 @@ def run_game(num_players):
         for i in range(num_players):
             totals[i] += round_scores[j][i]
 
-
-    print(totals)
+    # print(round_scores)
+    # print(totals)
+    return round_scores
     
 
-run_game(4)
+print(run_game(2))
+
+with open('sushigo2playerstrat1both.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile, delimiter=',',
+                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    writer.writerow(["game_no", "r1p1", "r1p2", "r2p1", "r2p2", "r3p1", "r3p2", "p1_pudding", "p2_pudding", "p1_total", "p2_total", "winner"])
+    for i in range(100000):
+        game = run_game(2)
+        p1_total = game[0][0] + game[1][0] + game[2][0] + game[3][0]
+        p2_total = game[0][1] + game[1][1] + game[2][1] + game[3][1]
+        winner = 0
+        if p1_total > p2_total:
+            winner = 1
+        elif p2_total > p1_total:
+            winner = 2
+        
+        writer.writerow([i, game[0][0], game[0][1], game[1][0], game[1][1], game[2][0], game[2][1], game[3][0], game[3][1], p1_total, p2_total, winner])
