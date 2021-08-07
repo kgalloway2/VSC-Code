@@ -181,28 +181,64 @@ def random_strategy(visible_cards, selected_cards):
     pass 
 
 def strategy_1(visible_cards):
-    if 'sashimi' in visible_cards:
-        return visible_cards.index('sashimi')
-    elif 'tempura' in visible_cards:
-        return visible_cards.index('tempura')
-    elif 'wasabi' in visible_cards:
-        return visible_cards.index('wasabi')
-    elif 'squid' in visible_cards:
-        return visible_cards.index('squid')
-    elif 'salmon' in visible_cards:
-        return visible_cards.index('salmon')
-    elif 'egg' in visible_cards:
-        return visible_cards.index('egg')
-    elif 'dumpling' in visible_cards:
-        return visible_cards.index('dumpling')
-    elif 'maki3' in visible_cards:
-        return visible_cards.index('maki3')
-    elif 'maki2' in visible_cards:
-        return visible_cards.index('maki2')
-    elif 'maki1' in visible_cards:
-        return visible_cards.index('maki1')
-    elif 'pudding' in visible_cards:
-        return visible_cards.index('pudding')
+    cards = ['wasabi', 'egg', 'salmon', 'squid', 'sashimi', 'tempura', 
+        'dumpling', 'maki1', 'maki2', 'maki3', 'pudding', 'chopstick']
+    ordering = [4, 5, 0, 3, 2, 1, 6, 9, 8, 7, 10, 11]
+    if cards[ordering[0]] in visible_cards:
+        return visible_cards.index(cards[ordering[0]])
+    elif cards[ordering[1]] in visible_cards:
+        return visible_cards.index(cards[ordering[1]])
+    elif cards[ordering[2]] in visible_cards:
+        return visible_cards.index(cards[ordering[2]])
+    elif cards[ordering[3]] in visible_cards:
+        return visible_cards.index(cards[ordering[3]])
+    elif cards[ordering[4]] in visible_cards:
+        return visible_cards.index(cards[ordering[4]])
+    elif cards[ordering[5]] in visible_cards:
+        return visible_cards.index(cards[ordering[5]])
+    elif cards[ordering[6]] in visible_cards:
+        return visible_cards.index(cards[ordering[6]])
+    elif cards[ordering[7]] in visible_cards:
+        return visible_cards.index(cards[ordering[7]])
+    elif cards[ordering[8]] in visible_cards:
+        return visible_cards.index(cards[ordering[8]])
+    elif cards[ordering[9]] in visible_cards:
+        return visible_cards.index(cards[ordering[9]])
+    elif cards[ordering[10]] in visible_cards:
+        return visible_cards.index(cards[ordering[10]])
+    elif cards[ordering[11]] in visible_cards:
+        return visible_cards.index(cards[ordering[11]])
+    else:
+        return 0
+
+def strategy_2(visible_cards):
+    cards = ['wasabi', 'egg', 'salmon', 'squid', 'sashimi', 'tempura', 
+        'dumpling', 'maki1', 'maki2', 'maki3', 'pudding', 'chopstick']
+    ordering = [6, 0, 3, 2, 1, 9, 8, 7, 5, 4, 10, 11]
+    if cards[ordering[0]] in visible_cards:
+        return visible_cards.index(cards[ordering[0]])
+    elif cards[ordering[1]] in visible_cards:
+        return visible_cards.index(cards[ordering[1]])
+    elif cards[ordering[2]] in visible_cards:
+        return visible_cards.index(cards[ordering[2]])
+    elif cards[ordering[3]] in visible_cards:
+        return visible_cards.index(cards[ordering[3]])
+    elif cards[ordering[4]] in visible_cards:
+        return visible_cards.index(cards[ordering[4]])
+    elif cards[ordering[5]] in visible_cards:
+        return visible_cards.index(cards[ordering[5]])
+    elif cards[ordering[6]] in visible_cards:
+        return visible_cards.index(cards[ordering[6]])
+    elif cards[ordering[7]] in visible_cards:
+        return visible_cards.index(cards[ordering[7]])
+    elif cards[ordering[8]] in visible_cards:
+        return visible_cards.index(cards[ordering[8]])
+    elif cards[ordering[9]] in visible_cards:
+        return visible_cards.index(cards[ordering[9]])
+    elif cards[ordering[10]] in visible_cards:
+        return visible_cards.index(cards[ordering[10]])
+    elif cards[ordering[11]] in visible_cards:
+        return visible_cards.index(cards[ordering[11]])
     else:
         return 0
 
@@ -234,7 +270,7 @@ def run_game(num_players):
                 if i == 0:
                     picked_card_index = strategy_1(players_card_list[0])
                 elif i == 1:
-                    picked_card_index = strategy_1(players_card_list[1])
+                    picked_card_index = strategy_2(players_card_list[1])
                 else: 
                     picked_card_index = random.randint(0, len(players_card_list[i]) - 1)
                     
@@ -248,7 +284,7 @@ def run_game(num_players):
                         if i == 0:
                             second_picked_card_index = strategy_1(players_card_list[0])
                         elif i == 1:
-                            second_picked_card_index = strategy_1(players_card_list[1])
+                            second_picked_card_index = strategy_2(players_card_list[1])
                         else:
                             second_picked_card_index = random.randint(0, len(players_card_list[i]) - 1)
 
@@ -319,7 +355,7 @@ def run_game(num_players):
 
 print(run_game(2))
 
-with open('sushigo2playerstrat1both.csv', 'w', newline='') as csvfile:
+with open('sushigo2playerstrat1and2.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
     writer.writerow(["game_no", "r1p1", "r1p2", "r2p1", "r2p2", "r3p1", "r3p2", "p1_pudding", "p2_pudding", "p1_total", "p2_total", "winner"])
