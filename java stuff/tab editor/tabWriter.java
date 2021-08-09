@@ -1,16 +1,11 @@
-// currently working for the single chord I have put in. It can display an example
-
 // tool tips if you want
 // swing supports "undo" look into this
-
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.UIManager;
 import java.util.Hashtable;
-// import java.util.Arrays;
-// import java.util.Vector;
 import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.File;
