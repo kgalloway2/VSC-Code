@@ -98,7 +98,7 @@ app.layout = html.Div([
             multi=True,
             value=[i for i in poke_df['Primary.Type'].unique()]
         )
-    ], style={'width': '10%', 'display': 'inline-block'}),
+    ], style={'width': '20%', 'display': 'inline-block'}),
 
     html.Div([
         dcc.Dropdown(
@@ -112,7 +112,7 @@ app.layout = html.Div([
         dcc.Input(
             id='custom-value'
         )
-    ], style={'width': '30%', 'display': 'inline-block'}),
+    ], style={'width': '15%', 'display': 'inline-block', 'padding-left': '20px'}),
 
     html.Div([
         dcc.Dropdown(
@@ -121,7 +121,7 @@ app.layout = html.Div([
             multi=True,
             value=["Generation"]
         )
-    ], style={'width': '25%', 'display': 'inline-block'}),
+    ], style={'width': '25%', 'display': 'inline-block', 'padding-left': '20px'}),
 
     html.Div([
         dcc.Dropdown(
